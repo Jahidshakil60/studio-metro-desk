@@ -1,0 +1,141 @@
+.get-quote-page__formsection .formsection-progressbar {
+  width: 100%;
+  height: 40px;
+  background: #f2f2fd;
+  margin: 100px 0 50px 0;
+  position: relative;
+  overflow: hidden;
+}
+.get-quote-page__formsection .formsection-progressbar .wave {
+  background: #7a80bd;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+}
+.get-quote-page__formsection .formsection-progressbar .wave::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  background-color: rgba(122, 128, 189, 0.8901960784);
+  border-radius: 20%;
+  transform: translateY(-50%) rotate(0);
+  -webkit-animation: rotate 6s linear infinite;
+          animation: rotate 6s linear infinite;
+  z-index: 10;
+}
+.get-quote-page__formsection .formsection-progressbar .wave::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  background-color: rgba(122, 128, 189, 0.8431372549);
+  border-radius: 22%;
+  transform: translateY(-50%) rotate(0);
+  -webkit-animation: rotate 10s linear -5s infinite;
+  animation: rotate 10s linear -5s infinite;
+  z-index: 20;
+}
+@-webkit-keyframes rotate {
+  50% {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+@keyframes rotate {
+  50% {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+.get-quote-page__formsection .formsection-progressbar p {
+  font-size: 25px;
+  color: #bfc1dc;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 10%);
+}
+.get-quote-page__formsection .formsection-main {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__sidebar {
+  flex: 1;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  gap: 24px;
+  background: #f2f2fd;
+  border-bottom: 2px solid #9e9e9e;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item p {
+  font-size: 25px;
+  padding: 1px 10px;
+  background: #232a5f;
+  border-radius: 50%;
+  color: white;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item h6 {
+  color: #7a80bd;
+  font-size: 28px;
+  line-height: 38px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item-single {
+  padding: 60px 40px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body {
+  flex: 2;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body h4 {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item {
+  background: #FAFAFA;
+  border-radius: 5px;
+  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+  padding: 0 12px 20px 12px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 27px 0 27px 12px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head .circle {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head p {
+  font-size: 18px;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-image {
+  overflow: hidden;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-image img {
+  width: 100%;
+  height: 100%;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item:hover {
+  outline: 1px solid #4E527B;
+}
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item:hover img {
+  transform: scale(1.1);
+}/*# sourceMappingURL=formsection.css.map */
