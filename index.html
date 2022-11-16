@@ -8,113 +8,134 @@
 			href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@200;300;400;500;600&family=Open+Sans:wght@500;600;700&family=Permanent+Marker&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 		<!-- style link -->
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="CSS/herosection.css" />
-        <link rel="stylesheet" href="CSS/formsection.css">
+		<link rel="stylesheet" href="CSS/formsection.css" />
 		<title>StudioMetroDesk</title>
 	</head>
-	<body>
+	<body >
 		<div class="get-quote-page">
 			<div class="get-quote-page__herosection">
-                
-                <div class="herosection-main body-main--frame">
-
-                    <div class="herosection-main__text">
-                        <h1>Get your custom quote</h1>
-                        <p>Tell us what you need, and we'll send your custom quote within 4 step and get back to your work. We are take care of your work.</p>
-                    </div>
-                    <div class="herosection-main__image">
-                        <img src="img/hero-section.gif" alt="" />
-                    </div>
-                </div>
+				<div class="herosection-main body-main--frame">
+					<div class="herosection-main__text">
+						<h1>Get your custom quote</h1>
+						<p>Tell us what you need, and we'll send your custom quote within 4 step and get back to your work. We are take care of your work.</p>
+					</div>
+					<div class="herosection-main__image">
+						<img src="img/hero-section.gif" alt="" />
+					</div>
+				</div>
 			</div>
-            <div class="get-quote-page__formsection body-main--frame">
-                <div class="formsection-progressbar">
-                    <div class="wave"></div>
-                    <p>25%</p>
-                </div>
+			<div class="get-quote-page__formsection body-main--frame">
+				<div class="formsection-progressbar">
+					<div class="wave"></div>
+					<p id="percentage">25%</p>
+				</div>
 				<div class="formsection-main">
 					<div class="formsection-main__sidebar">
-						<div class="sidebar-item">
-							<p>1</p>
-							<h6>CHOOSE SERVICES</h6>
+						<div class="sidebar-item-wrapper active" id="services">
+							<div class="sidebar-item">
+								<p>1</p>
+								<h6>CHOOSE SERVICES</h6>
+							</div>
+							<p class="item-name"></p>
 						</div>
-						<div class="sidebar-item sidebar-item-single">
-							<p>2</p>
-							<h6>DELIVERY TIME</h6>
+						<div class="sidebar-item-wrapper" id="delivery">
+							<div class="sidebar-item sidebar-item-single">
+								<p>2</p>
+								<h6>DELIVERY TIME</h6>
+							</div>
+							<p class="item-name"></p>
 						</div>
-						<div class="sidebar-item sidebar-item-single">
-							<p>3</p>
-							<h6>UPLOAD IMAGE</h6>
+						<div class="sidebar-item-wrapper">
+							<div class="sidebar-item sidebar-item-single">
+								<p>3</p>
+								<h6>UPLOAD IMAGE</h6>
+							</div>
 						</div>
-						<div class="sidebar-item">
-							<p>4</p>
-							<h6>CONTACT INFORMATION</h6>
+						<div class="sidebar-item-wrapper">
+							<div class="sidebar-item">
+								<p>4</p>
+								<h6>CONTACT INFORMATION</h6>
+							</div>
 						</div>
 					</div>
 					<div class="formsection-main__body">
 						<h4>What edits do you want to try?</h4>
-						<div class="product-card-main">
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
+						<div>
+							<form action="" class="product-card-main">
+								<div class="product-card-main__item" value="Clipping path">
+									<div class="item-head">
+										<input type="radio" id="html" name="form" value="Clipping path" class="circle" />
+										<label for="html">Clipping path</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_1.jpg" alt="" />
+									</div>
 								</div>
-								<div class="item-image">
-									<img src="/img/card_1.jpg" alt="">
+								<div class="product-card-main__item">
+									<div class="item-head">
+										<input type="radio" id="Multi_Clipping" name="form" value="Multi-Clipping Paths" class="circle" />
+										<label for="Multi_Clipping">Multi-Clipping Paths</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_2.jpg" alt="" />
+									</div>
+								</div>
+								<div class="product-card-main__item">
+									<div class="item-head">
+										<input type="radio" id="retouching" name="form" value="High End Retouching" class="circle" />
+										<label for="retouching">High End Retouching</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_3.jpg" alt="" />
+									</div>
+								</div>
+								<div class="product-card-main__item">
+									<div class="item-head">
+										<input type="radio" id="raster" name="form" value="Raster to Vector" class="circle" />
+										<label for="raster">Raster to Vector</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_4.jpg" alt="" />
+									</div>
+								</div>
+								<div class="product-card-main__item">
+									<div class="item-head">
+										<input type="radio" id="Embroidery" name="form" value="Embroidery Digitizing" class="circle" />
+										<label for="Embroidery">Embroidery Digitizing</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_5.jpg" alt="" />
+									</div>
+								</div>
+								<div class="product-card-main__item">
+									<div class="item-head">
+										<input type="radio" id="Masking" name="form" value="Model Hair Masking" class="circle" />
+										<label for="Masking">Model Hair Masking</label>
+									</div>
+									<div class="item-image">
+										<img src="/img/card_6.jpg" alt="" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="delivery-time">
+						<h4>When do you need your images back?</h4>
+						<div class="delivery-time__main">
+							<div class="bodysection-time">
+								<div class="item-head">
+									<input type="radio" id="ASAP" name="time" value="1 Hr ASAP" class="circle" />
+									<label for="Masking">1 Hr ASAP</label>
 								</div>
 							</div>
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
-								</div>
-								<div class="item-image">
-									<img src="/img/card_2.jpg" alt="">
-								</div>
-							</div>
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
-								</div>
-								<div class="item-image">
-									<img src="/img/card_3.jpg" alt="">
-								</div>
-							</div>
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
-								</div>
-								<div class="item-image">
-									<img src="/img/card_4.jpg" alt="">
-								</div>
-							</div>
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
-								</div>
-								<div class="item-image">
-									<img src="/img/card_5.jpg" alt="">
-								</div>
-							</div>
-							<div class="product-card-main__item">
-								<div class="item-head">
-									<div class="circle"></div>
-									<p>Clipping path</p>
-								</div>
-								<div class="item-image">
-									<img src="/img/card_6.jpg" alt="">
-								</div>
-							</div>
-
 						</div>
 					</div>
 				</div>
-            </div>
+			</div>
 		</div>
 		<script src="/script.js"></script>
 	</body>
