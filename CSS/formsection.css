@@ -1,3 +1,48 @@
+.get-quote-page__formsection .item-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 27px 0 27px 12px;
+}
+.get-quote-page__formsection .item-head .circle {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.get-quote-page__formsection .item-head input[type=radio] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #7a80bd;
+  border-radius: 50%;
+  outline: none;
+}
+.get-quote-page__formsection .item-head input[type=radio]:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.get-quote-page__formsection .item-head input[type=radio]:checked:before {
+  background: #4e527b;
+}
+.get-quote-page__formsection .item-head p {
+  font-size: 18px;
+}
+.get-quote-page__formsection .product-card-main__item {
+  background: #fafafa;
+  border-radius: 5px;
+  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+  padding: 0 12px 20px 12px;
+}
+.get-quote-page__formsection .product-card-main__item:hover {
+  outline: 1px solid #4e527b;
+}
+.get-quote-page__formsection .product-card-main__item:hover img {
+  transform: scale(1.1);
+}
 .get-quote-page__formsection .formsection-progressbar {
   width: 100%;
   height: 40px;
@@ -73,7 +118,7 @@
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item-wrapper {
   padding: 40px;
-  background: #F2F2F2;
+  background: #f2f2f2;
   border-bottom: 2px solid #9e9e9e;
   position: relative;
 }
@@ -83,7 +128,7 @@
   left: 0;
   font-size: 16px;
   line-height: 30px;
-  background: #9E9E9E;
+  background: #9e9e9e;
   color: white;
   width: 100%;
   text-align: center;
@@ -96,7 +141,7 @@
   padding-left: 50px;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .active {
-  background: #F2F2FD;
+  background: #f2f2fd;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .active .sidebar-item p {
   background: #232a5f;
@@ -106,7 +151,7 @@
   color: #7a80bd;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .active .item-name {
-  background: #7A80BD;
+  background: #7a80bd;
   color: white;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item {
@@ -117,12 +162,12 @@
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item p {
   font-size: 25px;
   padding: 1px 10px;
-  background: #9E9E9E;
+  background: #9e9e9e;
   border-radius: 50%;
   color: white;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item h6 {
-  color: #9E9E9E;
+  color: #9e9e9e;
   font-size: 28px;
   line-height: 38px;
 }
@@ -141,59 +186,118 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 23px;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item {
-  background: #fafafa;
-  border-radius: 5px;
-  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
-  padding: 0 12px 20px 12px;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 27px 0 27px 12px;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head .circle {
-  height: 20px;
-  width: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head input[type=radio] {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #7A80BD;
-  border-radius: 50%;
-  outline: none;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head input[type=radio]:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head input[type=radio]:checked:before {
-  background: #4E527B;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-head p {
-  font-size: 18px;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-image {
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .item-image {
   overflow: hidden;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item .item-image img {
+.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .item-image img {
   width: 100%;
   height: 100%;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item:hover {
-  outline: 1px solid #4e527b;
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .product-card-main__item:hover img {
-  transform: scale(1.1);
 }
 .get-quote-page__formsection .formsection-main .delivery-time {
   flex: 2;
   display: none;
+}
+.get-quote-page__formsection .formsection-main .delivery-time h4 {
+  font-size: 20px;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+  row-gap: 27px;
+  margin-top: 30px;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__main .product-card-main__item {
+  padding: 0 0 0 0;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__main .product-card-main__item:hover {
+  outline: 1px solid #4e527b;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__main .item-head {
+  padding: 18px;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__commentsection {
+  margin: 30px 0 10px 0;
+}
+.get-quote-page__formsection .formsection-main .delivery-time .delivery-time__commentsection .textarea textarea {
+  margin-top: 25px;
+  border: none;
+  background: #fafafa;
+  border-left: 1px solid #4e527b;
+  padding: 20px 20px 5px 20px;
+  outline: none;
+  font-size: 20px;
+}
+.get-quote-page__formsection .formsection-main .upload-image {
+  flex: 2;
+  display: none;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area {
+  border: 2px dashed rgba(122, 128, 189, 0.8);
+  outline: #fafafa solid 8px;
+  height: 450px;
+  border-radius: 5px;
+  background: #fafafa;
+  position: relative;
+  padding: 15px;
+  margin-top: 40px;
+  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+  overflow-y: scroll;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .active {
+  border: 2px solid #fff;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area #result {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area img {
+  height: 70px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .button-container {
+  position: relative;
+  width: 100%;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .button-container .image_button {
+  background: none;
+  height: 15px;
+  width: 15px;
+  border: 0.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  font-size: 18px;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn header {
+  color: #9c9c9a;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: rgba(122, 128, 189, 0.7803921569);
+  cursor: pointer;
 }/*# sourceMappingURL=formsection.css.map */

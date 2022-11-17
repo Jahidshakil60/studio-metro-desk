@@ -6,22 +6,21 @@ let cardBody = document.getElementsByClassName("product-card-main__item");
 // element1.appendChild(newtag);
 // element2.appendChild(newtag);
 let circleFill = document.querySelectorAll("circle");
-let active = document.querySelector(".active")
-
-
-
-
-
+let active = document.querySelector(".active");
+let inputimage = document.getElementById("image-input");
 
 //for sidebar functionality//
 
 let sidebar = document.getElementsByClassName("sidebar-item-wrapper");
 let percentage = document.getElementById("percentage");
 const before = document.querySelector(".wave");
+let formsectionbody = document.querySelector(".formsection-main__body");
+let deliverytime = document.querySelector(".delivery-time");
+let uploadimage = document.querySelector(".upload-image");
 
 const some_func = (data) => {
 	return (e) => {
-		console.log(e);
+		console.log();
 		if (document.querySelector(".active") !== null) {
 			console.log(document.querySelector(".active").childNodes[3].innerText == "");
 			if (document.querySelector(".active").childNodes[3].innerText == "") {
@@ -34,10 +33,14 @@ const some_func = (data) => {
 					before.style.setProperty("--width", "550px");
 					before.style.setProperty("--height", "550px");
 					percentage.innerText = "50%";
+					formsectionbody.style.display = "none";
+					deliverytime.style.display = "block";
 				} else if (data == 2) {
 					before.style.setProperty("--width", "850px");
 					before.style.setProperty("--height", "850px");
 					percentage.innerText = "75%";
+					deliverytime.style.display = "none";
+					uploadimage.style.display = "block";
 				} else if (data == 3) {
 					before.style.setProperty("--width", "1150px");
 					before.style.setProperty("--height", "1150px");
@@ -57,28 +60,28 @@ for (let i = 0; i < sidebar.length; i++) {
 	sidebar[i].addEventListener("click", some_func(i));
 }
 
-const mufunc = ( product) => {
-    return (e) => {
-        cardBody[product].childNodes[1].childNodes[1].checked = true;
-    
-        console.log(sidebar[1].classList,sidebar[0]);
-        if(sidebar[0].classList[1] == 'active'){
-            sidebar[0].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value
-            
-        }else if(sidebar[1].classList[1] == 'active'){
-            sidebar[1].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value
-        }
-       
-        // const sidebar_func = (i) =>{
-        //     return(e) =>{
-               
-        //     }
-        // }
-         
-        // for(let i=0;i<sidebar.length; i++){
-        //     sidebar[i].addEventListener("click", sidebar_func(i))
-        // }
-    }
+const mufunc = (product) => {
+	return (e) => {
+		cardBody[product].childNodes[1].childNodes[1].checked = true;
+
+		if (sidebar[0].classList[1] == "active") {
+			sidebar[0].childNodes[3].innerHTML =
+				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
+		} else if (sidebar[1].classList[1] == "active") {
+			sidebar[1].childNodes[3].innerHTML =
+				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
+		}
+
+		// const sidebar_func = (i) =>{
+		//     return(e) =>{
+
+		//     }
+		// }
+
+		// for(let i=0;i<sidebar.length; i++){
+		//     sidebar[i].addEventListener("click", sidebar_func(i))
+		// }
+	};
 	// let circleFill = document.querySelectorAll("circle");
 	// if (event.path[0].children[0]) {
 	// 	event.path[0].children[0].checked = true;
@@ -91,16 +94,140 @@ const mufunc = ( product) => {
 	// }
 
 	// console.log(event);
-}
+};
 
 for (let i = 0; i < cardBody.length; i++) {
 	cardBody[i].addEventListener("click", mufunc(i));
 }
 
+// image upload//
 
-function scriptClick(){
- 
-    console.log(active);
+// document.querySelector("#files").addEventListener("change", (e) => {
+// 	//CHANGE EVENT FOR UPLOADING PHOTOS
+// 	if (window.File && window.FileReader && window.FileList && window.Blob) {
+// 		//CHECK IF FILE API IS SUPPORTED
+// 		const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
+// 		const output = document.querySelector("#result");
+// 		output.innerHTML = "";
+// 		for (let i = 0; i < files.length; i++) {
+// 			// LOOP THROUGH THE FILE LIST OBJECT
+// 			if (!files[i].type.match("image")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
+// 			const picReader = new FileReader(); // RETRIEVE DATA URI
+// 			picReader.addEventListener("load", function (event) {
+// 				// LOAD EVENT FOR DISPLAYING PHOTOS
+// 				const picFile = event.target;
+// 				const div = document.createElement("div");
+// 				div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
+// 				output.appendChild(div);
+// 				// console.log(files);
+// 			});
+// 			picReader.readAsDataURL(files[i]); //READ THE IMAGE
+// 			//   console.log(x);
+// 			// let images= document.getElementsByClassName('image-input')
+
+// 			// for(let i=0;i<)
+// 		}
+// 	} else {
+// 		alert("Your browser does not support File API");
+// 	}
+// });
+
+function imageupload() {
+	let x = document.getElementById("file-upload-button");
+	console.log(x);
 }
 
+//selecting all required elements
+const dropArea = document.querySelector(".drag-area"),
+	dragText = dropArea.querySelector("header"),
+	button = dropArea.querySelector("button"),
+	input = dropArea.querySelector("input");
+	const output = document.querySelector("#result");
+let file; //this is a global variable and we'll use it inside multiple functions
 
+button.onclick = () => {
+	input.click(); //if user click on the button then the input also clicked
+};
+
+input.addEventListener("change", function (event) {
+	//getting user select file and [0] this means if user select multiple files then we'll select only the first one
+	file = this.files;
+	dropArea.classList.add("active");
+	showFile(event); //calling function
+});
+
+//If user Drag File Over DropArea
+dropArea.addEventListener("dragover", (event) => {
+	event.preventDefault(); //preventing from default behaviour
+	dropArea.classList.add("active");
+	dragText.textContent = "Release to Upload File";
+});
+
+//If user leave dragged File from DropArea
+dropArea.addEventListener("dragleave", () => {
+	dropArea.classList.remove("active");
+	dragText.textContent = "Drag & Drop to Upload File";
+});
+
+//If user drop File on DropArea
+dropArea.addEventListener("drop", (event) => {
+	event.preventDefault(); //preventing from default behaviour
+	//getting user select file and [0] this means if user select multiple files then we'll select only the first one
+	file = event.dataTransfer.files[0];
+	dragText.textContent = "Your file has been Uploaded";
+  console.log(file);
+  console.log(event);
+	showFile(event , file); //calling function
+});
+
+function showFile(e , file) {
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		//CHECK IF FILE API IS SUPPORTED
+    if(file != null){
+      let fileReader = new FileReader(); //creating new FileReader object
+      fileReader.onload = ()=>{
+        let fileURL = fileReader.result; //passing user file source in fileURL variable
+          // UNCOMMENT THIS BELOW LINE. I GOT AN ERROR WHILE UPLOADING THIS POST SO I COMMENTED IT
+		  const div = document.createElement("div");
+		  div.innerHTML =  `<img src="${fileURL}" alt="image">`;
+        // let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
+        // dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
+		output.appendChild(div)
+      }
+      fileReader.readAsDataURL(file);
+    }else{
+
+      
+      const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
+      
+     
+    //   output.innerHTML = "";
+      for (let i = 0; i < files.length; i++) {
+        // LOOP THROUGH THE FILE LIST OBJECT
+        if (!files[i].type.match("image")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
+        const picReader = new FileReader(); // RETRIEVE DATA URI
+        picReader.addEventListener("load", function (event) {
+          // LOAD EVENT FOR DISPLAYING PHOTOS
+          const picFile = event.target;
+          const div = document.createElement("div");
+		  div.classList.add("button-container")
+          div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
+		  const button = document.createElement("button")
+		  button.classList.add("image_button")
+		  button.innerText = "+"
+		  div.appendChild(button)
+          output.appendChild(div);
+          // console.log(files);
+        });
+        picReader.readAsDataURL(files[i]); //READ THE IMAGE
+        
+      }
+    }
+	} else {
+		alert("This is not an Image File!");
+		dropArea.classList.remove("active");
+		dragText.textContent = "Drag & Drop to Upload File";
+		console.log(fileType);
+	}
+	console.log(output.childNodes.length);
+}

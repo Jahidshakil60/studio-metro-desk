@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="CSS/formsection.css" />
 		<title>StudioMetroDesk</title>
 	</head>
-	<body >
+	<body>
 		<div class="get-quote-page">
 			<div class="get-quote-page__herosection">
 				<div class="herosection-main body-main--frame">
@@ -126,12 +126,80 @@
 					<div class="delivery-time">
 						<h4>When do you need your images back?</h4>
 						<div class="delivery-time__main">
-							<div class="bodysection-time">
+							<div class="product-card-main__item">
 								<div class="item-head">
 									<input type="radio" id="ASAP" name="time" value="1 Hr ASAP" class="circle" />
-									<label for="Masking">1 Hr ASAP</label>
+									<label for="ASAP">1 Hr ASAP</label>
 								</div>
 							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="4_hour" name="time" value="4 HOUR" class="circle" />
+									<label for="4_hour">4 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="10_hour" name="time" value="10 HOUR" class="circle" />
+									<label for="10_hour">10 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="20_hour" name="time" value="20 HOUR" class="circle" />
+									<label for="20_hour">20 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="48_hour" name="time" value="48 HOUR" class="circle" />
+									<label for="48_hour">48 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="72_hour" name="time" value="72 HOUR" class="circle" />
+									<label for="72_hour">72 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="92_hour" name="time" value="92 HOUR" class="circle" />
+									<label for="92_hour">92 HOUR</label>
+								</div>
+							</div>
+							<div class="product-card-main__item">
+								<div class="item-head">
+									<input type="radio" id="7_days" name="time" value="7 DAYS" class="circle" />
+									<label for="7_days">7 DAYS</label>
+								</div>
+							</div>
+						</div>
+						<div class="delivery-time__commentsection">
+							<h2>Additional Comment</h2>
+							<div class="textarea">
+								<textarea name="" id="" cols="65" rows="10" placeholder="Please share any specific instructions for your edits"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="upload-image">
+						<h3 onclick="imageupload()">Upload Your Images</h3>
+						<!-- <div class="upload-image__image-fild">
+							 <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" multiple="multiple"> -->
+						<!-- <label for="files">Browse...</label> -->
+						<!-- <input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" class="image-input" style="opacity: 0; position: absolute;"> -->
+						<!-- <input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" class="image-input" value="Some custom text" name="Custom name">
+							<output id="result">
+						</div> -->
+						<div class="drag-area">
+							<div class="drag-area__btn">
+								<header>Drag & drop files here or</header>
+								<button>Browse File</button>
+							</div>
+							<input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg"  class="image-input" hidden/>
+							<!-- <output > -->
+								<div id="result"></div>
+
 						</div>
 					</div>
 				</div>
