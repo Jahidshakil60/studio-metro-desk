@@ -300,4 +300,44 @@
   font-size: 18px;
   color: rgba(122, 128, 189, 0.7803921569);
   cursor: pointer;
+}
+.get-quote-page__formsection .formsection-main .contact-information {
+  flex: 2;
+  display: none;
+}
+.get-quote-page__formsection .formsection-main .contact-information .common-flex-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 85px;
+  margin-top: 30px;
+}
+.get-quote-page__formsection .formsection-main .contact-information .common-flex-section .primaryinput-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.get-quote-page__formsection .formsection-main .contact-information .message-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+.get-quote-page__formsection .formsection-main .contact-information .message-section textarea {
+  background: #FAFAFA;
+  border: none;
+  outline: none;
+  border-left: 1px solid #9095ca;
+  padding: 15px 25px;
+  font-size: 18px;
+}
+.get-quote-page__formsection .formsection-main .contact-information input {
+  border: none;
+  outline: none;
+  background: #F2F2F2;
+  width: 100%;
+  padding: 17px 25px;
+  border-left: 1px solid #9095ca;
+  font-size: 18px;
 }/*# sourceMappingURL=formsection.css.map */

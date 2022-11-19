@@ -17,6 +17,7 @@ const before = document.querySelector(".wave");
 let formsectionbody = document.querySelector(".formsection-main__body");
 let deliverytime = document.querySelector(".delivery-time");
 let uploadimage = document.querySelector(".upload-image");
+let contactinformation = document.querySelector(".contact-information");
 
 const some_func = (data) => {
 	return (e) => {
@@ -45,6 +46,8 @@ const some_func = (data) => {
 					before.style.setProperty("--width", "1150px");
 					before.style.setProperty("--height", "1150px");
 					percentage.innerText = "100%";
+					uploadimage.style.display = "none"
+					contactinformation.style.display = "block"
 				} else {
 					before.style.setProperty("--width", "300px");
 					before.style.setProperty("--height", "300px");
@@ -132,19 +135,13 @@ for (let i = 0; i < cardBody.length; i++) {
 // 	}
 // });
 
-function imageupload() {
-	let x = document.getElementById("file-upload-button");
-	console.log(x);
-}
-
 //selecting all required elements
 const dropArea = document.querySelector(".drag-area"),
 	dragText = dropArea.querySelector("header"),
 	button = dropArea.querySelector("button"),
 	input = dropArea.querySelector("input");
-	const output = document.querySelector("#result");
+const output = document.querySelector("#result");
 let file; //this is a global variable and we'll use it inside multiple functions
-
 button.onclick = () => {
 	input.click(); //if user click on the button then the input also clicked
 };
@@ -153,7 +150,7 @@ input.addEventListener("change", function (event) {
 	//getting user select file and [0] this means if user select multiple files then we'll select only the first one
 	file = this.files;
 	dropArea.classList.add("active");
-	showFile(event); //calling function
+	let x = showFile(event); //calling function
 });
 
 //If user Drag File Over DropArea
@@ -175,59 +172,104 @@ dropArea.addEventListener("drop", (event) => {
 	//getting user select file and [0] this means if user select multiple files then we'll select only the first one
 	file = event.dataTransfer.files[0];
 	dragText.textContent = "Your file has been Uploaded";
-  console.log(file);
-  console.log(event);
-	showFile(event , file); //calling function
+	console.log(file);
+	console.log(event);
+	showFile(event, file); //calling function
 });
+let count = 0;
+let image_num = document.querySelector(".image_number");
+let classes;
 
-function showFile(e , file) {
+function showFile(e, file) {
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
 		//CHECK IF FILE API IS SUPPORTED
-    if(file != null){
-      let fileReader = new FileReader(); //creating new FileReader object
-      fileReader.onload = ()=>{
-        let fileURL = fileReader.result; //passing user file source in fileURL variable
-          // UNCOMMENT THIS BELOW LINE. I GOT AN ERROR WHILE UPLOADING THIS POST SO I COMMENTED IT
-		  const div = document.createElement("div");
-		  div.innerHTML =  `<img src="${fileURL}" alt="image">`;
-        // let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
-        // dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
-		output.appendChild(div)
-      }
-      fileReader.readAsDataURL(file);
-    }else{
+	
+		let button;
+		let delete_btn = document.getElementsByClassName("image_button");
 
-      
-      const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
-      
-     
-    //   output.innerHTML = "";
-      for (let i = 0; i < files.length; i++) {
-        // LOOP THROUGH THE FILE LIST OBJECT
-        if (!files[i].type.match("image")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
-        const picReader = new FileReader(); // RETRIEVE DATA URI
-        picReader.addEventListener("load", function (event) {
-          // LOAD EVENT FOR DISPLAYING PHOTOS
-          const picFile = event.target;
-          const div = document.createElement("div");
-		  div.classList.add("button-container")
-          div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
-		  const button = document.createElement("button")
-		  button.classList.add("image_button")
-		  button.innerText = "+"
-		  div.appendChild(button)
-          output.appendChild(div);
-          // console.log(files);
-        });
-        picReader.readAsDataURL(files[i]); //READ THE IMAGE
-        
-      }
-    }
+		if (file != null) {
+			let fileReader = new FileReader(); //creating new FileReader object
+			fileReader.onload = () => {
+				let fileURL = fileReader.result; //passing user file source in fileURL variable
+				const div = document.createElement("div");
+				div.classList.add("button-container");
+				div.innerHTML = `<img src="${fileURL}" alt="image">`;
+				const button = document.createElement("button");
+				button.classList.add("image_button");
+				button.innerText = "+";
+				div.appendChild(button);
+				output.appendChild(div);
+				countfunc();
+				const deleteImage = (i) => {
+					return (e) => {
+						output.removeChild(classes[i]);
+						count = count-1
+						console.log(count);
+						countfunc(count)
+
+
+					};
+				};
+
+				for (let i = 0; i < delete_btn.length; i++) {
+					delete_btn[i].addEventListener("click", deleteImage(i));
+				}
+			};
+			fileReader.readAsDataURL(file);
+		} else {
+			const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
+			for (let i = 0; i < files.length; i++) {
+				// LOOP THROUGH THE FILE LIST OBJECT
+				if (!files[i].type.match("image.*|application.*")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
+				const picReader = new FileReader(); // RETRIEVE DATA URI
+				picReader.addEventListener("load", function (event) {
+					// LOAD EVENT FOR DISPLAYING PHOTOS
+					const picFile = event.target;
+					const div = document.createElement("div");
+					div.classList.add("button-container");
+					div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
+					button = document.createElement("button");
+					button.classList.add("image_button");
+					button.innerText = "+";
+					div.appendChild(button);
+					output.appendChild(div);
+				
+					countfunc();
+					const deleteImage = (i) => {
+						return (e) => {
+							output.removeChild(classes[i]);
+							count = count-1
+							console.log(count);
+							countfunc(count)
+
+
+						};
+					};
+
+					for (let i = 0; i < delete_btn.length; i++) {
+						delete_btn[i].addEventListener("click", deleteImage(i));
+					}
+				});
+				picReader.readAsDataURL(files[i]); //READ THE IMAGE
+				// console.log(files[i]);
+			}
+		}
+
+		
 	} else {
 		alert("This is not an Image File!");
 		dropArea.classList.remove("active");
 		dragText.textContent = "Drag & Drop to Upload File";
 		console.log(fileType);
 	}
-	console.log(output.childNodes.length);
+}
+
+function countfunc(count) {
+	classes = document.querySelectorAll(".button-container");
+	count = classes.length;
+	image_num.innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + count + " Images uploaded";
+	if(count == 0){
+		image_num.innerHTML = ""
+		dragText.innerText = "Drag & drop files here or"
+	}
 }
