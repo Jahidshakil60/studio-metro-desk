@@ -10,22 +10,21 @@
   border: 1px solid black;
   border-radius: 50%;
 }
-.get-quote-page__formsection .item-head input[type=radio] {
-  -webkit-appearance: none;
+.get-quote-page__formsection .item-head .circle[type=radio] {
   width: 20px;
   height: 20px;
   border: 1px solid #7a80bd;
   border-radius: 50%;
   outline: none;
 }
-.get-quote-page__formsection .item-head input[type=radio]:before {
+.get-quote-page__formsection .item-head .circle[type=radio]:before {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.get-quote-page__formsection .item-head input[type=radio]:checked:before {
+.get-quote-page__formsection .item-head .circle[type=radio]:checked:before {
   background: #4e527b;
 }
 .get-quote-page__formsection .item-head p {
@@ -53,15 +52,14 @@
 }
 .get-quote-page__formsection .formsection-progressbar .wave {
   background: #7a80bd;
-  width: 15%;
   height: 100%;
   position: absolute;
 }
 .get-quote-page__formsection .formsection-progressbar .wave::before {
   content: "";
   position: absolute;
-  width: var(--width, 300px);
-  height: var(--height, 300px);
+  width: var(--width, 0px);
+  height: var(--height, 0px);
   left: 0;
   background-color: rgba(122, 128, 189, 0.8901960784);
   border-radius: 20%;
@@ -73,8 +71,8 @@
 .get-quote-page__formsection .formsection-progressbar .wave::after {
   content: "";
   position: absolute;
-  width: var(--width, 300px);
-  height: var(--height, 300px);
+  width: var(--width, 0px);
+  height: var(--height, 0px);
   left: 0;
   background-color: rgba(122, 128, 189, 0.8431372549);
   border-radius: 22%;
@@ -174,8 +172,29 @@
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar .sidebar-item-single {
   padding: 20px 0;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body {
+.get-quote-page__formsection .formsection-main .form-container {
   flex: 2;
+  position: relative;
+}
+.get-quote-page__formsection .formsection-main .form-container .main-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+.get-quote-page__formsection .formsection-main .form-container .main-button .btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  font-size: 26px;
+  color: #7A80BD;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+.get-quote-page__formsection .formsection-main .form-container .main-button .btn span {
+  font-size: 26px;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__body h4 {
   font-size: 20px;
@@ -194,7 +213,6 @@
   height: 100%;
 }
 .get-quote-page__formsection .formsection-main .delivery-time {
-  flex: 2;
   display: none;
 }
 .get-quote-page__formsection .formsection-main .delivery-time h4 {
@@ -230,7 +248,6 @@
   font-size: 20px;
 }
 .get-quote-page__formsection .formsection-main .upload-image {
-  flex: 2;
   display: none;
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area {
@@ -250,12 +267,13 @@
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area #result {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   width: 100%;
+  margin-top: -40px;
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area img {
-  height: 70px;
+  height: 100px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -266,10 +284,11 @@
   width: 100%;
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area .button-container .image_button {
-  background: none;
-  height: 15px;
-  width: 15px;
-  border: 0.5px solid black;
+  background: black;
+  color: white;
+  height: 22px;
+  width: 22px;
+  border: 0.5px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,12 +297,22 @@
   font-size: 18px;
   position: absolute;
   top: -10px;
-  right: -15px;
+  right: -10px;
+  padding: inherit;
+}
+.get-quote-page__formsection .formsection-main .upload-image .drag-area .button-container .image_button:hover {
+  transform: rotate(45deg) scale(1.2);
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn {
-  display: flex;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.9294117647);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
   align-items: center;
-  position: absolute;
+  gap: 5px;
+  position: -webkit-sticky;
+  position: sticky;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -291,18 +320,17 @@
   cursor: pointer;
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn header {
-  color: #9c9c9a;
+  color: #8b8b8b;
 }
 .get-quote-page__formsection .formsection-main .upload-image .drag-area .drag-area__btn button {
-  margin-left: 10px;
   background: none;
   border: none;
   font-size: 18px;
-  color: rgba(122, 128, 189, 0.7803921569);
+  color: rgba(86, 96, 206, 0.7803921569);
   cursor: pointer;
+  padding: 0;
 }
 .get-quote-page__formsection .formsection-main .contact-information {
-  flex: 2;
   display: none;
 }
 .get-quote-page__formsection .formsection-main .contact-information .common-flex-section {
@@ -325,19 +353,48 @@
   margin-top: 30px;
 }
 .get-quote-page__formsection .formsection-main .contact-information .message-section textarea {
-  background: #FAFAFA;
+  background: #fafafa;
   border: none;
   outline: none;
   border-left: 1px solid #9095ca;
   padding: 15px 25px;
   font-size: 18px;
 }
-.get-quote-page__formsection .formsection-main .contact-information input {
+.get-quote-page__formsection .formsection-main .contact-information .contact-input {
   border: none;
   outline: none;
-  background: #F2F2F2;
+  background: #f2f2f2;
   width: 100%;
+  height: inherit;
   padding: 17px 25px;
   border-left: 1px solid #9095ca;
   font-size: 18px;
+}
+.get-quote-page__formsection .formsection-main .contact-information #phone {
+  padding-left: 50px;
+}
+.get-quote-page__formsection .formsection-main .contact-information .submit-btn {
+  position: relative;
+  position: absolute;
+  border-radius: 5%;
+  bottom: 0px;
+  right: 20px;
+  display: none;
+  font-size: 26px;
+}
+.get-quote-page__formsection .formsection-main .contact-information .submit-btn .button-sub {
+  border-left: inherit;
+  width: inherit;
+  background: #232A5F;
+  padding: 10px 60px 10px 30px;
+  color: white;
+  border-radius: 5%;
+  border: none;
+  height: inherit;
+}
+.get-quote-page__formsection .formsection-main .contact-information .submit-btn span {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
 }/*# sourceMappingURL=formsection.css.map */
