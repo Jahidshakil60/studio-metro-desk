@@ -110,3 +110,12 @@ p {
     color: white;
 }
 
+
+/* global variables */
+
+:root {
+    --primary-color: #232A5F;
+    --secondary-color: #7A80BD;
+    --muted-color: #9E9E9E;
+}
+
