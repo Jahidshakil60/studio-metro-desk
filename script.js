@@ -16,7 +16,7 @@ let nextbutton = document.querySelector(".next-btn");
 let previousbutton = document.querySelector(".previous-btn");
 let submit_btn = document.querySelector(".submit-btn");
 
-previousbutton.style.display = "none";
+// previousbutton.style.display = "none";
 
 const some_func = (data) => {
 	return (e) => {

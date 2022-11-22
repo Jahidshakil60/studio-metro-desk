@@ -10,6 +10,9 @@
   gap: 100px;
   padding: 80px 0 60px 0;
 }
+.get-quote-page__herosection .herosection-main .herosection-main__text {
+  flex: 1;
+}
 .get-quote-page__herosection .herosection-main .herosection-main__text h1 {
   font-size: 60px;
   line-height: 80px;
@@ -17,4 +20,10 @@
 .get-quote-page__herosection .herosection-main .herosection-main__text p {
   font-size: 20px;
   line-height: 27px;
+}
+.get-quote-page__herosection .herosection-main .herosection-main__image {
+  flex: 1;
+}
+.get-quote-page__herosection .herosection-main .herosection-main__image img {
+  width: 100%;
 }/*# sourceMappingURL=herosection.css.map */

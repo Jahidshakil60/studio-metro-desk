@@ -1,47 +1,3 @@
-.get-quote-page__formsection .item-head {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 27px 0 27px 12px;
-}
-.get-quote-page__formsection .item-head .circle {
-  height: 20px;
-  width: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-.get-quote-page__formsection .item-head .circle[type=radio] {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #7a80bd;
-  border-radius: 50%;
-  outline: none;
-}
-.get-quote-page__formsection .item-head .circle[type=radio]:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.get-quote-page__formsection .item-head .circle[type=radio]:checked:before {
-  background: #4e527b;
-}
-.get-quote-page__formsection .item-head p {
-  font-size: 18px;
-}
-.get-quote-page__formsection .product-card-main__item {
-  background: #fafafa;
-  border-radius: 5px;
-  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
-  padding: 0 12px 20px 12px;
-}
-.get-quote-page__formsection .product-card-main__item:hover {
-  outline: 1px solid #4e527b;
-}
-.get-quote-page__formsection .product-card-main__item:hover img {
-  transform: scale(1.1);
-}
 .get-quote-page__formsection .formsection-progressbar {
   width: 100%;
   height: 40px;
@@ -175,26 +131,6 @@
 .get-quote-page__formsection .formsection-main .form-container {
   flex: 2;
   position: relative;
-}
-.get-quote-page__formsection .formsection-main .form-container .main-button {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 40px;
-}
-.get-quote-page__formsection .formsection-main .form-container .main-button .btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: none;
-  font-size: 26px;
-  color: #7A80BD;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-}
-.get-quote-page__formsection .formsection-main .form-container .main-button .btn span {
-  font-size: 26px;
 }
 .get-quote-page__formsection .formsection-main .formsection-main__body h4 {
   font-size: 20px;
@@ -372,29 +308,4 @@
 }
 .get-quote-page__formsection .formsection-main .contact-information #phone {
   padding-left: 50px;
-}
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn {
-  position: relative;
-  position: absolute;
-  border-radius: 5%;
-  bottom: 0px;
-  right: 20px;
-  display: none;
-  font-size: 26px;
-}
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn .button-sub {
-  border-left: inherit;
-  width: inherit;
-  background: #232A5F;
-  padding: 10px 60px 10px 30px;
-  color: white;
-  border-radius: 5%;
-  border: none;
-  height: inherit;
-}
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn span {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  color: white;
 }/*# sourceMappingURL=formsection.css.map */

@@ -1,12 +1,112 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
 }
 
-
-.body-main--frame{
-    width: 1200px;
-    margin: auto;
+.body-main--frame {
+	width: 1200px;
+	margin: auto;
 }
+/* global input field design */
+.item-head {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	padding: 27px 0 27px 12px;
+}
+.circle {
+	height: 20px;
+	width: 20px;
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+.circle[type="radio"] {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #7a80bd;
+	border-radius: 50%;
+	outline: none;
+}
+
+.circle[type="radio"]:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.circle[type="radio"]:checked:before {
+	background: #4e527b;
+}
+p {
+	font-size: 18px;
+}
+
+.product-card-main__item {
+    background: #fafafa;
+    border-radius: 5px;
+    filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+    padding: 0 12px 20px 12px;
+}
+.product-card-main__item:hover{
+    outline: 1px solid #4e527b;
+}
+.product-card-main__item:hover img{
+    transform: scale(1.1);
+}
+
+/* component main button */
+
+.main-button{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 40px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    font-size: 26px;
+    color: #7A80BD;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn span{
+    font-size: 26px;
+}
+
+/* submit button */
+.submit-btn{
+    position: relative;
+    position: absolute;
+    border-radius: 5%;
+    bottom: 0px ;
+    right: 20px;
+    display: none;
+    font-size: 26px;
+}
+
+.button-sub{
+    border-left: inherit;
+    width: inherit;
+    background: #232A5F;
+    padding: 10px 60px 10px 30px;
+    color: white;
+    border-radius: 5%;
+    border: none;
+    height: inherit;
+}
+.submit-btn span{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+}
+
