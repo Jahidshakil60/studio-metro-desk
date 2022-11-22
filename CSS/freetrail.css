@@ -1,7 +1,7 @@
 .trail-main__wrapper .arrow-progressbar {
   height: 50px;
   margin: 120px 0 40px 0;
-  width: 93%;
+  width: 95%;
 }
 .trail-main__wrapper .arrow-progressbar__main {
   display: flex;
@@ -64,6 +64,9 @@
   border-bottom: 25px solid transparent;
   border-left: 40px solid #7a80bd;
 }
+.trail-main__wrapper .service-section__main {
+  margin-bottom: 150px;
+}
 .trail-main__wrapper .formsection-main__body h4 {
   font-size: 20px;
   margin: 40px 0 25px 0;
@@ -82,9 +85,12 @@
 }
 .trail-main__wrapper .upload-image__main {
   display: none;
+  margin-bottom: 150px;
 }
-.trail-main__wrapper .upload-image__main h4 {
+.trail-main__wrapper .upload-image__main p {
   width: 50%;
+  font-size: 20px;
+  line-height: 27px;
 }
 .trail-main__wrapper .upload-image__main .drag-area {
   border: 2px dashed rgba(122, 128, 189, 0.8);
@@ -163,6 +169,10 @@
 .trail-main__wrapper .contact-information__main {
   display: none;
   margin-bottom: 150px;
+  position: relative;
+}
+.trail-main__wrapper .contact-information__main h6 {
+  font-size: 20px;
 }
 .trail-main__wrapper .contact-information__main .common-flex-section {
   display: flex;
@@ -175,7 +185,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 13px;
 }
 .trail-main__wrapper .contact-information__main .message-section {
   display: flex;
@@ -200,7 +209,34 @@
   padding: 17px 25px;
   border-left: 1px solid #9095ca;
   font-size: 18px;
+  margin-top: 13px;
 }
 .trail-main__wrapper .contact-information__main .phone {
   padding-left: 50px;
+}
+.trail-main__wrapper .contact-information__main .submit-button {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  font-size: 26px;
+}
+.trail-main__wrapper .contact-information__main .submit-button .submit-input {
+  background: #232A5F;
+  padding: 10px 60px 10px 30px;
+  color: white;
+  border-radius: 5%;
+  border: none;
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+}
+.trail-main__wrapper .contact-information__main .submit-button .button-wrapper {
+  position: relative;
+}
+.trail-main__wrapper .contact-information__main .submit-button .button-wrapper span {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  cursor: pointer;
 }/*# sourceMappingURL=freetrail.css.map */

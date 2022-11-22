@@ -9,6 +9,7 @@ const progressbarClick = (i) => {
 		document.querySelector(".active").classList.remove("active");
 		progressbar[i].classList.add("active");
 		nextSlide(i);
+		previousSlide(i);
 	};
 };
 
@@ -40,6 +41,20 @@ function nextSlide(i) {
 		servicesection.style.display = "none";
 		document.querySelector(".active").classList.remove("active");
 		progressbar[i].classList.add("active");
+	} else if (i == 0) {
+		servicesection.style.display = "block";
+		upload_image.style.display = "none";
+		contact_information.style.display = "none";
+	}
+}
+
+function previousSlide(i) {
+	document.querySelector(".active").classList.remove("active");
+	progressbar[i].classList.add("active");
+	if (i == 1) {
+		upload_image.style.display = "block";
+		servicesection.style.display = "none";
+		contact_information.style.display = "none";
 	} else if (i == 0) {
 		servicesection.style.display = "block";
 		upload_image.style.display = "none";
@@ -164,4 +179,4 @@ function showFile(e, file) {
 
 // country code api
 var codeinput = document.querySelector(".phone");
-window.intlTelInput(codeinput,{});
+window.intlTelInput(codeinput, {});

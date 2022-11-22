@@ -107,7 +107,7 @@
                     </div>
                     <div class="upload-image__main">
                         <div class="image-main-wrapper">
-                            <h4>Seeing your images will help us make sure your quote is accurate. It also means we can.</h4>
+                            <p>Seeing your images will help us make sure your quote is accurate. It also means we can.</p>
 
                             <div class="drag-area">
 								<div class="drag-area__btn">
@@ -127,13 +127,13 @@
 							</div>
                         </div>
                         <div class="main-button">
-                            <button class="previous-btn btn"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
+                            <button class="previous-btn btn" onclick="previousSlide(0)"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
 							<div></div>
 							<button class="next-btn btn" onclick="nextSlide(2)">Next <span class="material-symbols-outlined"> arrow_right_alt </span></button>
 						</div>
                     </div>
                     <div class="contact-information__main">
-                        <h4>Let us know where to send your edits </h4>
+                        <h6>Let us know where to send your edits </h6>
                         <div class="contact-information">
                             <form action="">
                                 <div class="common-flex-section">
@@ -162,13 +162,16 @@
                                 </div>
                                 <div class="submit-button">
                                     <!-- <input id="post" type="submit" value="submit" class="button-sub" /> -->
-                                    <input type="submit" value="submit">
-                                    <span class="material-symbols-outlined"> arrow_right_alt </span>
+                                    <div class="button-wrapper">
+
+                                        <input type="submit" value="submit" class="submit-input">
+                                        <span class="material-symbols-outlined"> arrow_right_alt </span>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         <div class="main-button">
-							<button class="previous-btn btn"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
+							<button class="previous-btn btn" onclick="previousSlide(1)"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
 							<div></div>
 						</div>
                     </div>
