@@ -142,28 +142,7 @@ const mufunc = (product) => {
 				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
 		}
 
-		// const sidebar_func = (i) =>{
-		//     return(e) =>{
-
-		//     }
-		// }
-
-		// for(let i=0;i<sidebar.length; i++){
-		//     sidebar[i].addEventListener("click", sidebar_func(i))
-		// }
 	};
-	// let circleFill = document.querySelectorAll("circle");
-	// if (event.path[0].children[0]) {
-	// 	event.path[0].children[0].checked = true;
-	// 	event.path[5].children[0].children[0].children[1].innerHTML =
-	// 		'<span class="material-symbols-outlined">check_circle</span>' + event.path[0].children[0].value;
-	// } else if (event.path[2].children[0].children[0]) {
-	// 	event.path[2].children[0].children[0].checked = true;
-	// 	event.path[6].children[0].children[0].children[1].innerHTML =
-	// 		'<span class="material-symbols-outlined">check_circle</span>' + event.path[2].children[0].children[0].value;
-	// }
-
-	// console.log(event);
 };
 
 for (let i = 0; i < cardBody.length; i++) {
@@ -180,6 +159,7 @@ const dropArea = document.querySelector(".drag-area"),
 const output = document.querySelector("#result");
 let div;
 let file; //this is a global variable and we'll use it inside multiple functions
+
 button.onclick = () => {
 	input.click(); //if user click on the button then the input also clicked
 };
@@ -194,21 +174,11 @@ input.addEventListener("change", function (event) {
 	deleteMe(event);
 });
 function deleteMe(event) {
-	// for (let j = 0; j < delete_btn.length; j++) {
-	// 	delete_btn[j].addEventListener("click", () => {
-	// 		console.log(delete_btn[j]);
-	// 	});
-	//     return 1
-	// }
 	let files = event.target.files;
-	let imagesitem = event.path[0].nextElementSibling.childNodes;
 	for (let i = 0; i < files.length; i++) {
-		// console.log(imagesitem[i]);
 		div = document.createElement("div");
 		div.classList.add("button-container");
-
 		output.appendChild(div);
-		console.log();
 	}
 }
 
@@ -241,7 +211,7 @@ let image_num = document.querySelector(".image_number");
 let classes;
 let array = [];
 let pic_array = [];
-let delete_btn;
+// let delete_btn;
 let sum = 0;
 
 function showFile(e, file) {
@@ -289,69 +259,21 @@ function showFile(e, file) {
 					let image = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
 					pic_array.push(image);
 					sum = sum+1
-					// console.log(some);
-					// array.push(div);
-					// for (let a = 0; a < array.length; a++) {
-					// 	output.appendChild(array[a]);
-					// }
-					// console.log(sum);
 					uploadarrImage(some, sum);
 					countfunc();
-
-					delete_btn = document.getElementsByClassName("image_button");
-					// const deleteImage = (j) => {
-					// 	return (e) => {
-					// 		classes = document.querySelectorAll(".button-container");
-					// 		output.removeChild(picFile);
-					// 		// count = count - 1;
-					// 		// countfunc(count);
-					// 		console.log(picFile);
-					// 		// removeFirst(array, array[0])
-					// 	};
-					// };
-
-					// for (let j = 0; j < delete_btn.length; j++) {
-					// 	delete_btn[j].addEventListener("click", deleteImage(j));
-					// }
 				});
 
 				picReader.readAsDataURL(files[i]); //READ THE IMAGE
-				// console.log(files[i]);
 			}
-			// sum = sum + files.length;
-			// console.log(num_array.length);
 		}
 	} else {
 		alert("This is not an Image File!");
 		dropArea.classList.remove("active");
 		dragText.textContent = "Drag & Drop to Upload File";
-		// console.log(fileType);
 	}
 }
 
-let add = 0;
 let button_dlt;
-let idList = []
-
-
-
-async function uniqueIdGenerator() {
-	let results_element = document.getElementById('result').children
-	if (results_element.length) {
-		await uploadarrImage()
-		uniqueIdGenerator()
-	}
-	// console.log(results_element)
-	// for (let i = 0; i <= results_element.length; i++) {
-
-	// 	console.log(results_element[i])
-	// }
-	// console.log(results_element[1].children)
-}
-// const uniqueIdGenerator = async () => {
-// 	const result = await uploadarrImage()
-// 	// do something else here after firstFunction completes
-//   }
 
 function uploadarrImage(x , sum) {
 	let btn_container = document.querySelectorAll(".button-container");
@@ -360,43 +282,23 @@ function uploadarrImage(x , sum) {
 
 		button_dlt = document.createElement("button");
 		button_dlt.classList.add("image_button");
-		
-		// for (let i = 0; i <= btn_container[d].children.length; i++) {
-		// 	console.log(btn_container[d].children[i])
-		// }
-		console.log(sum + d);
 		button_dlt.id = "newId" + sum + d
 		button_dlt.innerText = "+";
 		btn_container[d].appendChild(button_dlt);
 		
-		if (btn_container[d].children[1]) {
-			idList.push(btn_container[d].children[1].id)
-		}
-		// console.log(idList)
 		let current_btn = document.getElementById("newId" + sum + d)
-		// console.log(current_btn);
-		// current_btn.addEventListener("click" , imgDelete(current_btn))
 		current_btn.addEventListener("click" , function(){
 			pic_array.splice(d, 1)
 			let img_container = current_btn.parentElement;
 			img_container.remove()
-			// console.log(pic_array)
+			count = count -1
+			countfunc(count)
 
 		})
 	}
-	
-	// for (let i = 0; i <= results_element.length; i++) {
-
-	// 	console.log(results_element[i])
-	// }
 
 }
 
-function imgDelete(current_btn){
-	// console.log(current_btn);
-
-
-}
 
 function countfunc(count) {
 	classes = document.querySelectorAll(".button-container");
