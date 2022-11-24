@@ -1,6 +1,11 @@
+.price-page {
+  color: var(--primary-paragraph);
+  font-size: 20px;
+}
+
 .price-page .get-quote-page__herosection {
-  background-image: url(../img/price_page_Vector_1.png), linear-gradient(#fafafa, #fafafa);
-  background-size: cover;
+  background-image: url(../img/price_page/path_Line.png), linear-gradient(#fafafa, #fafafa);
+  background-size: contain;
   background-position: center;
 }
 
@@ -10,6 +15,9 @@
 
 .price-page .get-quote-page__herosection .herosection-main .herosection-main__text {
   flex: 1.4;
+}
+.herosection-main__text h1 {
+  margin-bottom: 20px;
   color: var(--primary-color);
 }
 
@@ -43,36 +51,167 @@
   color: var(--muted-color);
 }
 .calculator__header {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .calculator__header h3 {
-    margin-bottom: 10px;
-    color: black;
-
+  margin-bottom: 10px;
+  color: black;
 }
 .calculator__header p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 /* .unit-price-text {
     font-size: 72px;
     font-weight: 800;
 } */
-/* .unit-price-text sup {
-    font-size: 20px;
-} */
+.calculator__unit-price {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
 .price-number-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 50px;
   font-weight: 800;
 }
-.price-text {
+.price-number-wrapper .price-text {
   font-size: 72px;
   font-weight: 800;
   line-height: 1;
 }
-.doller-sign {
-    margin-top: 10px;
+.price-number-wrapper .doller-sign {
+  margin-top: 10px;
+}
+
+.calculator .calculator__form {
+}
+
+.quantity-field-wrapper {
+  position: relative;
+  display: inline;
+}
+
+.calculator__form .quantity-field {
+  font-size: 20px;
+  padding: 10px;
+  border: 0.5px solid var(--muted-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 80%;
+  text-align: center;
+}
+.quantity__required-mark {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  font-size: 25px;
+  color: red;
+}
+.calculator__form-select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 0.5px solid var(--muted-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--muted-color);
+  background: none;
+}
+.calculator__form .select--bold {
+  font-weight: bold;
+}
+
+.calculator__form-total-quotation{
+  margin: 30px 0;
+}
+.calculator__form-total-quotation .quotation_number {
+  font-size: 40px;
+  margin: 5px;
+}
+.calculator__form-submit {
+  padding: 15px 45px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: var(--muted-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.payment-section {
+  background: #fafafa;
+  background-image: url(../img//price_page/payment-section-bg.png);
+  background-size: contain;
+  background-position: center;
+  padding: 100px 0;
+}
+.payment__header {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.payment__header h2 {
+  color: #7A80BD;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.payment__header p {
+  font-size: 20px;
+}
+.payment__systems-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+}
+.payment__system {
+  text-align: center;
+}
+.payment__system img{
+  margin-bottom: 30px;
+}
+.payment__system h3{
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+
+/* hire photo editor */
+.hire-photo-editor-section {
+  padding: 100px 0 0 0;
+}
+.hire-editor-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+.hire-editor__text h2 {
+  font-size: 60px;
+}
+.hire-editor__text-list-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  margin-left: 0;
+}
+.hire-editor__text .list-icon {
+  margin-right: 10px;
+  line-height: 0;
+}
+.hire-editor__photo {
+  line-height: 0;
+}
+.client-section {
+  background: #F2F2FD;
+  padding: 100px 0;
+}
+.client-section__wrapper {
+  width: 50%;
+  text-align: center;
+}
+.client-section__wrapper img {
+  margin-bottom: 50px;
 }
