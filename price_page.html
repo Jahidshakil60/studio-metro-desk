@@ -51,33 +51,38 @@
                     <p>per image price</p>
                 </div>
                 <div class="calculator__form">
-                  <form action="">
+                  <form id="clippingPathForm" action="">
                     <div class="quantity-field-wrapper">
-                      <input type="number" placeholder="1000" class="quantity-field">
+                      <input onkeyup="calculatePrice('clippingPathForm')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
                       <p class="quantity__required-mark">*</p>
                     </div>
-                    <select name="rate" id="rate" class="calculator__form-select select--bold">
-                      <option value="2.5">Flat Rate $2.5</option>
-                      <option value="3.5">Flat Rate $3.5</option>
-                      <option value="4.5">Flat Rate $4.5</option>
+                    <select onchange="calculatePrice('clippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
+                      <option value="1">Basic - $1</option>
+                      <option selected value="2.5">Flat Rate - $2.5</option>
+                      <option value="5">Medium - $5</option>
+                      <option value="10">Complex - $10</option>
+                      <option value="16">Super Complex - $16</option>
                     </select>
-                    <select name="service" id="service" class="calculator__form-select">
-                      <option value="0.5">Reflection Shadow $0.5</option>
-                      <option value="1.0">Reflection Shadow $1.0</option>
-                      <option value="1.5">Reflection Shadow $1.5</option>
-                      <option value="2.0">Reflection Shadow $2.0</option>
+                    <select onchange="calculatePrice('clippingPathForm')" name="service" id="service" class="calculator__form-select">
+                      <option value="0.5">Drop Shadow $0.5</option>
+                      <option value="0.5">Custom Shadow $0.5</option>
+                      <option selected value="0.5">Reflection Shadow $0.5</option>
+                      <option value="0.5">Keep Shadow $0.5</option>
                     </select>
-                    <select name="service" id="service" class="calculator__form-select">
-                      <option value="15">92 Hours 15% Discount</option>
-                      <option value="20">92 Hours 20% Discount</option>
-                      <option value="25">92 Hours 25% Discount</option>
-                      <option value="30">92 Hours 30% Discount</option>
+                    <select onchange="calculatePrice('clippingPathForm')" name="time" id="service" class="calculator__form-select">
+                      <option value="0">20 Hours - No Extra</option>
+                      <option value="70">10 Hours - 70% Extra</option>
+                      <option value="200">4 Hours - 200% Extra</option>
+                      <option value="300">1 Hr ASAP - 300% Extra</option>
+                      <option value="-5">48 Hours - 5% Discount</option>
+                      <option value="-10">72 Hours - 10% Discount</option>
+                      <option value="-15">92 Hours - 15% Discount</option>
                     </select>
                     <div class="calculator__form-total-quotation">
                       <p>TOTAL QUOTATION</p>
-                      <h3 class="quotation_number">$00.00</h3>
+                      <h3 id="totalOutput" class="quotation_number">$0.00</h3>
                     </div>
-                    <button type="submit" class="calculator__form-submit">Get Started</button>
+                    <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
                   </form>
                 </div>
             </div>
@@ -96,37 +101,41 @@
                   </div>
                   <p>per image price</p>
               </div>
-              <div class="calculator__form">
-                <form action="">
+              <div class="calculator__form">    
+                <form id="multiClippingPathForm" action="">
                   <div class="quantity-field-wrapper">
-                    <input type="number" placeholder="1000" class="quantity-field">
+                    <input onkeyup="calculatePrice('multiClippingPathForm')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
                     <p class="quantity__required-mark">*</p>
                   </div>
-                  <select name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="2.5">Flat Rate $2.5</option>
-                    <option value="3.5">Flat Rate $3.5</option>
-                    <option value="4.5">Flat Rate $4.5</option>
+                  <select onchange="calculatePrice('multiClippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
+                    <option value="1">Basic - $1</option>
+                    <option selected value="2.5">Flat Rate - $2.5</option>
+                    <option value="5">Medium - $5</option>
+                    <option value="10">Complex - $10</option>
+                    <option value="16">Super Complex - $16</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Reflection Shadow $0.5</option>
-                    <option value="1.0">Reflection Shadow $1.0</option>
-                    <option value="1.5">Reflection Shadow $1.5</option>
-                    <option value="2.0">Reflection Shadow $2.0</option>
+                  <select onchange="calculatePrice('multiClippingPathForm')" name="service" id="service" class="calculator__form-select">
+                    <option value="0.5">Drop Shadow $0.5</option>
+                    <option value="0.5">Custom Shadow $0.5</option>
+                    <option selected value="0.5">Reflection Shadow $0.5</option>
+                    <option value="0.5">Keep Shadow $0.5</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="15">92 Hours 15% Discount</option>
-                    <option value="20">92 Hours 20% Discount</option>
-                    <option value="25">92 Hours 25% Discount</option>
-                    <option value="30">92 Hours 30% Discount</option>
+                  <select onchange="calculatePrice('multiClippingPathForm')" name="time" id="service" class="calculator__form-select">
+                    <option value="0">20 Hours - No Extra</option>
+                    <option value="70">10 Hours - 70% Extra</option>
+                    <option value="200">4 Hours - 200% Extra</option>
+                    <option value="300">1 Hr ASAP - 300% Extra</option>
+                    <option value="-5">48 Hours - 5% Discount</option>
+                    <option value="-10">72 Hours - 10% Discount</option>
+                    <option value="-15">92 Hours - 15% Discount</option>
                   </select>
                   <div class="calculator__form-total-quotation">
                     <p>TOTAL QUOTATION</p>
-                    <h3 class="quotation_number">$00.00</h3>
+                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
                   </div>
-                  <button type="submit" class="calculator__form-submit">Get Started</button>
+                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
                 </form>
               </div>
-                
             </div>
             <div class="calculator calculator__ghost-mannequin">
                 <div class="calculator__header">
@@ -144,39 +153,44 @@
                   <p>per image price</p>
               </div>
               <div class="calculator__form">
-                <form action="">
+                <form id="ghostMannequin" action="">
                   <div class="quantity-field-wrapper">
-                    <input type="number" placeholder="1000" class="quantity-field">
+                    <input onkeyup="calculatePrice('ghostMannequin')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
                     <p class="quantity__required-mark">*</p>
                   </div>
-                  <select name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="2.5">Flat Rate $2.5</option>
-                    <option value="3.5">Flat Rate $3.5</option>
-                    <option value="4.5">Flat Rate $4.5</option>
+                  <select onchange="calculatePrice('ghostMannequin')" name="rate" id="rate" class="calculator__form-select select--bold">
+                    <option value="1">Basic - $1</option>
+                    <option selected value="2.5">Flat Rate - $2.5</option>
+                    <option value="5">Medium - $5</option>
+                    <option value="10">Complex - $10</option>
+                    <option value="16">Super Complex - $16</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Reflection Shadow $0.5</option>
-                    <option value="1.0">Reflection Shadow $1.0</option>
-                    <option value="1.5">Reflection Shadow $1.5</option>
-                    <option value="2.0">Reflection Shadow $2.0</option>
+                  <select onchange="calculatePrice('ghostMannequin')" name="service" id="service" class="calculator__form-select">
+                    <option value="0.5">Drop Shadow $0.5</option>
+                    <option value="0.5">Custom Shadow $0.5</option>
+                    <option selected value="0.5">Reflection Shadow $0.5</option>
+                    <option value="0.5">Keep Shadow $0.5</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="15">92 Hours 15% Discount</option>
-                    <option value="20">92 Hours 20% Discount</option>
-                    <option value="25">92 Hours 25% Discount</option>
-                    <option value="30">92 Hours 30% Discount</option>
+                  <select onchange="calculatePrice('ghostMannequin')" name="time" id="service" class="calculator__form-select">
+                    <option value="0">20 Hours - No Extra</option>
+                    <option value="70">10 Hours - 70% Extra</option>
+                    <option value="200">4 Hours - 200% Extra</option>
+                    <option value="300">1 Hr ASAP - 300% Extra</option>
+                    <option value="-5">48 Hours - 5% Discount</option>
+                    <option value="-10">72 Hours - 10% Discount</option>
+                    <option value="-15">92 Hours - 15% Discount</option>
                   </select>
                   <div class="calculator__form-total-quotation">
                     <p>TOTAL QUOTATION</p>
-                    <h3 class="quotation_number">$00.00</h3>
+                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
                   </div>
-                  <button type="submit" class="calculator__form-submit">Get Started</button>
+                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
                 </form>
               </div>
             </div>
-            <div class="calculator calculator__photo-retouchng">
+            <div class="calculator calculator__photo-retouching">
                 <div class="calculator__header">
-                    <h3>Photo Retouchng</h3>
+                    <h3>Photo Retouching</h3>
                     <p>Hand Made service</p>
                 </div>
                 <div class="calculator__image">
@@ -190,33 +204,38 @@
                   <p>per image price</p>
               </div>
               <div class="calculator__form">
-                <form action="">
+                <form id="photoRetouching" action="">
                   <div class="quantity-field-wrapper">
-                    <input type="number" placeholder="1000" class="quantity-field">
+                    <input onkeyup="calculatePrice('photoRetouching')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
                     <p class="quantity__required-mark">*</p>
                   </div>
-                  <select name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="2.5">Flat Rate $2.5</option>
-                    <option value="3.5">Flat Rate $3.5</option>
-                    <option value="4.5">Flat Rate $4.5</option>
+                  <select onchange="calculatePrice('photoRetouching')" name="rate" id="rate" class="calculator__form-select select--bold">
+                    <option value="1">Basic - $1</option>
+                    <option selected value="2.5">Flat Rate - $2.5</option>
+                    <option value="5">Medium - $5</option>
+                    <option value="10">Complex - $10</option>
+                    <option value="16">Super Complex - $16</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Reflection Shadow $0.5</option>
-                    <option value="1.0">Reflection Shadow $1.0</option>
-                    <option value="1.5">Reflection Shadow $1.5</option>
-                    <option value="2.0">Reflection Shadow $2.0</option>
+                  <select onchange="calculatePrice('photoRetouching')" name="service" id="service" class="calculator__form-select">
+                    <option value="0.5">Drop Shadow $0.5</option>
+                    <option value="0.5">Custom Shadow $0.5</option>
+                    <option selected value="0.5">Reflection Shadow $0.5</option>
+                    <option value="0.5">Keep Shadow $0.5</option>
                   </select>
-                  <select name="service" id="service" class="calculator__form-select">
-                    <option value="15">92 Hours 15% Discount</option>
-                    <option value="20">92 Hours 20% Discount</option>
-                    <option value="25">92 Hours 25% Discount</option>
-                    <option value="30">92 Hours 30% Discount</option>
+                  <select onchange="calculatePrice('photoRetouching')" name="time" id="service" class="calculator__form-select">
+                    <option value="0">20 Hours - No Extra</option>
+                    <option value="70">10 Hours - 70% Extra</option>
+                    <option value="200">4 Hours - 200% Extra</option>
+                    <option value="300">1 Hr ASAP - 300% Extra</option>
+                    <option value="-5">48 Hours - 5% Discount</option>
+                    <option value="-10">72 Hours - 10% Discount</option>
+                    <option value="-15">92 Hours - 15% Discount</option>
                   </select>
                   <div class="calculator__form-total-quotation">
                     <p>TOTAL QUOTATION</p>
-                    <h3 class="quotation_number">$00.00</h3>
+                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
                   </div>
-                  <button type="submit" class="calculator__form-submit">Get Started</button>
+                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
                 </form>
               </div>
             </div>
@@ -287,5 +306,13 @@
         </div>
       </section>
     </div>
+
+
+    <script src="./js/price_page.js"></script>
+
+
+
+
+
   </body>
 </html>
