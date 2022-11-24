@@ -1,5 +1,5 @@
 .get-quote-page__herosection {
-  background-image: url(../img/test.png), linear-gradient(#FAFAFA, #FAFAFA);
+  background-image: url(/img/test.png), linear-gradient(#FAFAFA, #FAFAFA);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -24,6 +24,6 @@
 .get-quote-page__herosection .herosection-main .herosection-main__image {
   flex: 1;
 }
-.herosection-main .herosection-main__image img {
+.get-quote-page__herosection .herosection-main .herosection-main__image img {
   width: 100%;
 }/*# sourceMappingURL=herosection.css.map */

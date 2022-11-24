@@ -178,6 +178,7 @@ const dropArea = document.querySelector(".drag-area"),
 	button = dropArea.querySelector("button"),
 	input = dropArea.querySelector("input");
 const output = document.querySelector("#result");
+let div;
 let file; //this is a global variable and we'll use it inside multiple functions
 button.onclick = () => {
 	input.click(); //if user click on the button then the input also clicked
@@ -189,8 +190,27 @@ input.addEventListener("change", function (event) {
 	before.style.setProperty("--width", "850px");
 	before.style.setProperty("--height", "850px");
 	percentage.innerText = "75%";
-	let x = showFile(event); //calling function
+	showFile(event); //calling function
+	deleteMe(event);
 });
+function deleteMe(event) {
+	// for (let j = 0; j < delete_btn.length; j++) {
+	// 	delete_btn[j].addEventListener("click", () => {
+	// 		console.log(delete_btn[j]);
+	// 	});
+	//     return 1
+	// }
+	let files = event.target.files;
+	let imagesitem = event.path[0].nextElementSibling.childNodes;
+	for (let i = 0; i < files.length; i++) {
+		// console.log(imagesitem[i]);
+		div = document.createElement("div");
+		div.classList.add("button-container");
+
+		output.appendChild(div);
+		console.log();
+	}
+}
 
 //If user Drag File Over DropArea
 dropArea.addEventListener("dragover", (event) => {
@@ -214,20 +234,19 @@ dropArea.addEventListener("drop", (event) => {
 	before.style.setProperty("--width", "850px");
 	before.style.setProperty("--height", "850px");
 	percentage.innerText = "75%";
-	console.log(file);
-	console.log(event);
 	showFile(event, file); //calling function
 });
 let count = 0;
 let image_num = document.querySelector(".image_number");
 let classes;
+let array = [];
+let pic_array = [];
+let delete_btn;
+let sum = 0;
 
 function showFile(e, file) {
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
 		//CHECK IF FILE API IS SUPPORTED
-
-		let button;
-		let delete_btn = document.getElementsByClassName("image_button");
 
 		if (file != null) {
 			let fileReader = new FileReader(); //creating new FileReader object
@@ -246,7 +265,6 @@ function showFile(e, file) {
 					return (e) => {
 						output.removeChild(classes[i]);
 						count = count - 1;
-						console.log(count);
 						countfunc(count);
 					};
 				};
@@ -258,6 +276,8 @@ function showFile(e, file) {
 			fileReader.readAsDataURL(file);
 		} else {
 			const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
+			let some = pic_array.length;
+
 			for (let i = 0; i < files.length; i++) {
 				// LOOP THROUGH THE FILE LIST OBJECT
 				if (!files[i].type.match("image.*|application.*")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
@@ -265,39 +285,117 @@ function showFile(e, file) {
 				picReader.addEventListener("load", function (event) {
 					// LOAD EVENT FOR DISPLAYING PHOTOS
 					const picFile = event.target;
-					const div = document.createElement("div");
-					div.classList.add("button-container");
-					div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
-					button = document.createElement("button");
-					button.classList.add("image_button");
-					button.innerText = "+";
-					div.appendChild(button);
-					output.appendChild(div);
 
+					let image = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
+					pic_array.push(image);
+					sum = sum+1
+					// console.log(some);
+					// array.push(div);
+					// for (let a = 0; a < array.length; a++) {
+					// 	output.appendChild(array[a]);
+					// }
+					// console.log(sum);
+					uploadarrImage(some, sum);
 					countfunc();
-					const deleteImage = (i) => {
-						return (e) => {
-							output.removeChild(classes[i]);
-							count = count - 1;
-							console.log(count);
-							countfunc(count);
-						};
-					};
 
-					for (let i = 0; i < delete_btn.length; i++) {
-						delete_btn[i].addEventListener("click", deleteImage(i));
-					}
+					delete_btn = document.getElementsByClassName("image_button");
+					// const deleteImage = (j) => {
+					// 	return (e) => {
+					// 		classes = document.querySelectorAll(".button-container");
+					// 		output.removeChild(picFile);
+					// 		// count = count - 1;
+					// 		// countfunc(count);
+					// 		console.log(picFile);
+					// 		// removeFirst(array, array[0])
+					// 	};
+					// };
+
+					// for (let j = 0; j < delete_btn.length; j++) {
+					// 	delete_btn[j].addEventListener("click", deleteImage(j));
+					// }
 				});
+
 				picReader.readAsDataURL(files[i]); //READ THE IMAGE
 				// console.log(files[i]);
 			}
+			// sum = sum + files.length;
+			// console.log(num_array.length);
 		}
 	} else {
 		alert("This is not an Image File!");
 		dropArea.classList.remove("active");
 		dragText.textContent = "Drag & Drop to Upload File";
-		console.log(fileType);
+		// console.log(fileType);
 	}
+}
+
+let add = 0;
+let button_dlt;
+let idList = []
+
+
+
+async function uniqueIdGenerator() {
+	let results_element = document.getElementById('result').children
+	if (results_element.length) {
+		await uploadarrImage()
+		uniqueIdGenerator()
+	}
+	// console.log(results_element)
+	// for (let i = 0; i <= results_element.length; i++) {
+
+	// 	console.log(results_element[i])
+	// }
+	// console.log(results_element[1].children)
+}
+// const uniqueIdGenerator = async () => {
+// 	const result = await uploadarrImage()
+// 	// do something else here after firstFunction completes
+//   }
+
+function uploadarrImage(x , sum) {
+	let btn_container = document.querySelectorAll(".button-container");
+	for (let d = x; d < btn_container.length; d++) {
+		btn_container[d].innerHTML = pic_array[d];
+
+		button_dlt = document.createElement("button");
+		button_dlt.classList.add("image_button");
+		
+		// for (let i = 0; i <= btn_container[d].children.length; i++) {
+		// 	console.log(btn_container[d].children[i])
+		// }
+		console.log(sum + d);
+		button_dlt.id = "newId" + sum + d
+		button_dlt.innerText = "+";
+		btn_container[d].appendChild(button_dlt);
+		
+		if (btn_container[d].children[1]) {
+			idList.push(btn_container[d].children[1].id)
+		}
+		// console.log(idList)
+		let current_btn = document.getElementById("newId" + sum + d)
+		// console.log(current_btn);
+		// current_btn.addEventListener("click" , imgDelete(current_btn))
+		current_btn.addEventListener("click" , function(){
+			pic_array.splice(d, 1)
+			let img_container = current_btn.parentElement;
+			img_container.remove()
+			// console.log(pic_array)
+
+		})
+	}
+	
+	// for (let i = 0; i <= results_element.length; i++) {
+
+	// 	console.log(results_element[i])
+	// }
+
+}
+
+function imgDelete(current_btn){
+	// console.log(current_btn);
+
+
 }
 
 function countfunc(count) {
@@ -319,34 +417,31 @@ let primaryinput = document.querySelectorAll(".contact-input");
 console.log(primaryinput);
 const requiredInputValue = (i) => {
 	return (e) => {
-		console.log(primaryinput[i].value);
+		// console.log(primaryinput[i].value);
 		if (primaryinput[i].value !== null) {
-			if(i == 0){
+			if (i == 0) {
 				before.style.setProperty("--width", "900px");
 				before.style.setProperty("--height", "900px");
 				percentage.innerText = "81%";
-			}else if(i == 1){
+			} else if (i == 1) {
 				before.style.setProperty("--width", "950px");
 				before.style.setProperty("--height", "950px");
 				percentage.innerText = "87%";
-			}else if(i == 2){
+			} else if (i == 2) {
 				before.style.setProperty("--width", "1000px");
 				before.style.setProperty("--height", "1000px");
 				percentage.innerText = "93%";
-			}else if(i == 3){
+			} else if (i == 3) {
 				before.style.setProperty("--width", "1100px");
 				before.style.setProperty("--height", "1100px");
 				percentage.innerText = "99%";
-				if(primaryinput[i].value == ""){
-					primaryinput[i].value = "+1"
+				if (primaryinput[i].value == "") {
+					primaryinput[i].value = "+1";
 				}
 			}
 		}
-			
 	};
 };
 for (let i = 0; i < primaryinput.length; i++) {
 	primaryinput[i].addEventListener("change", requiredInputValue(i));
 }
-
-
