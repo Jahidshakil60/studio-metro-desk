@@ -18,6 +18,13 @@ function calculatePrice(formId) {
               numbers[x] = form[i].value;
             }
           }
+        } 
+      } else {
+        field = document.getElementById('mainField')
+        if(field.value > 0) {
+          form[i].classList.add('filledup-button--active')
+        } else {
+          form[i].classList.remove('filledup-button--active')
         }
       }
     }
