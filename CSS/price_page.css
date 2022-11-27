@@ -54,17 +54,12 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   background: #F2F2FD;
 }
-.calculator:hover .calculator__unit-price, .calculator__form-total-quotation{
+.calculator:hover .calculator__form-total-quotation{
   color: #252E63;  
 }
-
-.calculator:hover.mytestclass{
-  color: blue;
+.calculator:hover .calculator__unit-price {
+  color: #252E63;
 }
-
-
-
-
 
 .calculator__header {
   margin-bottom: 30px;
@@ -136,8 +131,11 @@
   border-radius: 5px;
   margin-bottom: 20px;
   font-size: 12px;
-  color: var(--muted-color);
-  background: none;
+  color: var(--primary-color);
+  background: white;
+}
+.calculator__form-select option {
+  color: var(--primary-color);
 }
 .calculator__form .select--bold {
   font-weight: bold;
@@ -158,6 +156,12 @@
   border: none;
   color: white;
   cursor: pointer;
+}
+.filledup-button--active {
+  background: var(--primary-color);
+}
+.filledup-text--active {
+  color: var(--primary-color);
 }
 
 .payment-section {
