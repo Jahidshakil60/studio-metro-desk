@@ -160,6 +160,9 @@
 .filledup-button--active {
   background: var(--primary-color);
 }
+.filledup-text--active {
+  color: var(--primary-color);
+}
 
 .payment-section {
   background: #fafafa;

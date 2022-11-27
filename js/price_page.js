@@ -21,10 +21,13 @@ function calculatePrice(formId) {
         } 
       } else {
         field = document.getElementById('mainField')
+        form_calculator = document.getElementById('clippingPathForm'+'Wrap')
         if(field.value > 0) {
           form[i].classList.add('filledup-button--active')
+          form_calculator.classList.add('filledup-text--active')
         } else {
           form[i].classList.remove('filledup-button--active')
+          form_calculator.classList.remove('filledup-text--active')
         }
       }
     }
