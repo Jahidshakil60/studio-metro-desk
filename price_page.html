@@ -35,210 +35,238 @@
           <div class="estimation-calculator__header-divider"></div>
         </div>
         <div class="calculators__wrapper">
-            <div class="calculator calculator__clipping-path">
-                <div class="calculator__header">
-                    <h3>Clipping Path Service</h3>
-                    <p>Hand Made service</p>
-                </div>
-                <div class="calculator__image">
-                    <img src="img/price_page/clipping_path.png" alt="">
-                </div>
-                <div class="calculator__unit-price">
-                    <div class="price-number-wrapper">
-                        <p class="doller-sign">$</p>
-                        <p class="price-text">01</p>
-                    </div>
-                    <p>per image price</p>
-                </div>
-                <div class="calculator__form">
-                  <form id="clippingPathForm" action="">
-                    <div class="quantity-field-wrapper">
-                      <input onkeyup="calculatePrice('clippingPathForm')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
-                      <p class="quantity__required-mark">*</p>
-                    </div>
-                    <select onchange="calculatePrice('clippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
-                      <option value="1">Basic - $1</option>
-                      <option selected value="2.5">Flat Rate - $2.5</option>
-                      <option value="5">Medium - $5</option>
-                      <option value="10">Complex - $10</option>
-                      <option value="16">Super Complex - $16</option>
-                    </select>
-                    <select onchange="calculatePrice('clippingPathForm')" name="service" id="service" class="calculator__form-select">
-                      <option value="0.5">Drop Shadow $0.5</option>
-                      <option value="0.5">Custom Shadow $0.5</option>
-                      <option selected value="0.5">Reflection Shadow $0.5</option>
-                      <option value="0.5">Keep Shadow $0.5</option>
-                    </select>
-                    <select onchange="calculatePrice('clippingPathForm')" name="time" id="service" class="calculator__form-select">
-                      <option value="0">20 Hours - No Extra</option>
-                      <option value="70">10 Hours - 70% Extra</option>
-                      <option value="200">4 Hours - 200% Extra</option>
-                      <option value="300">1 Hr ASAP - 300% Extra</option>
-                      <option value="-5">48 Hours - 5% Discount</option>
-                      <option value="-10">72 Hours - 10% Discount</option>
-                      <option value="-15">92 Hours - 15% Discount</option>
-                    </select>
-                    <div class="calculator__form-total-quotation">
-                      <p>TOTAL QUOTATION</p>
-                      <h3 id="totalOutput" class="quotation_number">$0.00</h3>
-                    </div>
-                    <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
-                  </form>
-                </div>
+          <div class="calculator calculator__clipping-path">
+            <div class="calculator__header">
+              <h3>Clipping Path Service</h3>
+              <p>Hand Made service</p>
             </div>
-            <div class="calculator calculator__multi-clipping-path">
-                <div class="calculator__header">
-                    <h3>Multi-Clipping Path</h3>
-                    <p>Hand Made service</p>
-                </div>
-                <div class="calculator__image">
-                    <img src="img/price_page/multi-clipping.png" alt="">
-                </div>
-                <div class="calculator__unit-price">
-                  <div class="price-number-wrapper">
-                      <p class="doller-sign">$</p>
-                      <p class="price-text">02</p>
-                  </div>
-                  <p>per image price</p>
-              </div>
-              <div class="calculator__form">    
-                <form id="multiClippingPathForm" action="">
-                  <div class="quantity-field-wrapper">
-                    <input onkeyup="calculatePrice('multiClippingPathForm')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
-                    <p class="quantity__required-mark">*</p>
-                  </div>
-                  <select onchange="calculatePrice('multiClippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="1">Basic - $1</option>
-                    <option selected value="2.5">Flat Rate - $2.5</option>
-                    <option value="5">Medium - $5</option>
-                    <option value="10">Complex - $10</option>
-                    <option value="16">Super Complex - $16</option>
-                  </select>
-                  <select onchange="calculatePrice('multiClippingPathForm')" name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Drop Shadow $0.5</option>
-                    <option value="0.5">Custom Shadow $0.5</option>
-                    <option selected value="0.5">Reflection Shadow $0.5</option>
-                    <option value="0.5">Keep Shadow $0.5</option>
-                  </select>
-                  <select onchange="calculatePrice('multiClippingPathForm')" name="time" id="service" class="calculator__form-select">
-                    <option value="0">20 Hours - No Extra</option>
-                    <option value="70">10 Hours - 70% Extra</option>
-                    <option value="200">4 Hours - 200% Extra</option>
-                    <option value="300">1 Hr ASAP - 300% Extra</option>
-                    <option value="-5">48 Hours - 5% Discount</option>
-                    <option value="-10">72 Hours - 10% Discount</option>
-                    <option value="-15">92 Hours - 15% Discount</option>
-                  </select>
-                  <div class="calculator__form-total-quotation">
-                    <p>TOTAL QUOTATION</p>
-                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
-                  </div>
-                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
-                </form>
-              </div>
+            <div class="calculator__image">
+              <img src="img/price_page/clipping_path.png" alt="" />
             </div>
-            <div class="calculator calculator__ghost-mannequin">
-                <div class="calculator__header">
-                    <h3>Ghost Mannequin</h3>
-                    <p>Hand Made service</p>
-                </div>
-                <div class="calculator__image">
-                    <img src="img/price_page/ghost_mannequin.png" alt="">
-                </div>
-                <div class="calculator__unit-price">
-                  <div class="price-number-wrapper">
-                      <p class="doller-sign">$</p>
-                      <p class="price-text">1.5</p>
-                  </div>
-                  <p>per image price</p>
+            <div class="calculator__unit-price">
+              <div class="price-number-wrapper">
+                <p class="doller-sign">$</p>
+                <p class="price-text">01</p>
               </div>
-              <div class="calculator__form">
-                <form id="ghostMannequin" action="">
-                  <div class="quantity-field-wrapper">
-                    <input onkeyup="calculatePrice('ghostMannequin')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
-                    <p class="quantity__required-mark">*</p>
-                  </div>
-                  <select onchange="calculatePrice('ghostMannequin')" name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="1">Basic - $1</option>
-                    <option selected value="2.5">Flat Rate - $2.5</option>
-                    <option value="5">Medium - $5</option>
-                    <option value="10">Complex - $10</option>
-                    <option value="16">Super Complex - $16</option>
-                  </select>
-                  <select onchange="calculatePrice('ghostMannequin')" name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Drop Shadow $0.5</option>
-                    <option value="0.5">Custom Shadow $0.5</option>
-                    <option selected value="0.5">Reflection Shadow $0.5</option>
-                    <option value="0.5">Keep Shadow $0.5</option>
-                  </select>
-                  <select onchange="calculatePrice('ghostMannequin')" name="time" id="service" class="calculator__form-select">
-                    <option value="0">20 Hours - No Extra</option>
-                    <option value="70">10 Hours - 70% Extra</option>
-                    <option value="200">4 Hours - 200% Extra</option>
-                    <option value="300">1 Hr ASAP - 300% Extra</option>
-                    <option value="-5">48 Hours - 5% Discount</option>
-                    <option value="-10">72 Hours - 10% Discount</option>
-                    <option value="-15">92 Hours - 15% Discount</option>
-                  </select>
-                  <div class="calculator__form-total-quotation">
-                    <p>TOTAL QUOTATION</p>
-                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
-                  </div>
-                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
-                </form>
-              </div>
+              <p>per image price</p>
             </div>
-            <div class="calculator calculator__photo-retouching">
-                <div class="calculator__header">
-                    <h3>Photo Retouching</h3>
-                    <p>Hand Made service</p>
+            <div class="calculator__form">
+              <form id="clippingPathForm" action="">
+                <div class="quantity-field-wrapper">
+                  <input
+                    onkeyup="calculatePrice('clippingPathForm')"
+                    required
+                    name="quantity"
+                    type="number"
+                    placeholder="1000"
+                    class="quantity-field"
+                  />
+                  <p class="quantity__required-mark">*</p>
                 </div>
-                <div class="calculator__image">
-                    <img src="img/price_page/clipping_path.png" alt="">
+                <select onchange="calculatePrice('clippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
+                  <option value="1">Basic - $1</option>
+                  <option selected value="2.5">Flat Rate - $2.5</option>
+                  <option value="5">Medium - $5</option>
+                  <option value="10">Complex - $10</option>
+                  <option value="16">Super Complex - $16</option>
+                </select>
+                <select onchange="calculatePrice('clippingPathForm')" name="service" id="service" class="calculator__form-select">
+                  <option value="0.5">Drop Shadow $0.5</option>
+                  <option value="0.5">Custom Shadow $0.5</option>
+                  <option selected value="0.5">Reflection Shadow $0.5</option>
+                  <option value="0.5">Keep Shadow $0.5</option>
+                </select>
+                <select onchange="calculatePrice('clippingPathForm')" name="time" id="service" class="calculator__form-select">
+                  <option value="0">20 Hours - No Extra</option>
+                  <option value="70">10 Hours - 70% Extra</option>
+                  <option value="200">4 Hours - 200% Extra</option>
+                  <option value="300">1 Hr ASAP - 300% Extra</option>
+                  <option value="-5">48 Hours - 5% Discount</option>
+                  <option value="-10">72 Hours - 10% Discount</option>
+                  <option value="-15">92 Hours - 15% Discount</option>
+                </select>
+                <div class="calculator__form-total-quotation">
+                  <p>TOTAL QUOTATION</p>
+                  <h3 id="totalOutput" class="quotation_number">$0.00</h3>
                 </div>
-                <div class="calculator__unit-price">
-                  <div class="price-number-wrapper">
-                      <p class="doller-sign">$</p>
-                      <p class="price-text">03</p>
-                  </div>
-                  <p>per image price</p>
-              </div>
-              <div class="calculator__form">
-                <form id="photoRetouching" action="">
-                  <div class="quantity-field-wrapper">
-                    <input onkeyup="calculatePrice('photoRetouching')" required name="quantity" type="number" placeholder="1000" class="quantity-field">
-                    <p class="quantity__required-mark">*</p>
-                  </div>
-                  <select onchange="calculatePrice('photoRetouching')" name="rate" id="rate" class="calculator__form-select select--bold">
-                    <option value="1">Basic - $1</option>
-                    <option selected value="2.5">Flat Rate - $2.5</option>
-                    <option value="5">Medium - $5</option>
-                    <option value="10">Complex - $10</option>
-                    <option value="16">Super Complex - $16</option>
-                  </select>
-                  <select onchange="calculatePrice('photoRetouching')" name="service" id="service" class="calculator__form-select">
-                    <option value="0.5">Drop Shadow $0.5</option>
-                    <option value="0.5">Custom Shadow $0.5</option>
-                    <option selected value="0.5">Reflection Shadow $0.5</option>
-                    <option value="0.5">Keep Shadow $0.5</option>
-                  </select>
-                  <select onchange="calculatePrice('photoRetouching')" name="time" id="service" class="calculator__form-select">
-                    <option value="0">20 Hours - No Extra</option>
-                    <option value="70">10 Hours - 70% Extra</option>
-                    <option value="200">4 Hours - 200% Extra</option>
-                    <option value="300">1 Hr ASAP - 300% Extra</option>
-                    <option value="-5">48 Hours - 5% Discount</option>
-                    <option value="-10">72 Hours - 10% Discount</option>
-                    <option value="-15">92 Hours - 15% Discount</option>
-                  </select>
-                  <div class="calculator__form-total-quotation">
-                    <p>TOTAL QUOTATION</p>
-                    <h3 id="totalOutput" class="quotation_number">$0.00</h3>
-                  </div>
-                  <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
-                </form>
-              </div>
+                <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
+              </form>
             </div>
+          </div>
+          <div class="calculator calculator__multi-clipping-path">
+            <div class="calculator__header">
+              <h3>Multi-Clipping Path</h3>
+              <p>Hand Made service</p>
+            </div>
+            <div class="calculator__image">
+              <img src="img/price_page/multi-clipping.png" alt="" />
+            </div>
+            <div class="calculator__unit-price">
+              <div class="price-number-wrapper">
+                <p class="doller-sign">$</p>
+                <p class="price-text">02</p>
+              </div>
+              <p>per image price</p>
+            </div>
+            <div class="calculator__form">
+              <form id="multiClippingPathForm" action="">
+                <div class="quantity-field-wrapper">
+                  <input
+                    onkeyup="calculatePrice('multiClippingPathForm')"
+                    required
+                    name="quantity"
+                    type="number"
+                    placeholder="1000"
+                    class="quantity-field"
+                  />
+                  <p class="quantity__required-mark">*</p>
+                </div>
+                <select onchange="calculatePrice('multiClippingPathForm')" name="rate" id="rate" class="calculator__form-select select--bold">
+                  <option value="1">Basic - $1</option>
+                  <option selected value="2.5">Flat Rate - $2.5</option>
+                  <option value="5">Medium - $5</option>
+                  <option value="10">Complex - $10</option>
+                  <option value="16">Super Complex - $16</option>
+                </select>
+                <select onchange="calculatePrice('multiClippingPathForm')" name="service" id="service" class="calculator__form-select">
+                  <option value="0.5">Drop Shadow $0.5</option>
+                  <option value="0.5">Custom Shadow $0.5</option>
+                  <option selected value="0.5">Reflection Shadow $0.5</option>
+                  <option value="0.5">Keep Shadow $0.5</option>
+                </select>
+                <select onchange="calculatePrice('multiClippingPathForm')" name="time" id="service" class="calculator__form-select">
+                  <option value="0">20 Hours - No Extra</option>
+                  <option value="70">10 Hours - 70% Extra</option>
+                  <option value="200">4 Hours - 200% Extra</option>
+                  <option value="300">1 Hr ASAP - 300% Extra</option>
+                  <option value="-5">48 Hours - 5% Discount</option>
+                  <option value="-10">72 Hours - 10% Discount</option>
+                  <option value="-15">92 Hours - 15% Discount</option>
+                </select>
+                <div class="calculator__form-total-quotation">
+                  <p>TOTAL QUOTATION</p>
+                  <h3 id="totalOutput" class="quotation_number">$0.00</h3>
+                </div>
+                <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
+              </form>
+            </div>
+          </div>
+          <div class="calculator calculator__ghost-mannequin">
+            <div class="calculator__header">
+              <h3>Ghost Mannequin</h3>
+              <p>Hand Made service</p>
+            </div>
+            <div class="calculator__image">
+              <img src="img/price_page/ghost_mannequin.png" alt="" />
+            </div>
+            <div class="calculator__unit-price">
+              <div class="price-number-wrapper">
+                <p class="doller-sign">$</p>
+                <p class="price-text">1.5</p>
+              </div>
+              <p>per image price</p>
+            </div>
+            <div class="calculator__form">
+              <form id="ghostMannequin" action="">
+                <div class="quantity-field-wrapper">
+                  <input
+                    onkeyup="calculatePrice('ghostMannequin')"
+                    required
+                    name="quantity"
+                    type="number"
+                    placeholder="1000"
+                    class="quantity-field"
+                  />
+                  <p class="quantity__required-mark">*</p>
+                </div>
+                <select onchange="calculatePrice('ghostMannequin')" name="rate" id="rate" class="calculator__form-select select--bold">
+                  <option value="1">Basic - $1</option>
+                  <option selected value="2.5">Flat Rate - $2.5</option>
+                  <option value="5">Medium - $5</option>
+                  <option value="10">Complex - $10</option>
+                  <option value="16">Super Complex - $16</option>
+                </select>
+                <select onchange="calculatePrice('ghostMannequin')" name="service" id="service" class="calculator__form-select">
+                  <option value="0.5">Drop Shadow $0.5</option>
+                  <option value="0.5">Custom Shadow $0.5</option>
+                  <option selected value="0.5">Reflection Shadow $0.5</option>
+                  <option value="0.5">Keep Shadow $0.5</option>
+                </select>
+                <select onchange="calculatePrice('ghostMannequin')" name="time" id="service" class="calculator__form-select">
+                  <option value="0">20 Hours - No Extra</option>
+                  <option value="70">10 Hours - 70% Extra</option>
+                  <option value="200">4 Hours - 200% Extra</option>
+                  <option value="300">1 Hr ASAP - 300% Extra</option>
+                  <option value="-5">48 Hours - 5% Discount</option>
+                  <option value="-10">72 Hours - 10% Discount</option>
+                  <option value="-15">92 Hours - 15% Discount</option>
+                </select>
+                <div class="calculator__form-total-quotation">
+                  <p>TOTAL QUOTATION</p>
+                  <h3 id="totalOutput" class="quotation_number">$0.00</h3>
+                </div>
+                <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
+              </form>
+            </div>
+          </div>
+          <div class="calculator calculator__photo-retouching">
+            <div class="calculator__header">
+              <h3>Photo Retouching</h3>
+              <p>Hand Made service</p>
+            </div>
+            <div class="calculator__image">
+              <img src="img/price_page/clipping_path.png" alt="" />
+            </div>
+            <div class="calculator__unit-price">
+              <div class="price-number-wrapper">
+                <p class="doller-sign">$</p>
+                <p class="price-text">03</p>
+              </div>
+              <p>per image price</p>
+            </div>
+            <div class="calculator__form">
+              <form id="photoRetouching" action="">
+                <div class="quantity-field-wrapper">
+                  <input
+                    onkeyup="calculatePrice('photoRetouching')"
+                    required
+                    name="quantity"
+                    type="number"
+                    placeholder="1000"
+                    class="quantity-field"
+                  />
+                  <p class="quantity__required-mark">*</p>
+                </div>
+                <select onchange="calculatePrice('photoRetouching')" name="rate" id="rate" class="calculator__form-select select--bold">
+                  <option value="1">Basic - $1</option>
+                  <option selected value="2.5">Flat Rate - $2.5</option>
+                  <option value="5">Medium - $5</option>
+                  <option value="10">Complex - $10</option>
+                  <option value="16">Super Complex - $16</option>
+                </select>
+                <select onchange="calculatePrice('photoRetouching')" name="service" id="service" class="calculator__form-select">
+                  <option value="0.5">Drop Shadow $0.5</option>
+                  <option value="0.5">Custom Shadow $0.5</option>
+                  <option selected value="0.5">Reflection Shadow $0.5</option>
+                  <option value="0.5">Keep Shadow $0.5</option>
+                </select>
+                <select onchange="calculatePrice('photoRetouching')" name="time" id="service" class="calculator__form-select">
+                  <option value="0">20 Hours - No Extra</option>
+                  <option value="70">10 Hours - 70% Extra</option>
+                  <option value="200">4 Hours - 200% Extra</option>
+                  <option value="300">1 Hr ASAP - 300% Extra</option>
+                  <option value="-5">48 Hours - 5% Discount</option>
+                  <option value="-10">72 Hours - 10% Discount</option>
+                  <option value="-15">92 Hours - 15% Discount</option>
+                </select>
+                <div class="calculator__form-total-quotation">
+                  <p>TOTAL QUOTATION</p>
+                  <h3 id="totalOutput" class="quotation_number">$0.00</h3>
+                </div>
+                <button name="submit" id="clippingPath" type="submit" class="calculator__form-submit">Get Started</button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
       <section class="payment-section">
@@ -249,22 +277,19 @@
           </div>
           <div class="payment__systems-wrapper">
             <div class="payment__system">
-              <img src="./img/price_page/credit_card.png" alt="">
+              <img src="./img/price_page/credit_card.png" alt="" />
               <h3>Credit Card</h3>
-              <p>Accept Visa, Mastercard, amEx, Discover, 
-                Diners Club & JCB from worldwide.</p>
+              <p>Accept Visa, Mastercard, amEx, Discover, Diners Club & JCB from worldwide.</p>
             </div>
             <div class="payment__system">
-              <img src="./img/price_page/bank_transfer.png" alt="">
+              <img src="./img/price_page/bank_transfer.png" alt="" />
               <h3>Bank Transfer</h3>
-              <p>Bank transfers provide a safe way 
-                to send money over bank rails.</p>
+              <p>Bank transfers provide a safe way to send money over bank rails.</p>
             </div>
             <div class="payment__system">
-              <img src="./img/price_page/invoice.png" alt="">
+              <img src="./img/price_page/invoice.png" alt="" />
               <h3>Monthly Invoice</h3>
-              <p>You can pay monthly after 
-                receiving a full month of work.</p>
+              <p>You can pay monthly after receiving a full month of work.</p>
             </div>
           </div>
         </div>
@@ -272,47 +297,37 @@
       <section class="hire-photo-editor-section body-main--frame">
         <div class="hire-editor-wrapper">
           <div class="hire-editor__text">
-            <h2>Hire a Photo Editor
-              From Just $3 per hour</h2>
+            <h2>Hire a Photo Editor From Just $3 per hour</h2>
             <div class="hire-editor__text-list-wrapper">
-              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt=""></div>
+              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt="" /></div>
               <div>Forget about recruiting, screening resumes, interviews and payroll.</div>
             </div>
             <div class="hire-editor__text-list-wrapper">
-              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt=""></div>
+              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt="" /></div>
               <div>Do what you do best - outsource the rest.</div>
             </div>
             <div class="hire-editor__text-list-wrapper">
-              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt=""></div>
+              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt="" /></div>
               <div>No recruitment free, free replacement.</div>
             </div>
             <div class="hire-editor__text-list-wrapper">
-              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt=""></div>
+              <div class="list-icon"><img src="./img/price_page/list-icon.png" alt="" /></div>
               <div>Just want to get back your life back?</div>
             </div>
-            
           </div>
           <div class="hire-editor__photo">
-            <img src="./img/price_page/hire_editor_image.png" alt="">
+            <img src="./img/price_page/hire_editor_image.png" alt="" />
           </div>
         </div>
       </section>
       <section class="client-section">
         <div class="client-section__wrapper body-main--frame">
-          <img src="./img/price_page/client-section_image.png" alt="">
-          <p>Companies worldwide trust Studio Metrodesk, Inc.
-            as their preferred photo clipping & retouching vendor/partner.</p>
-
+          <img src="./img/price_page/client-section_image.png" alt="" />
+          <p>Companies worldwide trust Studio Metrodesk, Inc. as their preferred photo clipping & retouching vendor/partner.</p>
         </div>
       </section>
     </div>
 
-
     <script src="./js/price_page.js"></script>
-
-
-
-
-
   </body>
 </html>

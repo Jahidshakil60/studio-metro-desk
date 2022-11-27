@@ -50,6 +50,22 @@
   text-align: center;
   color: var(--muted-color);
 }
+.calculator:hover{
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  background: #F2F2FD;
+}
+.calculator:hover .calculator__unit-price, .calculator__form-total-quotation{
+  color: #252E63;  
+}
+
+.calculator:hover.mytestclass{
+  color: blue;
+}
+
+
+
+
+
 .calculator__header {
   margin-bottom: 30px;
 }
@@ -92,6 +108,9 @@
   position: relative;
   display: inline;
 }
+.quantity-field::placeholder {
+  color: #c1c1c1;
+} 
 
 .calculator__form .quantity-field {
   font-size: 20px;
