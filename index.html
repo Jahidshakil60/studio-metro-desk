@@ -66,6 +66,7 @@
 								<p>4</p>
 								<h6>CONTACT INFORMATION</h6>
 							</div>
+							<p class="item-name"></p>
 						</div>
 					</div>
 					<div class="form-container">
@@ -210,7 +211,6 @@
 									accept="image/jpeg, image/png, image/jpg, application/pdf"
 									class="image-input"
 									hidden
-									
 								/>
 								<!-- <output > -->
 								<div id="result"></div>
@@ -253,9 +253,13 @@
 							</div>
 						</div>
 						<div class="main-button">
-							<button class="previous-btn btn"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
+							<div class="previous-btn">
+								<button class="btn"><span class="material-symbols-outlined"> west </span> Previous</button>
+							</div>
 							<div></div>
-							<button class="next-btn btn">Next <span class="material-symbols-outlined"> arrow_right_alt </span></button>
+							<div class="next-btn">
+								<button class="right-arrow btn">Next<span class="material-symbols-outlined"> east </span></button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -265,7 +269,7 @@
 		<script src="./build/js/intlTelInput.js"></script>
 		<script>
 			var numinput = document.querySelector("#phone");
-			window.intlTelInput(numinput,{});
+			window.intlTelInput(numinput, {});
 		</script>
 	</body>
 </html>

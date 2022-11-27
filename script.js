@@ -1,5 +1,5 @@
 let cardBody = document.getElementsByClassName("product-card-main__item");
-let circleFill = document.querySelectorAll("circle");
+let circleFill = document.querySelectorAll(".circle");
 let active = document.querySelector(".active");
 let inputimage = document.getElementById("image-input");
 
@@ -15,6 +15,8 @@ let contactinformation = document.querySelector(".contact-information");
 let nextbutton = document.querySelector(".next-btn");
 let previousbutton = document.querySelector(".previous-btn");
 let submit_btn = document.querySelector(".submit-btn");
+let barsectionpera = document.querySelectorAll('.item-name')
+let rightarrow = document.querySelector('.right-arrow')
 
 // previousbutton.style.display = "none";
 
@@ -22,7 +24,7 @@ const some_func = (data) => {
 	return (e) => {
 		console.log();
 		if (document.querySelector(".active") !== null) {
-			console.log(document.querySelector(".active").childNodes[3].innerText == "");
+			// console.log(document.querySelector(".active").childNodes[3].innerText == "");
 			previousbutton.style.display = "block";
 			if (document.querySelector(".active").childNodes[3].innerText == "") {
 				alert("Please choose a serveice");
@@ -34,10 +36,14 @@ const some_func = (data) => {
 					formsectionbody.style.display = "none";
 					deliverytime.style.display = "block";
 					uploadimage.style.display = "none";
+					contactinformation.style.display = "none";
+					nextbutton.style.display = "block";
 				} else if (data == 2) {
 					deliverytime.style.display = "none";
 					uploadimage.style.display = "block";
 					formsectionbody.style.display = "none";
+					contactinformation.style.display = "none";
+					nextbutton.style.display = "block";
 				} else if (data == 3) {
 					// before.style.setProperty("--width", "1150px");
 					// before.style.setProperty("--height", "1150px");
@@ -47,11 +53,14 @@ const some_func = (data) => {
 					contactinformation.style.display = "block";
 					nextbutton.style.display = "none";
 					submit_btn.style.display = "block";
+					sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Plese fill up this form"
 				} else {
 					formsectionbody.style.display = "block";
 					deliverytime.style.display = "none";
 					uploadimage.style.display = "none";
+					contactinformation.style.display = "none";
 					previousbutton.style.display = "none";
+					nextbutton.style.display = "block";
 				}
 			}
 		}
@@ -66,36 +75,50 @@ for (let i = 0; i < sidebar.length; i++) {
 
 // console.log(sidebar[i].childNodes[3].innerText);
 
-const btnClick = (i) => {
+const nextBtnClick = () => {
 	return (e) => {
-		if (sidebar[i].childNodes[3].innerText !== "") {
-			document.querySelector(".active").classList.remove("active");
-			sidebar[i].nextSibling.nextSibling.classList.add("active");
-			console.log(sidebar[0]);
-			previousbutton.style.display = "block";
-			if (i == 0) {
+		    rightarrow.style.color = '#9e9e9e'
+			if(sidebar[0].childNodes[3].innerText !== "" && sidebar[0].classList[1] == "active"){
+				document.querySelector(".active").classList.remove("active");
+				sidebar[1].classList.add("active");
 				formsectionbody.style.display = "none";
 				deliverytime.style.display = "block";
-			} else if (i == 1) {
+				previousbutton.style.display = "block";
+				if(barsectionpera[1].innerText !== ""){
+					rightarrow.style.color = '#7a80bd'
+				}
+			}else if(sidebar[1].childNodes[3].innerText !== "" && sidebar[1].classList[1] == "active"){
+				document.querySelector(".active").classList.remove("active");
+				sidebar[2].classList.add("active");
 				deliverytime.style.display = "none";
 				uploadimage.style.display = "block";
-			} else if (i == 2) {
+				if(barsectionpera[2].innerText !== ""){
+					rightarrow.style.color = '#7a80bd'
+				}
+			}else if(sidebar[2].childNodes[3].innerText !== "" && sidebar[2].classList[1] == "active"){
+				document.querySelector(".active").classList.remove("active");
+				sidebar[3].classList.add("active");
 				uploadimage.style.display = "none";
 				contactinformation.style.display = "block";
 				nextbutton.style.display = "none";
 				submit_btn.style.display = "block";
+				sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Please fill up this form"
+			}else{
+				alert("please select a service")
 			}
-		}
+			
+
+		// }
 	};
 };
-for (let i = 0; i < sidebar.length; i++) {
-	nextbutton.addEventListener("click", btnClick(i));
-}
+
+nextbutton.addEventListener("click", nextBtnClick());
+
 const preBtnClick = (i) => {
 	return (e) => {
 		console.log(sidebar[i].classList.length);
+		rightarrow.style.color = '#7a80bd'
 		if (sidebar[i].classList.length == 2) {
-			// previousbutton.style.opacity = "1"
 			nextbutton.style.display = "block";
 			document.querySelector(".active").classList.remove("active");
 			sidebar[i].previousSibling.previousSibling.classList.add("active");
@@ -123,6 +146,9 @@ for (let i = 0; i < sidebar.length; i++) {
 const mufunc = (product) => {
 	return (e) => {
 		cardBody[product].childNodes[1].childNodes[1].checked = true;
+		if(barsectionpera.innerText !== ""){
+			rightarrow.style.color = '#7a80bd'
+		}
 		console.log();
 		if (cardBody[product].childNodes[1].childNodes[1].name == "form") {
 			before.style.setProperty("--width", "300px");
@@ -136,7 +162,7 @@ const mufunc = (product) => {
 
 		if (sidebar[0].classList[1] == "active") {
 			sidebar[0].childNodes[3].innerHTML =
-				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
+				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;	
 		} else if (sidebar[1].classList[1] == "active") {
 			sidebar[1].childNodes[3].innerHTML =
 				'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
@@ -304,12 +330,16 @@ function countfunc(count) {
 	classes = document.querySelectorAll(".button-container");
 	count = classes.length;
 	image_num.innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + count + " Images uploaded";
+	if(barsectionpera.innerText !== ""){
+		rightarrow.style.color = '#7a80bd'
+	}
 	if (count == 0) {
 		image_num.innerHTML = "";
 		dragText.innerText = "Drag & drop files here or";
 		before.style.setProperty("--width", "550px");
 		before.style.setProperty("--height", "550px");
 		percentage.innerText = "50%";
+		rightarrow.style.color = '#9e9e9e'
 	}
 }
 
