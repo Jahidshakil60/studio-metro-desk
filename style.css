@@ -84,6 +84,7 @@ p {
 }
 .btn:hover{
     background: inherit;
+	
 }
 
 .btn span{
@@ -93,6 +94,9 @@ p {
 
 .previous-btn{
 	display: none;
+}
+.previous-btn .btn:hover{
+	color: rgb(122, 128, 189);
 }
 
 .next-btn{}

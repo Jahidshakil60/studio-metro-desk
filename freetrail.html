@@ -4,12 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <!-- style -->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<!-- slider-swiper -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+		<!-- style -->
 		<link rel="stylesheet" href="CSS/herosection.css" />
 		<link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="CSS/freetrail.css">
-        <link rel="stylesheet" href="./build/css/demo.css" />
+		<link rel="stylesheet" href="CSS/freetrail.css" />
+		<link rel="stylesheet" href="CSS/review.css" />
+		<link rel="stylesheet" href="./build/css/demo.css" />
 		<link rel="stylesheet" href="./build/css/intlTelInput.css" />
 		<title>Document</title>
 	</head>
@@ -25,7 +32,7 @@
 						</p>
 					</div>
 					<div class="herosection-main__image">
-						<img src="img/free__trail.png" alt="" />
+						<img src="img/free_trail.gif" alt="" />
 					</div>
 				</div>
 			</div>
@@ -38,8 +45,8 @@
 							<div class="contact-information progressbar-single">Contact Informations</div>
 						</div>
 					</div>
-                    <div class="service-section__main">
-                        <div class="formsection-main__body">
+					<div class="service-section__main">
+						<div class="formsection-main__body">
 							<h4>What edits do you want to try?</h4>
 							<div>
 								<form action="" class="product-card-main">
@@ -100,16 +107,18 @@
 								</form>
 							</div>
 						</div>
-                        <div class="main-button">
+						<div class="main-button">
 							<div></div>
-							<button class="next-btn btn" onclick="nextSlide(1)">Next <span class="material-symbols-outlined"> arrow_right_alt </span></button>
+							<div class="next-btn">
+								<button class="right-arrow btn" id="serveice-button" onclick="nextSlide(1)">Next<span class="material-symbols-outlined"> east </span></button>
+							</div>
 						</div>
-                    </div>
-                    <div class="upload-image__main">
-                        <div class="image-main-wrapper">
-                            <p>Seeing your images will help us make sure your quote is accurate. It also means we can.</p>
+					</div>
+					<div class="upload-image__main">
+						<div class="image-main-wrapper">
+							<p>Seeing your images will help us make sure your quote is accurate. It also means we can.</p>
 
-                            <div class="drag-area">
+							<div class="drag-area">
 								<div class="drag-area__btn">
 									<header>Drag & drop files here or</header>
 									<button>Browse File</button>
@@ -125,60 +134,156 @@
 								<!-- <output > -->
 								<div class="result"></div>
 							</div>
-                        </div>
-                        <div class="main-button">
-                            <button class="previous-btn btn" onclick="previousSlide(0)"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
-							<div></div>
-							<button class="next-btn btn" onclick="nextSlide(2)">Next <span class="material-symbols-outlined"> arrow_right_alt </span></button>
 						</div>
-                    </div>
-                    <div class="contact-information__main">
-                        <h6>Let us know where to send your edits </h6>
-                        <div class="contact-information">
-                            <form action="">
-                                <div class="common-flex-section">
-                                    <div class="primaryinput-container">
-                                        <label for="">What's your first name? *</label>
-                                        <input type="text" placeholder="Your first name" required class="contact-input" />
-                                    </div>
-                                    <div class="primaryinput-container">
-                                        <label for="">What's your last name?</label>
-                                        <input type="text" placeholder="Your last name" required class="contact-input" />
-                                    </div>
-                                </div>
-                                <div class="common-flex-section">
-                                    <div class="primaryinput-container">
-                                        <label for="">What's your email? *</label>
-                                        <input type="email" placeholder="Your email address" required class="contact-input" />
-                                    </div>
-                                    <div class="primaryinput-container">
-                                        <label for="">What's your phone number? *</label>
-                                        <input type="tel"  placeholder="Your phone number" value="+1" required class="contact-input phone" />
-                                    </div>
-                                </div>
-                                <div class="message-section">
-                                    <label for="">Message</label>
-                                    <textarea name="" id="" cols="30" rows="7" placeholder="Type here"></textarea>
-                                </div>
-                                <div class="submit-button">
-                                    <!-- <input id="post" type="submit" value="submit" class="button-sub" /> -->
-                                    <div class="button-wrapper">
-
-                                        <input type="submit" value="submit" class="submit-input">
-                                        <span class="material-symbols-outlined"> arrow_right_alt </span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="main-button">
-							<button class="previous-btn btn" onclick="previousSlide(1)"><span class="material-symbols-outlined"> keyboard_backspace </span> Previous</button>
+						<div class="main-button">
+							<button class="previous-button btn" onclick="previousSlide(0)">
+								<span class="material-symbols-outlined"> west </span> Previous
+							</button>
+							<div></div>
+							<button class="next-btn btn" onclick="nextSlide(2)" id="upload-button">Next <span class="material-symbols-outlined"> east </span></button>
+						</div>
+					</div>
+					<div class="contact-information__main">
+						<h6>Let us know where to send your edits</h6>
+						<div class="contact-information">
+							<form action="">
+								<div class="common-flex-section">
+									<div class="primaryinput-container">
+										<label for="">What's your first name? *</label>
+										<input type="text" placeholder="Your first name" required class="contact-input" />
+									</div>
+									<div class="primaryinput-container">
+										<label for="">What's your last name?</label>
+										<input type="text" placeholder="Your last name" required class="contact-input" />
+									</div>
+								</div>
+								<div class="common-flex-section">
+									<div class="primaryinput-container">
+										<label for="">What's your email? *</label>
+										<input type="email" placeholder="Your email address" required class="contact-input" />
+									</div>
+									<div class="primaryinput-container">
+										<label for="">What's your phone number? *</label>
+										<input type="tel" placeholder="Your phone number" value="+1" required class="contact-input phone" />
+									</div>
+								</div>
+								<div class="message-section">
+									<label for="">Message</label>
+									<textarea name="" id="" cols="30" rows="7" placeholder="Type here"></textarea>
+								</div>
+								<div class="submit-button">
+									<!-- <input id="post" type="submit" value="submit" class="button-sub" /> -->
+									<div class="button-wrapper">
+										<input type="submit" value="submit" class="submit-input" />
+										<span class="material-symbols-outlined"> arrow_right_alt </span>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="main-button">
+							<button class="previous-button btn" onclick="previousSlide(1)">
+								<span class="material-symbols-outlined"> west </span> Previous
+							</button>
 							<div></div>
 						</div>
-                    </div>
+					</div>
+				</div>
+			</div>
+			<div class="get-quote__review">
+				<div class="body-main--frame">
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="review-mainsection">
+									<p class="comment-section">
+										<img src="img/sign.png" alt="" />
+										   Wonderful service. Talented designers who are easy to work with. Will use Studio Metrodesk again. Will use Studio Metrodesk again.
+										Talented designers who are easy to work with. Talented designers who are easy to work with.
+									</p>
+									<p class="review-mainsection__serveice">Clipping Path.Retouching</p>
+									<div class="review-mainsection__profile">
+										<img src="img/review.png" alt="" />
+										<div class="profile-description">
+											<div class="star">
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+											</div>
+											<p>Sandra Krail</p>
+											<p>Studio Manager, california</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="review-mainsection">
+									<p class="comment-section">
+										<img src="img/sign.png" alt="" />
+										Wonderful service. Talented designers who are easy to work with. Will use Studio Metrodesk again. Will use Studio Metrodesk again.
+										Talented designers who are easy to work with. Talented designers who are easy to work with.
+									</p>
+									<p class="review-mainsection__serveice">Clipping Path.Retouching</p>
+									<div class="review-mainsection__profile">
+										<img src="img/review.png" alt="" />
+										<div class="profile-description">
+											<div class="star">
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+											</div>
+											<p>Sandra Krail</p>
+											<p>Studio Manager, california</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="review-mainsection">
+									<p class="comment-section">
+										<img src="img/sign.png" alt="" />
+										Wonderful service. Talented designers who are easy to work with. Will use Studio Metrodesk again. Will use Studio Metrodesk again.
+										Talented designers who are easy to work with. Talented designers who are easy to work with.
+									</p>
+									<p class="review-mainsection__serveice">Clipping Path.Retouching</p>
+									<div class="review-mainsection__profile">
+										<img src="img/review.png" alt="" />
+										<div class="profile-description">
+											<div class="star">
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+												<span class="material-symbols-outlined review-star"> star </span>
+											</div>
+											<p>Sandra Krail</p>
+											<p>Studio Manager, california</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-        <script src="./build/js/intlTelInput.js"></script>
-        <script src="freetrail.js"></script>
+		<script src="./build/js/intlTelInput.js"></script>
+		<script src="freetrail.js"></script>
+			<!-- Swiper JS -->
+			<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+			<!-- Initialize Swiper -->
+			<script>
+				var swiper = new Swiper(".mySwiper", {
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true,
+					},
+				});
+			</script>
 	</body>
 </html>

@@ -20,12 +20,16 @@
 			p {
 				font-size: 20px;
 				line-height: 27px;
+				margin-top: 25px;
+				color: #313030;
 			}
 		}
 		.herosection-main__image {
 			flex: 1;
 			img{
-				width: 100%;
+				width: 80%;
+				margin-left: 80px;
+				// height: 90%;
 			}
 		}
 	}
