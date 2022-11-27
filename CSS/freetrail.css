@@ -239,4 +239,7 @@
   right: 25px;
   color: white;
   cursor: pointer;
+}
+.trail-main__wrapper .previous-button:hover {
+  color: rgb(122, 128, 189);
 }/*# sourceMappingURL=freetrail.css.map */

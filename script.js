@@ -25,12 +25,13 @@ const some_func = (data) => {
 		console.log();
 		if (document.querySelector(".active") !== null) {
 			// console.log(document.querySelector(".active").childNodes[3].innerText == "");
-			previousbutton.style.display = "block";
+			
 			if (document.querySelector(".active").childNodes[3].innerText == "") {
 				alert("Please choose a serveice");
 			} else {
 				document.querySelector(".active").classList.remove("active");
 				sidebar[data].classList.add("active");
+				rightarrow.style.color = '#9e9e9e'
 				console.log(data);
 				if (data == 1) {
 					formsectionbody.style.display = "none";
@@ -38,12 +39,16 @@ const some_func = (data) => {
 					uploadimage.style.display = "none";
 					contactinformation.style.display = "none";
 					nextbutton.style.display = "block";
+					previousbutton.style.display = "block";
+					rightarrow.style.color = '#7a80bd';
 				} else if (data == 2) {
 					deliverytime.style.display = "none";
 					uploadimage.style.display = "block";
 					formsectionbody.style.display = "none";
 					contactinformation.style.display = "none";
 					nextbutton.style.display = "block";
+					previousbutton.style.display = "block";
+					rightarrow.style.color = '#7a80bd';
 				} else if (data == 3) {
 					// before.style.setProperty("--width", "1150px");
 					// before.style.setProperty("--height", "1150px");
@@ -52,6 +57,7 @@ const some_func = (data) => {
 					uploadimage.style.display = "none";
 					contactinformation.style.display = "block";
 					nextbutton.style.display = "none";
+					previousbutton.style.display = "block";
 					submit_btn.style.display = "block";
 					sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Plese fill up this form"
 				} else {
@@ -61,6 +67,7 @@ const some_func = (data) => {
 					contactinformation.style.display = "none";
 					previousbutton.style.display = "none";
 					nextbutton.style.display = "block";
+					rightarrow.style.color = '#7a80bd';
 				}
 			}
 		}
@@ -237,7 +244,7 @@ let image_num = document.querySelector(".image_number");
 let classes;
 let array = [];
 let pic_array = [];
-// let delete_btn;
+let delete_btn;
 let sum = 0;
 
 function showFile(e, file) {
@@ -257,11 +264,15 @@ function showFile(e, file) {
 				div.appendChild(button);
 				output.appendChild(div);
 				countfunc();
+				delete_btn = document.querySelectorAll('.image_button')
+			
 				const deleteImage = (i) => {
 					return (e) => {
+						classes = document.querySelectorAll('.button-container')
 						output.removeChild(classes[i]);
 						count = count - 1;
 						countfunc(count);
+						console.log("yes");
 					};
 				};
 
