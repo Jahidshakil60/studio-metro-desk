@@ -163,6 +163,9 @@
 .filledup-text--active {
   color: var(--primary-color);
 }
+.filledup-bg--active {
+  background: #F2F2FD;
+}
 
 .payment-section {
   background: #fafafa;

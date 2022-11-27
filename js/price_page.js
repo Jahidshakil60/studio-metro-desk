@@ -25,9 +25,13 @@ function calculatePrice(formId) {
         if(field.value > 0) {
           form[i].classList.add('filledup-button--active')
           form_calculator.classList.add('filledup-text--active')
+          form_calculator.classList.add('filledup-bg--active')
+
         } else {
           form[i].classList.remove('filledup-button--active')
           form_calculator.classList.remove('filledup-text--active')
+          form_calculator.classList.remove('filledup-bg--active')
+
         }
       }
     }
