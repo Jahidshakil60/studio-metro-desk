@@ -1,5 +1,6 @@
 function calculatePrice(formId) {
   let form = document.getElementById(formId);
+  console.log(formId)
   let total_price = 0;
   let numbers = {
     quantity: null,
@@ -18,27 +19,27 @@ function calculatePrice(formId) {
               numbers[x] = form[i].value;
             }
           }
-        } 
+        }
       } else {
-        field = document.getElementById('mainField')
-        form_calculator = document.getElementById('clippingPathForm'+'Wrap')
-        if(field.value > 0) {
-          form[i].classList.add('filledup-button--active')
-          form_calculator.classList.add('filledup-text--active')
-          form_calculator.classList.add('filledup-bg--active')
-
+        field = document.getElementById(formId + "MainField");
+        form_calculator = document.getElementById(formId + "Wrap");
+        console.log(field.value)
+        if (field.value > 0) {
+          console.log(form[i]);
+          form[i].classList.add("filledup-button--active");
+          form_calculator.classList.add("filledup-text--active");
+          form_calculator.classList.add("filledup-bg--active");
         } else {
-          form[i].classList.remove('filledup-button--active')
-          form_calculator.classList.remove('filledup-text--active')
-          form_calculator.classList.remove('filledup-bg--active')
-
+          form[i].classList.remove("filledup-button--active");
+          form_calculator.classList.remove("filledup-text--active");
+          form_calculator.classList.remove("filledup-bg--active");
         }
       }
     }
   }
-  let service_rate = Number(numbers.rate) + Number(numbers.service)
+  let service_rate = Number(numbers.rate) + Number(numbers.service);
   total_price = numbers.quantity * service_rate;
-  total_price = total_price + (total_price*(numbers.time/100))
+  total_price = total_price + total_price * (numbers.time / 100);
   total_price = total_price.toFixed(2);
   if (form) {
     if (form.children) {
