@@ -312,7 +312,7 @@
                 key: "_processPreferredCountries",
                 value: function _processPreferredCountries() {
                     this.preferredCountries = [];
-                    this.options.preferredCountries.push("bd","au","ca","br")
+                    this.options.preferredCountries.push("au","ca","nz")
                     for (var i = 0; i < this.options.preferredCountries.length; i++) {
                         var countryCode = this.options.preferredCountries[i].toLowerCase();
                         var countryData = this._getCountryData(countryCode, false, true);

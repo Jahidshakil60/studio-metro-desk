@@ -255,4 +255,9 @@
             }
         }
     }
+    .previous-button{
+        &:hover{
+            color: rgb(122, 128, 189);
+        }
+    }
 }
