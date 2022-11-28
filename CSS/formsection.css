@@ -315,15 +315,44 @@
   bottom: 10px;
   right: 20px;
   display: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 .get-quote-page__formsection .formsection-main .contact-information .submit-btn .button-sub {
   border-left: inherit;
   width: inherit;
   background: #232A5F;
-  padding: 15PX 30PX;
+  padding: 10px;
+  width: 270px;
   color: white;
   border: none;
   height: inherit;
   cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+.get-quote-page__formsection .formsection-main .contact-information .submit-btn .loader {
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: an1 1s ease infinite;
+          animation: an1 1s ease infinite;
+}
+@-webkit-keyframes an1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes an1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }/*# sourceMappingURL=formsection.css.map */

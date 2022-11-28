@@ -18,21 +18,34 @@ let submit_btn = document.querySelector(".submit-btn");
 let barsectionpera = document.querySelectorAll('.item-name')
 let rightarrow = document.querySelector('.right-arrow')
 
+//submit button animation
+
+let submit_button = document.querySelector('.button-sub')
+let contact_input = document.querySelectorAll('.contact-input')
+
+submit_button.onclick = function (){
+	if(contact_input[0].value !== ""){
+		this.innerHTML = "<div class='loader'></div>"
+		setTimeout(()=>{
+			window.location.reload();
+		}, 1000)
+	
+	}
+
+}
+
 // previousbutton.style.display = "none";
 
 const some_func = (data) => {
 	return (e) => {
 		console.log();
 		if (document.querySelector(".active") !== null) {
-			// console.log(document.querySelector(".active").childNodes[3].innerText == "");
-			
 			if (document.querySelector(".active").childNodes[3].innerText == "") {
 				alert("Please choose a serveice");
 			} else {
 				document.querySelector(".active").classList.remove("active");
 				sidebar[data].classList.add("active");
 				rightarrow.style.color = '#9e9e9e'
-				console.log(data);
 				if (data == 1) {
 					formsectionbody.style.display = "none";
 					deliverytime.style.display = "block";
@@ -79,9 +92,6 @@ const some_func = (data) => {
 for (let i = 0; i < sidebar.length; i++) {
 	sidebar[i].addEventListener("click", some_func(i));
 }
-
-// console.log(sidebar[i].childNodes[3].innerText);
-
 const nextBtnClick = () => {
 	return (e) => {
 		    rightarrow.style.color = '#9e9e9e'
@@ -123,7 +133,6 @@ nextbutton.addEventListener("click", nextBtnClick());
 
 const preBtnClick = (i) => {
 	return (e) => {
-		console.log(sidebar[i].classList.length);
 		rightarrow.style.color = '#7a80bd'
 		if (sidebar[i].classList.length == 2) {
 			nextbutton.style.display = "block";
@@ -250,35 +259,19 @@ let sum = 0;
 function showFile(e, file) {
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
 		//CHECK IF FILE API IS SUPPORTED
-
+		let some = pic_array.length;
 		if (file != null) {
 			let fileReader = new FileReader(); //creating new FileReader object
 			fileReader.onload = () => {
 				let fileURL = fileReader.result; //passing user file source in fileURL variable
 				const div = document.createElement("div");
 				div.classList.add("button-container");
-				div.innerHTML = `<img src="${fileURL}" alt="image">`;
-				const button = document.createElement("button");
-				button.classList.add("image_button");
-				button.innerText = "+";
-				div.appendChild(button);
 				output.appendChild(div);
+				let image = `<img src="${fileURL}" alt="image">`;
+				pic_array.push(image);
+				sum = sum+3
+				uploadarrImage(some, sum);
 				countfunc();
-				delete_btn = document.querySelectorAll('.image_button')
-			
-				const deleteImage = (i) => {
-					return (e) => {
-						classes = document.querySelectorAll('.button-container')
-						output.removeChild(classes[i]);
-						count = count - 1;
-						countfunc(count);
-						console.log("yes");
-					};
-				};
-
-				for (let i = 0; i < delete_btn.length; i++) {
-					delete_btn[i].addEventListener("click", deleteImage(i));
-				}
 			};
 			fileReader.readAsDataURL(file);
 		} else {
@@ -316,27 +309,31 @@ function uploadarrImage(x , sum) {
 	let btn_container = document.querySelectorAll(".button-container");
 	for (let d = x; d < btn_container.length; d++) {
 		btn_container[d].innerHTML = pic_array[d];
-
 		button_dlt = document.createElement("button");
 		button_dlt.classList.add("image_button");
 		button_dlt.id = "newId" + sum + d
 		button_dlt.innerText = "+";
 		btn_container[d].appendChild(button_dlt);
+		console.log(pic_array,d);
 		
 		let current_btn = document.getElementById("newId" + sum + d)
-		current_btn.addEventListener("click" , function(){
-			pic_array.splice(d, 1)
+		current_btn.addEventListener("click" , function(event){
+			let button_array = document.getElementsByClassName('image_button')
+			let target_button_index = null
+			for (let i = 0; i < button_array.length; i++) {
+				if(event.target.id == button_array[i].id) {
+					target_button_index = i
+				}
+			}
+			pic_array.splice(target_button_index, 1)
 			let img_container = current_btn.parentElement;
 			img_container.remove()
 			count = count -1
 			countfunc(count)
-
 		})
 	}
 
 }
-
-
 function countfunc(count) {
 	classes = document.querySelectorAll(".button-container");
 	count = classes.length;
@@ -360,7 +357,6 @@ let primaryinput = document.querySelectorAll(".contact-input");
 console.log(primaryinput);
 const requiredInputValue = (i) => {
 	return (e) => {
-		// console.log(primaryinput[i].value);
 		if (primaryinput[i].value !== null) {
 			if (i == 0) {
 				before.style.setProperty("--width", "900px");

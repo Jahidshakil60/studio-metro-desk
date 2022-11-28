@@ -214,31 +214,59 @@
 .trail-main__wrapper .contact-information__main .phone {
   padding-left: 50px;
 }
-.trail-main__wrapper .contact-information__main .submit-button {
+.trail-main__wrapper .contact-information__main .free_trail-button {
   position: absolute;
   bottom: -20px;
-  right: 20px;
+  right: 30px;
   font-size: 26px;
 }
-.trail-main__wrapper .contact-information__main .submit-button .submit-input {
-  background: #232A5F;
-  padding: 10px 60px 10px 30px;
+.trail-main__wrapper .contact-information__main .free_trail-button .button-sub {
+  background: #232a5f;
+  padding: 10px 30px 10px 0px;
+  width: 170px;
   color: white;
-  border-radius: 5%;
   border: none;
   height: inherit;
-  width: inherit;
   cursor: pointer;
+  display: grid;
+  place-content: center;
 }
-.trail-main__wrapper .contact-information__main .submit-button .button-wrapper {
+.trail-main__wrapper .contact-information__main .free_trail-button .submit-btn {
   position: relative;
 }
-.trail-main__wrapper .contact-information__main .submit-button .button-wrapper span {
+.trail-main__wrapper .contact-information__main .free_trail-button .submit-btn span {
   position: absolute;
-  top: 15px;
+  top: 14px;
   right: 25px;
   color: white;
   cursor: pointer;
+}
+.trail-main__wrapper .contact-information__main .free_trail-button .submit-btn .loader {
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: an1 1s ease infinite;
+          animation: an1 1s ease infinite;
+}
+@-webkit-keyframes an1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes an1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }
 .trail-main__wrapper .previous-button:hover {
   color: rgb(122, 128, 189);

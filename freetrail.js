@@ -6,6 +6,23 @@ let contact_information = document.querySelector(".contact-information__main");
 let serveice_button = document.getElementById('serveice-button')
 let upload_button = document.getElementById('upload-button')
 
+//submit button animation
+
+let submit_button = document.querySelector('.button-sub')
+let contact_input = document.querySelectorAll('.contact-input')
+let arrow = document.querySelector('.arrow')
+submit_button.onclick = function (){
+	if(contact_input[0].value !== ""){
+		this.innerHTML = "<div class='loader'></div>"
+		arrow.style.display = "none"
+		setTimeout(()=>{
+			window.location.reload();
+		}, 1500)
+	
+	}
+
+}
+
 
 const progressbarClick = (i) => {
 	return (e) => {
