@@ -55,3 +55,16 @@ function calculatePrice(formId) {
     }
   }
 }
+
+
+// function activeCalculator(wrapperID) {
+//   let wrapper = document.getElementById(wrapperID)
+//   let all_classes = wrapper.classList
+//   if (all_classes.indexOf('calculator-active')) {
+//     console.log("Active")
+//   } else {
+//     console.log('Not active')
+//   }
+//   console.log(wrapper.classList.add('calculator-active'))
+// }
+
