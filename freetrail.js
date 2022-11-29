@@ -11,14 +11,20 @@ let upload_button = document.getElementById('upload-button')
 let submit_button = document.querySelector('.button-sub')
 let contact_input = document.querySelectorAll('.contact-input')
 let arrow = document.querySelector('.arrow')
-submit_button.onclick = function (){
-	if(contact_input[0].value !== ""){
-		this.innerHTML = "<div class='loader'></div>"
-		arrow.style.display = "none"
-		setTimeout(()=>{
-			window.location.reload();
-		}, 1500)
+submit_button.onclick = function (event){
+	if(contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== ""){
+		event.preventDefault();
+			this.innerHTML = "<div class='loader'></div>"
+			arrow.style.display = "none"
+			setTimeout(()=>{
+				// window.location.reload();
+				this.innerHTML = "Successful"
+				this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px"
+			}, 1500)
 	
+			setTimeout(()=>{
+				window.location.href = "https://studiometrodesk.com/thank-you-free-trial"
+			}, 2200)	
 	}
 
 }
