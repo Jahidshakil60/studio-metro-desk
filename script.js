@@ -18,20 +18,40 @@ let submit_btn = document.querySelector(".submit-btn");
 let barsectionpera = document.querySelectorAll('.item-name')
 let rightarrow = document.querySelector('.right-arrow')
 
+
+// tool tip functionality
+
+let tool_tip = document.querySelectorAll('.info-button-main')
+
 //submit button animation
 
 let submit_button = document.querySelector('.button-sub')
 let contact_input = document.querySelectorAll('.contact-input')
+let warning_text = document.querySelector('.warning-text')
 
-submit_button.onclick = function (){
-	if(contact_input[0].value !== ""){
-		this.innerHTML = "<div class='loader'></div>"
-		setTimeout(()=>{
-			window.location.reload();
-		}, 1000)
-	
+submit_button.onclick = function (event){
+	if(contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== "" ){
+		   if(contact_input[3].value !== "+1"){
+				event.preventDefault();
+				this.innerHTML = "<div class='loader'></div>"
+				setTimeout(()=>{
+					// window.location.reload();
+					this.innerHTML = "Successful"
+					this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px"
+				}, 1500)
+		
+				setTimeout(()=>{
+					window.location.href = "https://studiometrodesk.com/thank-you-get-quote"
+				}, 2200)	
+
+			}else{
+				event.preventDefault();
+				warning_text.style.visibility= 'visible'
+				setTimeout(()=>{
+					warning_text.style.visibility= 'hidden'
+				},1000)
+			}
 	}
-
 }
 
 // previousbutton.style.display = "none";
