@@ -1,7 +1,6 @@
 function calculatePrice(formId) {
   let form = document.getElementById(formId);
-  console.log(formId)
-  let total_price = 0;
+  let total_price = 0.0;
   let numbers = {
     quantity: null,
     rate: null,
@@ -23,31 +22,34 @@ function calculatePrice(formId) {
       } else {
         field = document.getElementById(formId + "MainField");
         form_calculator = document.getElementById(formId + "Wrap");
-        console.log(field.value)
         if (field.value > 0) {
-          console.log(form[i]);
-          form[i].classList.add("filledup-button--active");
+          // form[i].classList.add("filledup-button--active");
           form_calculator.classList.add("filledup-text--active");
           form_calculator.classList.add("filledup-bg--active");
         } else {
-          form[i].classList.remove("filledup-button--active");
+          // form[i].classList.remove("filledup-button--active");
           form_calculator.classList.remove("filledup-text--active");
           form_calculator.classList.remove("filledup-bg--active");
         }
       }
     }
   }
-  let service_rate = Number(numbers.rate) + Number(numbers.service);
-  total_price = numbers.quantity * service_rate;
-  total_price = total_price + total_price * (numbers.time / 100);
-  total_price = total_price.toFixed(2);
-  if (form) {
-    if (form.children) {
-      for (let k = 0; k <= form.children.length; k++) {
-        if (form.children[k]) {
-          if (form.children[k].children) {
-            if (form.children[k].children.totalOutput) {
-              form.children[k].children.totalOutput.innerHTML = "$" + total_price;
+  if (numbers.quantity && numbers.rate && numbers.service && numbers.time != 'a') {
+    let service_rate = Number(numbers.rate) + Number(numbers.service);
+    total_price = numbers.quantity * service_rate;
+    total_price = total_price + total_price * (numbers.time / 100);
+    total_price = total_price.toFixed(2);
+    form[4].classList.add("filledup-button--active");
+
+
+    if (form) {
+      if (form.children) {
+        for (let k = 0; k <= form.children.length; k++) {
+          if (form.children[k]) {
+            if (form.children[k].children) {
+              if (form.children[k].children.totalOutput) {
+                form.children[k].children.totalOutput.innerHTML = "$" + total_price;
+              }
             }
           }
         }
