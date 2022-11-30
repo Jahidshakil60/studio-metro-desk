@@ -1,5 +1,5 @@
 .get-quote-page__herosection {
-  background-image: url(/img/test.png), linear-gradient(#FAFAFA, #FAFAFA);
+  background-image: url(/img/test.png), linear-gradient(#fafafa, #fafafa);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -17,11 +17,27 @@
   font-size: 60px;
   line-height: 80px;
 }
+@media only screen and (max-width : 480px) {
+  .get-quote-page__herosection .herosection-main .herosection-main__text h1 {
+    font-size: 36px;
+    padding: 40px 0px 12px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
 .get-quote-page__herosection .herosection-main .herosection-main__text p {
   font-size: 20px;
   line-height: 27px;
   margin-top: 25px;
   color: #313030;
+}
+@media only screen and (max-width : 480px) {
+  .get-quote-page__herosection .herosection-main .herosection-main__text p {
+    text-align: center;
+    margin: 10px 0 40px 0;
+    line-height: 27px;
+    font-size: 18px;
+  }
 }
 .get-quote-page__herosection .herosection-main .herosection-main__image {
   flex: 1;
@@ -29,4 +45,22 @@
 .get-quote-page__herosection .herosection-main .herosection-main__image img {
   width: 80%;
   margin-left: 80px;
+}
+@media only screen and (max-width : 480px) {
+  .get-quote-page__herosection .herosection-main .herosection-main__image img {
+    margin-left: inherit;
+    width: 100%;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .get-quote-page__herosection .herosection-main {
+    display: block;
+    padding: 0px 20px 30px 20px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .get-quote-page__herosection {
+    font-size: 24px;
+  }
 }/*# sourceMappingURL=herosection.css.map */

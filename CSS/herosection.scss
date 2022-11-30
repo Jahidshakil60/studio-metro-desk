@@ -1,36 +1,59 @@
+$media-mobile-sm: "only screen and (max-width : 480px)";
 .get-quote-page__herosection {
-   
-    background-image: url(/img/test.png),linear-gradient(#FAFAFA,#FAFAFA);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-   
-   
+	background-image: url(/img/test.png), linear-gradient(#fafafa, #fafafa);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+
 	.herosection-main {
 		display: flex;
 		gap: 100px;
-        padding: 80px 0 60px 0;
+		padding: 80px 0 60px 0;
 		.herosection-main__text {
 			flex: 1;
 			h1 {
 				font-size: 60px;
 				line-height: 80px;
+				@media #{$media-mobile-sm} {
+					font-size: 36px;
+					padding: 40px 0px 12px;
+					line-height: 1.2;
+					text-align: center;
+				}
 			}
 			p {
 				font-size: 20px;
 				line-height: 27px;
 				margin-top: 25px;
 				color: #313030;
+				@media #{$media-mobile-sm} {
+					text-align: center;
+					margin: 10px 0 40px 0;
+					line-height: 27px;
+					font-size: 18px;
+				}
 			}
 		}
 		.herosection-main__image {
 			flex: 1;
-			img{
+			img {
 				width: 80%;
 				margin-left: 80px;
 				// height: 90%;
+				@media #{$media-mobile-sm} {
+					margin-left: inherit;
+					width: 100%;
+				}
 			}
 		}
+		@media #{$media-mobile-sm} {
+			display: block;
+			padding: 0px 20px 30px 20px;
+			width: 100%;
+		}
+	}
+	@media #{$media-mobile-sm} {
+		font-size: 24px;
 	}
 }
