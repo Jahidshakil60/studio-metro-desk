@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="./build/css/intlTelInput.css" />
 		<title>StudioMetroDesk</title>
 	</head>
-	<body>
+	<body onload="responsiveSection()">
 		<a href="freetrail.html">free trail</a>
 		<a href="price_page.html">Price Page</a>
 		<div class="get-quote-page">
@@ -54,15 +54,16 @@
 							</div>
 							<p class="item-name"></p>
 						</div>
+						<!-- this section is for mobile responsive view -->
 						<div class="mobile__formsection">
-							<div class="swiper mySwiper">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<div class="formsection-main__body">
-											<h4>What edits do you want to try?</h4>
-											<div>
-												<form action="" class="product-card-main">
-													<div class="product-card-main__item" value="Clipping path">
+							<div class="m-formsection-main__body">
+								<h4>What edits do you want to try?</h4>
+								<div>
+									<form action="" class="product-card-main">
+										<div class="swiper mySwiper">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item" value="Clipping path">
 														<div class="item-head">
 															<input type="radio" id="html" name="form" value="Clipping path" class="circle" />
 															<label for="html">Clipping path</label>
@@ -77,7 +78,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="product-card-main__item">
+												</div>
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item">
 														<div class="item-head">
 															<input type="radio" id="Multi_Clipping" name="form" value="Multi-Clipping Paths" class="circle" />
 															<label for="Multi_Clipping">Multi-Clipping Paths</label>
@@ -92,7 +95,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="product-card-main__item">
+												</div>
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item">
 														<div class="item-head">
 															<input type="radio" id="retouching" name="form" value="High End Retouching" class="circle" />
 															<label for="retouching">High End Retouching</label>
@@ -107,7 +112,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="product-card-main__item">
+												</div>
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item">
 														<div class="item-head">
 															<input type="radio" id="raster" name="form" value="Raster to Vector" class="circle" />
 															<label for="raster">Raster to Vector</label>
@@ -122,7 +129,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="product-card-main__item">
+												</div>
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item">
 														<div class="item-head">
 															<input type="radio" id="Embroidery" name="form" value="Embroidery Digitizing" class="circle" />
 															<label for="Embroidery">Embroidery Digitizing</label>
@@ -137,7 +146,9 @@
 															</div>
 														</div>
 													</div>
-													<div class="product-card-main__item">
+												</div>
+												<div class="swiper-slide">
+													<div class="m-product-card-main__item">
 														<div class="item-head">
 															<input type="radio" id="Masking" name="form" value="Model Hair Masking" class="circle" />
 															<label for="Masking">Model Hair Masking</label>
@@ -152,13 +163,15 @@
 															</div>
 														</div>
 													</div>
-												</form>
+												</div>
 											</div>
+											<div class="swiper-pagination"></div>
 										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 						</div>
+						<!-- end -->
 						<div class="sidebar-item-wrapper" id="delivery">
 							<div class="sidebar-item sidebar-item-single">
 								<p>2</p>
@@ -166,6 +179,82 @@
 							</div>
 							<p class="item-name"></p>
 						</div>
+						<!-- this section is for mobile responsive view -->
+						<div class="mobile-deliverysection">
+							<h4>When do you need your images back?</h4>
+							<div class="delivery-time__main">
+								<div class="swiper mySwiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide two-flex--item">
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="ASAP" name="time" value="1 Hr ASAP" class="circle" />
+													<label for="ASAP">1 Hr ASAP</label>
+												</div>
+											</div>
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="4_hour" name="time" value="4 HOUR" class="circle" />
+													<label for="4_hour">4 HOUR</label>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide two-flex--item">
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="10_hour" name="time" value="10 HOUR" class="circle" />
+													<label for="10_hour">10 HOUR</label>
+												</div>
+											</div>
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="20_hour" name="time" value="20 HOUR" class="circle" />
+													<label for="20_hour">20 HOUR</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="swiper-slide two-flex--item">
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="48_hour" name="time" value="48 HOUR" class="circle" />
+													<label for="48_hour">48 HOUR</label>
+												</div>
+											</div>
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="72_hour" name="time" value="72 HOUR" class="circle" />
+													<label for="72_hour">72 HOUR</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="swiper-slide two-flex--item">
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="92_hour" name="time" value="92 HOUR" class="circle" />
+													<label for="92_hour">92 HOUR</label>
+												</div>
+											</div>
+											<div class="m-product-card-main__item">
+												<div class="item-head">
+													<input type="radio" id="7_days" name="time" value="7 DAYS" class="circle" />
+													<label for="7_days">7 DAYS</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-pagination"></div>
+								</div>
+								<div class="delivery-time__commentsection">
+									<h2>Additional Comment</h2>
+									<div class="textarea">
+										<textarea name="" id="" cols="" rows="9" placeholder="Please share any specific instructions for your edits"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end -->
 						<div class="sidebar-item-wrapper">
 							<div class="sidebar-item sidebar-item-single">
 								<p>3</p>
@@ -173,12 +262,73 @@
 							</div>
 							<p class="image_number item-name"></p>
 						</div>
+						<!-- this section is for mobile responsive view -->
+						<div class="mobile-imageupload">
+							<h3>Upload Your Images</h3>
+							<div class="drag-area">
+								<div class="drag-area__btn">
+									<header>Drag & drop files here or</header>
+									<button>Browse File</button>
+								</div>
+								<input
+									id="files"
+									type="file"
+									multiple="multiple"
+									accept="image/jpeg, image/png, image/jpg, application/pdf"
+									class="image-input"
+									hidden
+								/>
+								<!-- <output > -->
+								<div id="result"></div>
+							</div>
+						</div>
+						<!-- end -->
 						<div class="sidebar-item-wrapper">
 							<div class="sidebar-item">
 								<p>4</p>
 								<h6>CONTACT INFORMATION</h6>
 							</div>
 							<p class="item-name"></p>
+						</div>
+						<!-- this section is for mobile responsive view -->
+						<div class="contact-information mobile-contact__information">
+							<h3>Let us know where to send your edits</h3>
+							<div class="contact-information__main">
+								<form action="">
+									<div class="common-flex-section">
+										<div class="primaryinput-container">
+											<label for="">What's your first name? <span class="label_star">*</span> </label>
+											<input type="text" placeholder="Your first name" required class="contact-input" />
+										</div>
+										<div class="primaryinput-container">
+											<label for="">What's your last name? <span class="label_star">*</span></label>
+											<input type="text" placeholder="Your last name" required class="contact-input" />
+										</div>
+									</div>
+									<div class="common-flex-section">
+										<div class="primaryinput-container">
+											<label for="">What's your email? <span class="label_star">*</span></label>
+											<input type="email" placeholder="Your email address" required class="contact-input" />
+										</div>
+										<div class="primaryinput-container phone-container">
+											<div class="phone-label">
+												<label for="">What's your phone number? <span class="label_star">*</span></label>
+											</div>
+											<input type="tel" id="phone" placeholder="Your phone number" value="+1" required class="contact-input" />
+											<div class="tooltip">
+												<p class="warning-text"><span class="material-symbols-outlined"> assignment_late </span>Please fill out this field</p>
+											</div>
+										</div>
+									</div>
+									<div class="message-section">
+										<label for="">Message</label>
+										<textarea name="" id="" cols="30" rows="7" placeholder="Type here"></textarea>
+									</div>
+									<div class="submit-btn">
+										<button type="submit" class="button-sub">SUBMIT YOUR QUOTE NOW</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 					<div class="form-container">
@@ -338,8 +488,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="upload-image">
-							<h3 onclick="imageupload()">Upload Your Images</h3>
+						<div class="upload-image desktop-imgupload">
+							<h3>Upload Your Images</h3>
 							<!-- <div class="upload-image__image-fild">
 								 <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" multiple="multiple"> -->
 							<!-- <label for="files">Browse...</label> -->
@@ -365,7 +515,7 @@
 							</div>
 						</div>
 
-						<div class="contact-information">
+						<div class="contact-information desktop-contact__information">
 							<h3>Let us know where to send your edits</h3>
 							<div class="contact-information__main">
 								<form action="">
@@ -510,6 +660,8 @@
 		<!-- Initialize Swiper -->
 		<script>
 			var swiper = new Swiper(".mySwiper", {
+				spaceBetween: 30,
+				slidesPerView: 1.2,
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true,

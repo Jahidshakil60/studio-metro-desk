@@ -71,6 +71,9 @@
   display: flex;
   gap: 50px;
   margin-bottom: 50px;
+  /* Tooltip container */
+  /* Tooltip text */
+  /* Show the tooltip text when you mouse over the tooltip container */
 }
 .get-quote-page__formsection .formsection-main .formsection-main__sidebar {
   flex: 1;
@@ -147,32 +150,42 @@
     display: none;
   }
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body {
-  /* Tooltip container */
-  /* Tooltip text */
-  /* Show the tooltip text when you mouse over the tooltip container */
-}
-.get-quote-page__formsection .formsection-main .formsection-main__body h4 {
+.get-quote-page__formsection .formsection-main h4 {
   font-size: 20px;
   margin-bottom: 25px;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main {
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .formsection-main h4 {
+    margin: 25px 0 15px 0;
+  }
+}
+.get-quote-page__formsection .formsection-main .product-card-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 23px;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .item-image {
+.get-quote-page__formsection .formsection-main .product-card-main .item-image {
   overflow: hidden;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .product-card-main .item-image img {
+.get-quote-page__formsection .formsection-main .product-card-main .item-image img {
   width: 100%;
   height: 100%;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .tooltip {
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .formsection-main .product-card-main .item-image img {
+    height: 216px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .formsection-main .product-card-main {
+    display: block;
+  }
+}
+.get-quote-page__formsection .formsection-main .tooltip {
   position: relative;
   display: inline-block;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .tooltip .tooltiptext {
+.get-quote-page__formsection .formsection-main .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: rgba(85, 85, 85, 0.685);
@@ -187,7 +200,7 @@
   right: -3px;
   bottom: -40px;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .tooltip .tooltiptext::after {
+.get-quote-page__formsection .formsection-main .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -197,7 +210,7 @@
   border-style: solid;
   border-color: transparent transparent rgba(85, 85, 85, 0.685) transparent;
 }
-.get-quote-page__formsection .formsection-main .formsection-main__body .tooltip:hover .tooltiptext {
+.get-quote-page__formsection .formsection-main .tooltip:hover .tooltiptext {
   visibility: visible;
 }
 .get-quote-page__formsection .formsection-main .delivery-time {
@@ -318,40 +331,52 @@
   cursor: pointer;
   padding: 0;
 }
-.get-quote-page__formsection .formsection-main .contact-information {
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .formsection-main {
+    display: block;
+    width: 100%;
+  }
+}
+.get-quote-page__formsection .contact-information {
   display: none;
   /* Tooltip container */
   /* Tooltip text */
   /* Show the tooltip text when you mouse over the tooltip container */
 }
-.get-quote-page__formsection .formsection-main .contact-information .common-flex-section {
+.get-quote-page__formsection .contact-information .common-flex-section {
   display: flex;
   width: 100%;
   justify-content: space-between;
   gap: 85px;
   margin-top: 30px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .common-flex-section .primaryinput-container {
+.get-quote-page__formsection .contact-information .common-flex-section .primaryinput-container {
   flex: 1;
 }
-.get-quote-page__formsection .formsection-main .contact-information .common-flex-section .primaryinput-container .label_star {
+.get-quote-page__formsection .contact-information .common-flex-section .primaryinput-container .label_star {
   color: red;
   margin-left: 8px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .common-flex-section .primaryinput-container .phone-label {
+.get-quote-page__formsection .contact-information .common-flex-section .primaryinput-container .phone-label {
   margin-bottom: 13px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .common-flex-section .phone-container {
+.get-quote-page__formsection .contact-information .common-flex-section .phone-container {
   display: flex;
   flex-direction: column;
 }
-.get-quote-page__formsection .formsection-main .contact-information .message-section {
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .contact-information .common-flex-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.get-quote-page__formsection .contact-information .message-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 30px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .message-section textarea {
+.get-quote-page__formsection .contact-information .message-section textarea {
   background: #fafafa;
   border: none;
   outline: none;
@@ -359,7 +384,7 @@
   padding: 15px 25px;
   font-size: 18px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .contact-input {
+.get-quote-page__formsection .contact-information .contact-input {
   border: none;
   outline: none;
   background: #f2f2f2;
@@ -370,10 +395,10 @@
   font-size: 18px;
   margin-top: 13px;
 }
-.get-quote-page__formsection .formsection-main .contact-information #phone {
+.get-quote-page__formsection .contact-information #phone {
   padding-left: 50px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn {
+.get-quote-page__formsection .contact-information .submit-btn {
   position: relative;
   position: absolute;
   bottom: 10px;
@@ -381,7 +406,7 @@
   display: none;
   font-size: 18px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn .button-sub {
+.get-quote-page__formsection .contact-information .submit-btn .button-sub {
   border-left: inherit;
   width: inherit;
   background: #232a5f;
@@ -394,7 +419,7 @@
   display: grid;
   place-content: center;
 }
-.get-quote-page__formsection .formsection-main .contact-information .submit-btn .loader {
+.get-quote-page__formsection .contact-information .submit-btn .loader {
   pointer-events: none;
   width: 25px;
   height: 25px;
@@ -420,11 +445,19 @@
     transform: rotate(1turn);
   }
 }
-.get-quote-page__formsection .formsection-main .contact-information .tooltip {
+@media only screen and (max-width : 480px) {
+  .get-quote-page__formsection .contact-information .submit-btn {
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+.get-quote-page__formsection .contact-information .tooltip {
   position: relative;
   display: inline-block;
 }
-.get-quote-page__formsection .formsection-main .contact-information .tooltip .warning-text {
+.get-quote-page__formsection .contact-information .tooltip .warning-text {
   visibility: hidden;
   width: 63%;
   background-color: rgb(255, 255, 255);
@@ -444,7 +477,7 @@
   top: 10px;
   border: 0.3px solid #000;
 }
-.get-quote-page__formsection .formsection-main .contact-information .tooltip .warning-text::after {
+.get-quote-page__formsection .contact-information .tooltip .warning-text::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -454,23 +487,157 @@
   border-style: solid;
   border-color: transparent transparent rgb(221, 221, 221) transparent;
 }
-.get-quote-page__formsection .formsection-main .contact-information .tooltip .warning-text span {
+.get-quote-page__formsection .contact-information .tooltip .warning-text span {
   margin: 0;
   padding: 0;
   color: orange;
   font-size: 28px;
 }
-.get-quote-page__formsection .formsection-main .contact-information .tooltip .warning-text .material-symbols-outlined {
+.get-quote-page__formsection .contact-information .tooltip .warning-text .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 @media only screen and (max-width : 480px) {
-  .get-quote-page__formsection .formsection-main {
+  .get-quote-page__formsection .contact-information {
     display: block;
-    width: 100%;
+    margin: 30px 0;
   }
 }
 @media only screen and (max-width : 480px) {
   .get-quote-page__formsection {
     width: 100%;
   }
+}
+
+.mobile__formsection {
+  display: none;
+  margin-bottom: 30px;
+}
+.mobile__formsection .m-product-card-main__item:hover img {
+  transform: scale(1.1);
+}
+
+.mobile-deliverysection {
+  display: none;
+  margin-bottom: 30px;
+}
+.mobile-deliverysection .two-flex--item {
+  display: flex;
+  gap: 15px;
+}
+.mobile-deliverysection .m-product-card-main__item {
+  padding: 0;
+}
+.mobile-deliverysection .m-product-card-main__item .item-head {
+  padding: 20px 0 20px 12px;
+}
+.mobile-deliverysection .delivery-time__commentsection {
+  margin-top: 20px;
+}
+.mobile-deliverysection .delivery-time__commentsection textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.mobile-imageupload {
+  margin: 25px 0 35px 0;
+  display: none;
+}
+.mobile-imageupload .drag-area {
+  width: 95%;
+  border: 2px dashed rgba(122, 128, 189, 0.8);
+  outline: #fafafa solid 8px;
+  height: 350px;
+  border-radius: 5px;
+  background: #fafafa;
+  position: relative;
+  padding: 15px;
+  margin: 20px auto 0;
+  filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.mobile-imageupload .drag-area .active {
+  border: 2px solid #fff;
+}
+.mobile-imageupload .drag-area #result {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  margin-top: -40px;
+}
+.mobile-imageupload .drag-area img {
+  height: 100px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.mobile-imageupload .drag-area .button-container {
+  position: relative;
+  width: 100%;
+}
+.mobile-imageupload .drag-area .button-container .image_button {
+  background: black;
+  color: white;
+  height: 22px;
+  width: 22px;
+  border: 0.5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  font-size: 18px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: inherit;
+}
+.mobile-imageupload .drag-area .button-container .image_button:hover {
+  transform: rotate(45deg) scale(1.2);
+}
+.mobile-imageupload .drag-area .drag-area__btn {
+  font-size: 15px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.9294117647);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  z-index: 2;
+  cursor: pointer;
+}
+.mobile-imageupload .drag-area .drag-area__btn header {
+  color: #8b8b8b;
+}
+.mobile-imageupload .drag-area .drag-area__btn button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: rgba(86, 96, 206, 0.7803921569);
+  cursor: pointer;
+  padding: 0;
+}
+
+.m-product-card-main__item {
+  width: 100%;
+  background: #fafafa;
+  border-radius: 5px;
+  filter: drop-shadow(0px 1px 2px rgba(122, 128, 189, 0.3));
+  padding: 0 12px 20px 12px;
+  position: relative;
+}
+.m-product-card-main__item:hover {
+  outline: 1px solid #4e527b;
+  box-shadow: 0px 0px 15px 2px rgba(122, 128, 189, 0.35);
 }/*# sourceMappingURL=formsection.css.map */

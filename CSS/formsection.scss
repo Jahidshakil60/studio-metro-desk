@@ -145,60 +145,70 @@ $media-mobile-sm: "only screen and (max-width : 480px)";
 			}
 		}
 		.formsection-main__body {
-			h4 {
-				font-size: 20px;
-				margin-bottom: 25px;
+		}
+		h4 {
+			font-size: 20px;
+			margin-bottom: 25px;
+			@media #{$media-mobile-sm} {
+				margin: 25px 0 15px 0;
 			}
-			.product-card-main {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 23px;
+		}
+		.product-card-main {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 23px;
 
-				.item-image {
-					overflow: hidden;
-					img {
-						width: 100%;
-						height: 100%;
+			.item-image {
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 100%;
+					@media #{$media-mobile-sm} {
+						height: 216px;
 					}
 				}
 			}
-			/* Tooltip container */
-			.tooltip {
-				position: relative;
-				display: inline-block;
-			}
-
-			/* Tooltip text */
-			.tooltip .tooltiptext {
-				visibility: hidden;
-				width: 120px;
-				background-color: rgba(85, 85, 85, 0.685);
-				color: #fff;
-				text-align: center;
-				padding: 5px 0;
-				border-radius: 6px;
-				font-size: 14px;
-				/* Position the tooltip text - see examples below! */
-				position: absolute;
-				z-index: 1;
-				right: -3px;
-				bottom: -40px;
-				&::after {
-					content: "";
-					position: absolute;
-					bottom: 100%;
-					right: 8px;
-					margin-left: -5px;
-					border-width: 5px;
-					border-style: solid;
-					border-color: transparent transparent  rgba(85, 85, 85, 0.685) transparent;
-				}
-			}
-			/* Show the tooltip text when you mouse over the tooltip container */
-			.tooltip:hover .tooltiptext {
-				visibility: visible;
+			@media #{$media-mobile-sm} {
+				display: block;
 			}
 		}
+		/* Tooltip container */
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+
+		/* Tooltip text */
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: rgba(85, 85, 85, 0.685);
+			color: #fff;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+			font-size: 14px;
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+			right: -3px;
+			bottom: -40px;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 100%;
+				right: 8px;
+				margin-left: -5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: transparent transparent rgba(85, 85, 85, 0.685) transparent;
+			}
+		}
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+
 		.delivery-time {
 			display: none;
 			h4 {
@@ -327,170 +337,311 @@ $media-mobile-sm: "only screen and (max-width : 480px)";
 			}
 		}
 
-		.contact-information {
-			display: none;
-			.common-flex-section {
-				display: flex;
-				width: 100%;
-				justify-content: space-between;
-				gap: 85px;
-				margin-top: 30px;
-				.primaryinput-container {
-					flex: 1;
-					// display: flex;
-					// flex-direction: column;
-					// gap: 13px;
-					.label_star{
-						color: red;
-						margin-left: 8px;
-					}
-					.phone-label{
-						margin-bottom: 13px;
-					}
-				}
-				.phone-container{
-					display: flex;
-					flex-direction: column;
-				}
-			}
-			.message-section {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-				margin-top: 30px;
-				textarea {
-					background: #fafafa;
-					border: none;
-					outline: none;
-					border-left: 1px solid #9095ca;
-					padding: 15px 25px;
-					font-size: 18px;
-				}
-			}
-			.contact-input {
-				border: none;
-				outline: none;
-				background: #f2f2f2;
-				width: 100%;
-				height: inherit;
-				padding: 17px 25px;
-				border-left: 1px solid #9095ca;
-				font-size: 18px;
-				margin-top: 13px;
-			}
-			#phone {
-				padding-left: 50px;
-			}
-			.submit-btn {
-				position: relative;
-				position: absolute;
-				bottom: 10px;
-				right: 20px;
-				display: none;
-				font-size: 18px;
-				.button-sub {
-					border-left: inherit;
-					width: inherit;
-					background: #232a5f;
-					padding: 10px;
-					width: 270px;
-					color: white;
-					border: none;
-					height: inherit;
-					cursor: pointer;
-					display: grid;
-					place-content: center;
-				}
-
-				.loader {
-					pointer-events: none;
-					width: 25px;
-					height: 25px;
-					border-radius: 50%;
-					border: 3px solid transparent;
-					border-top-color: #fff;
-					animation: an1 1s ease infinite;
-				}
-
-				@keyframes an1 {
-					0% {
-						transform: rotate(0turn);
-					}
-					100% {
-						transform: rotate(1turn);
-					}
-				}
-			}
-					/* Tooltip container */
-					.tooltip {
-						position: relative;
-						display: inline-block;
-					}
-		
-					/* Tooltip text */
-					.tooltip .warning-text {
-						visibility: hidden;
-						width: 63%;
-						background-color: rgb(255, 255, 255);
-						color: #000;
-						text-align: center;
-						padding: 10px 10px;
-						border-radius: 6px;
-						font-size: 14px;
-						box-shadow: 4px 5px 10px  #ccc;
-						display: flex;
-						align-items: center;
-						gap: 5px;
-						/* Position the tooltip text - see examples below! */
-						position: absolute;
-						z-index: 1;
-						left: 20%;
-						top: 10px;
-						border: 0.3px solid #000;
-						&::after {
-							content: "";
-							position: absolute;
-							bottom: 100%;
-							left: 15%;
-							margin-left: -5px;
-							border-width: 8px;
-							border-style: solid;
-							border-color: transparent transparent  rgb(221, 221, 221) transparent;
-							
-						}
-						span{
-							margin: 0;
-							padding: 0;
-							color: orange;
-							font-size: 28px;
-						}
-						.material-symbols-outlined {
-							font-variation-settings:
-							'FILL' 1,
-							'wght' 400,
-							'GRAD' 0,
-							'opsz' 48
-						  }
-					}
-					/* Show the tooltip text when you mouse over the tooltip container */
-					.tooltip:hover .tooltiptext {
-						// visibility: visible;
-					}
-		}
 		@media #{$media-mobile-sm} {
 			// margin: 50px 20px 0 20px;
 			display: block;
 			width: 100%;
 		}
 	}
+
+	.contact-information {
+		display: none;
+		.common-flex-section {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			gap: 85px;
+			margin-top: 30px;
+			.primaryinput-container {
+				flex: 1;
+				// display: flex;
+				// flex-direction: column;
+				// gap: 13px;
+				.label_star {
+					color: red;
+					margin-left: 8px;
+				}
+				.phone-label {
+					margin-bottom: 13px;
+				}
+			}
+			.phone-container {
+				display: flex;
+				flex-direction: column;
+			}
+			@media #{$media-mobile-sm} {
+				flex-direction: column;
+				gap: 15px;
+			}
+		}
+		.message-section {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			margin-top: 30px;
+			textarea {
+				background: #fafafa;
+				border: none;
+				outline: none;
+				border-left: 1px solid #9095ca;
+				padding: 15px 25px;
+				font-size: 18px;
+			}
+		}
+		.contact-input {
+			border: none;
+			outline: none;
+			background: #f2f2f2;
+			width: 100%;
+			height: inherit;
+			padding: 17px 25px;
+			border-left: 1px solid #9095ca;
+			font-size: 18px;
+			margin-top: 13px;
+		}
+		#phone {
+			padding-left: 50px;
+		}
+		.submit-btn {
+			position: relative;
+			position: absolute;
+			bottom: 10px;
+			right: 20px;
+			display: none;
+			font-size: 18px;
+			.button-sub {
+				border-left: inherit;
+				width: inherit;
+				background: #232a5f;
+				padding: 10px;
+				width: 270px;
+				color: white;
+				border: none;
+				height: inherit;
+				cursor: pointer;
+				display: grid;
+				place-content: center;
+			}
+
+			.loader {
+				pointer-events: none;
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #fff;
+				animation: an1 1s ease infinite;
+			}
+
+			@keyframes an1 {
+				0% {
+					transform: rotate(0turn);
+				}
+				100% {
+					transform: rotate(1turn);
+				}
+			}
+			@media #{$media-mobile-sm} {
+				position: inherit;
+				display: flex;
+				justify-content: center;
+				margin-top: 30px;
+
+			}
+		}
+		/* Tooltip container */
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+
+		/* Tooltip text */
+		.tooltip .warning-text {
+			visibility: hidden;
+			width: 63%;
+			background-color: rgb(255, 255, 255);
+			color: #000;
+			text-align: center;
+			padding: 10px 10px;
+			border-radius: 6px;
+			font-size: 14px;
+			box-shadow: 4px 5px 10px #ccc;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			/* Position the tooltip text - see examples below! */
+			position: absolute;
+			z-index: 1;
+			left: 20%;
+			top: 10px;
+			border: 0.3px solid #000;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 100%;
+				left: 15%;
+				margin-left: -5px;
+				border-width: 8px;
+				border-style: solid;
+				border-color: transparent transparent rgb(221, 221, 221) transparent;
+			}
+			span {
+				margin: 0;
+				padding: 0;
+				color: orange;
+				font-size: 28px;
+			}
+			.material-symbols-outlined {
+				font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+			}
+		}
+		/* Show the tooltip text when you mouse over the tooltip container */
+		.tooltip:hover .tooltiptext {
+			// visibility: visible;
+		}
+		@media #{$media-mobile-sm} {
+			display: block;
+			margin: 30px 0;
+		}
+	}
+
 	@media #{$media-mobile-sm} {
 		width: 100%;
 	}
+}
 
 
-	// mobile form-section
+// mobile form-section
 
-	.mobile__formsection{
-		// display: none;
+.mobile__formsection {
+	display: none;
+	margin-bottom: 30px;
+	.m-product-card-main__item:hover img {
+		transform: scale(1.1);
+	}
+}
+.mobile-deliverysection {
+	display: none;
+	margin-bottom: 30px;
+	.two-flex--item {
+		display: flex;
+		gap: 15px;
+	}
+	.m-product-card-main__item {
+		padding: 0;
+		.item-head{
+			padding: 20px 0 20px 12px;
+		}
+	}
+	.delivery-time__commentsection{
+		margin-top: 20px;
+		textarea {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			margin-top: 15px;
+		}
+	}
+}
+.mobile-imageupload {
+	margin: 25px 0 35px 0;
+	display: none;
+	.drag-area {
+		width: 95%;
+		border: 2px dashed #7a80bdcc;
+		outline: #fafafa solid 8px;
+		height: 350px;
+		border-radius: 5px;
+		background: #fafafa;
+		position: relative;
+		padding: 15px;
+		margin: 20px auto 0;
+		filter: drop-shadow(0px 1px 4px rgba(122, 128, 189, 0.35));
+		overflow-y: scroll;
+		overflow-x: hidden;
+
+		.active {
+			border: 2px solid #fff;
+		}
+		#result {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 15px;
+			width: 100%;
+			margin-top: -40px;
+		}
+		img {
+			height: 100px;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 5px;
+		}
+		.button-container {
+			position: relative;
+			width: 100%;
+			.image_button {
+				background: black;
+				color: white;
+				height: 22px;
+				width: 22px;
+				border: 0.5px solid white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				transform: rotate(45deg);
+				font-size: 18px;
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				padding: inherit;
+				&:hover {
+					transform: rotate(45deg) scale(1.2);
+				}
+			}
+		}
+		.drag-area__btn {
+			font-size: 15px;
+			padding: 5px 5px;
+			border-radius: 5px;
+			background: #fafafaed;
+			box-shadow: 0px 1px 5px 2px rgb(0 0 0 / 10%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+			position: sticky;
+			top: 50%;
+			left: 50%;
+			transform: translate(0, -50%);
+			z-index: 2;
+			cursor: pointer;
+
+			header {
+				color: #8b8b8b;
+			}
+			button {
+				background: none;
+				border: none;
+				font-size: 18px;
+				color: #5660cec7;
+				cursor: pointer;
+				padding: 0;
+				// padding: inherit;
+			}
+		}
+	}
+}
+.m-product-card-main__item {
+	width: 100%;
+	background: #fafafa;
+	border-radius: 5px;
+	filter: drop-shadow(0px 1px 2px rgba(122, 128, 189, 0.3));
+	padding: 0 12px 20px 12px;
+	position: relative;
+
+	&:hover {
+		outline: 1px solid #4e527b;
+		box-shadow: 0px 0px 15px 2px rgba(122, 128, 189, 0.35);
 	}
 }
