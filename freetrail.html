@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="./build/css/intlTelInput.css" />
 		<title>Document</title>
 	</head>
-	<body>
+	<body onload="freetrailmobile()">
 		<div class="free-trailpage">
 			<div class="get-quote-page__herosection">
 				<div class="herosection-main body-main--frame">
@@ -40,16 +40,16 @@
 				<div class="body-main--frame">
 					<div class="arrow-progressbar">
 						<div class="arrow-progressbar__main">
-							<div class="choose-services progressbar-single active">Choose Your Services</div>
-							<div class="upload-image progressbar-single">Upload Your Images</div>
-							<div class="contact-information progressbar-single">Contact Informations</div>
+							<div class="choose-services progressbar-single active"><p>Choose Your Services</p></div>
+							<div class="upload-image progressbar-single"><p>Upload Your Images</p></div>
+							<div class="contact-information progressbar-single"><p>Contact Informations</p></div>
 						</div>
 					</div>
 					<div class="service-section__main">
 						<div class="formsection-main__body">
 							<h4>What edits do you want to try?</h4>
 							<div>
-								<form action="" class="product-card-main">
+								<form action="" class="product-card-main desktop-card-main">
 									<div class="product-card-main__item" value="Clipping path">
 										<div class="item-head">
 											<input type="radio" id="html" name="form" value="Clipping path" class="circle" />
@@ -141,12 +141,124 @@
 										</div>
 									</div>
 								</form>
+								<!-- for mobile responsive section -->
+								<form action="" class="product-card-main mobile-card-main">
+									<div class="swiper mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="product-card-main__item" value="Clipping path">
+													<div class="item-head">
+														<input type="radio" id="html" name="form" value="Clipping path" class="circle" />
+														<label for="html">Clipping path</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_1.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="product-card-main__item">
+													<div class="item-head">
+														<input type="radio" id="Multi_Clipping" name="form" value="Multi-Clipping Paths" class="circle" />
+														<label for="Multi_Clipping">Multi-Clipping Paths</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_2.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="product-card-main__item">
+													<div class="item-head">
+														<input type="radio" id="retouching" name="form" value="High End Retouching" class="circle" />
+														<label for="retouching">High End Retouching</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_3.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="product-card-main__item">
+													<div class="item-head">
+														<input type="radio" id="raster" name="form" value="Raster to Vector" class="circle" />
+														<label for="raster">Raster to Vector</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_4.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="product-card-main__item">
+													<div class="item-head">
+														<input type="radio" id="Embroidery" name="form" value="Embroidery Digitizing" class="circle" />
+														<label for="Embroidery">Embroidery Digitizing</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_5.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="product-card-main__item">
+													<div class="item-head">
+														<input type="radio" id="Masking" name="form" value="Model Hair Masking" class="circle" />
+														<label for="Masking">Model Hair Masking</label>
+													</div>
+													<div class="item-image">
+														<img src="img/card_6.jpg" alt="" />
+													</div>
+													<div class="info-button-main">
+														<div class="tooltip">
+															<span class="material-symbols-outlined"> info </span>
+															<span class="tooltiptext">Tooltip text</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-pagination"></div>
+									</div>
+								</form>
 							</div>
 						</div>
 						<div class="main-button">
 							<div></div>
 							<div class="next-btn">
-								<button class="right-arrow btn" id="serveice-button" onclick="nextSlide(1)">Next<span class="material-symbols-outlined"> east </span></button>
+								<button class="right-arrow btn" id="serveice-button" onclick="nextSlide(1)">
+									Next<span class="material-symbols-outlined"> east </span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -176,7 +288,9 @@
 								<span class="material-symbols-outlined"> west </span> Previous
 							</button>
 							<div></div>
-							<button class="next-btn btn" onclick="nextSlide(2)" id="upload-button">Next <span class="material-symbols-outlined"> east </span></button>
+							<button class="next-btn btn" onclick="nextSlide(2)" id="upload-button">
+								Next <span class="material-symbols-outlined"> east </span>
+							</button>
 						</div>
 					</div>
 					<div class="contact-information__main">
@@ -234,7 +348,7 @@
 								<div class="review-mainsection">
 									<p class="comment-section">
 										<img src="img/sign.png" alt="" />
-										   Wonderful service. Talented designers who are easy to work with. Will use Studio Metrodesk again. Will use Studio Metrodesk again.
+										Wonderful service. Talented designers who are easy to work with. Will use Studio Metrodesk again. Will use Studio Metrodesk again.
 										Talented designers who are easy to work with. Talented designers who are easy to work with.
 									</p>
 									<p class="review-mainsection__serveice">Clipping Path.Retouching</p>
@@ -310,17 +424,19 @@
 		</div>
 		<script src="./build/js/intlTelInput.js"></script>
 		<script src="freetrail.js"></script>
-			<!-- Swiper JS -->
-			<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-			<!-- Initialize Swiper -->
-			<script>
-				var swiper = new Swiper(".mySwiper", {
-					pagination: {
-						el: ".swiper-pagination",
-						clickable: true,
-					},
-				});
-			</script>
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+				spaceBetween: 30,
+				slidesPerView: 1.2,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			});
+		</script>
 	</body>
 </html>

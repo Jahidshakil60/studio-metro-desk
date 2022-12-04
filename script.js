@@ -7,11 +7,42 @@ function responsiveSection() {
 		let mobile__deliverysection = document.querySelector(".mobile-deliverysection");
 		let desktop__upload = document.querySelector(".desktop-imgupload");
 		let mobile__upload = document.querySelector(".mobile-imageupload");
-		let desktopcontact__information = document.querySelector('.desktop-contact__information')
+		let desktopcontact__information = document.querySelector(".desktop-contact__information");
+		let contactinformation = document.querySelector(".contact-information");
 
 		mobile__formsection.style.display = "block";
 		desktop__upload.remove();
-		desktopcontact__information.remove()
+		desktopcontact__information.remove();
+
+		//submit button animation
+
+		let submit_button = document.querySelector(".button-sub");
+		let contact_input = document.querySelectorAll(".contact-input");
+		let warning_text = document.querySelector(".warning-text");
+
+		submit_button.onclick = function (event) {
+			if (contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== "") {
+				if (contact_input[3].value !== "+1") {
+					event.preventDefault();
+					this.innerHTML = "<div class='loader'></div>";
+					setTimeout(() => {
+						// window.location.reload();
+						this.innerHTML = "Successful";
+						this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px";
+					}, 1500);
+
+					setTimeout(() => {
+						window.location.href = "https://studiometrodesk.com/thank-you-get-quote";
+					}, 2200);
+				} else {
+					event.preventDefault();
+					warning_text.style.visibility = "visible";
+					setTimeout(() => {
+						warning_text.style.visibility = "hidden";
+					}, 1000);
+				}
+			}
+		};
 		const some_func = (data) => {
 			return (e) => {
 				console.log();
@@ -32,8 +63,9 @@ function responsiveSection() {
 							mobile__formsection.style.display = "none";
 							contactinformation.style.display = "none";
 						} else if (data == 3) {
-							formsectionbody.style.display = "none";
-							uploadimage.style.display = "none";
+							mobile__formsection.style.display = "none";
+							mobile__upload.style.display = "none";
+							mobile__deliverysection.style.display = "none";
 							contactinformation.style.display = "block";
 							sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Plese fill up this form";
 						} else {
@@ -56,20 +88,6 @@ function responsiveSection() {
 		const mufunc = (product) => {
 			return (e) => {
 				cardBody[product].childNodes[1].childNodes[1].checked = true;
-				// if (barsectionpera.innerText !== "") {
-
-				// }
-				// console.log();
-				// if (cardBody[product].childNodes[1].childNodes[1].name == "form") {
-				// 	before.style.setProperty("--width", "300px");
-				// 	before.style.setProperty("--height", "300px");
-				// 	percentage.innerText = "25%";
-				// } else if (cardBody[product].childNodes[1].childNodes[1].name == "time") {
-				// 	before.style.setProperty("--width", "550px");
-				// 	before.style.setProperty("--height", "550px");
-				// 	percentage.innerText = "50%";
-				// }
-
 				if (sidebar[0].classList[1] == "active") {
 					sidebar[0].childNodes[3].innerHTML =
 						'<span class="material-symbols-outlined">check_circle</span>' + cardBody[product].childNodes[1].childNodes[1].value;
@@ -235,8 +253,9 @@ function responsiveSection() {
 		let active = document.querySelector(".active");
 		let inputimage = document.getElementById("image-input");
 		let mobile__upload = document.querySelector(".mobile-imageupload");
-		let mobilecontact__information = document.querySelector('.mobile-contact__information')
-
+		let mobilecontact__information = document.querySelector(".mobile-contact__information");
+		mobile__upload.remove();
+		mobilecontact__information.remove();
 		//for sidebar functionality//
 
 		let sidebar = document.getElementsByClassName("sidebar-item-wrapper");
@@ -251,9 +270,6 @@ function responsiveSection() {
 		let submit_btn = document.querySelector(".submit-btn");
 		let barsectionpera = document.querySelectorAll(".item-name");
 		let rightarrow = document.querySelector(".right-arrow");
-
-		mobile__upload.remove();
-		mobilecontact__information.remove()
 
 		// tool tip functionality
 
@@ -328,6 +344,7 @@ function responsiveSection() {
 							previousbutton.style.display = "block";
 							submit_btn.style.display = "block";
 							sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Plese fill up this form";
+							console.log(contactinformation);
 						} else {
 							formsectionbody.style.display = "block";
 							deliverytime.style.display = "none";

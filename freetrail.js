@@ -3,32 +3,67 @@ let cardBody = document.getElementsByClassName("product-card-main__item");
 let upload_image = document.querySelector(".upload-image__main");
 let servicesection = document.querySelector(".service-section__main");
 let contact_information = document.querySelector(".contact-information__main");
-let serveice_button = document.getElementById('serveice-button')
-let upload_button = document.getElementById('upload-button')
+let serveice_button = document.getElementById("serveice-button");
+let upload_button = document.getElementById("upload-button");
+
+// mobile responsive
+
+function freetrailmobile() {
+	if (screen.width < 480) {
+		let desktop_card = document.querySelector(".desktop-card-main");
+		desktop_card.remove();
+
+		const cardSelect = (i) => {
+			return (e) => {
+				console.log(i);
+				cardBody[i].childNodes[1].childNodes[1].checked = true;
+				serveice_button.style.color = "#7a80bd";
+			};
+		};
+		
+		for (let i = 0; i < cardBody.length; i++) {
+			cardBody[i].addEventListener("click", cardSelect(i));
+		}
+
+	} else {
+		let mobile_card = document.querySelector(".mobile-card-main");
+		mobile_card.remove();
+
+		const cardSelect = (i) => {
+			return (e) => {
+				console.log(i);
+				cardBody[i].childNodes[1].childNodes[1].checked = true;
+				serveice_button.style.color = "#7a80bd";
+			};
+		};
+		
+		for (let i = 0; i < cardBody.length; i++) {
+			cardBody[i].addEventListener("click", cardSelect(i));
+		}
+	}
+}
 
 //submit button animation
 
-let submit_button = document.querySelector('.button-sub')
-let contact_input = document.querySelectorAll('.contact-input')
-let arrow = document.querySelector('.arrow')
-submit_button.onclick = function (event){
-	if(contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== ""){
+let submit_button = document.querySelector(".button-sub");
+let contact_input = document.querySelectorAll(".contact-input");
+let arrow = document.querySelector(".arrow");
+submit_button.onclick = function (event) {
+	if (contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== "") {
 		event.preventDefault();
-			this.innerHTML = "<div class='loader'></div>"
-			arrow.style.display = "none"
-			setTimeout(()=>{
-				// window.location.reload();
-				this.innerHTML = "Successful"
-				this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px"
-			}, 1500)
-	
-			setTimeout(()=>{
-				window.location.href = "https://studiometrodesk.com/thank-you-free-trial"
-			}, 2200)	
+		this.innerHTML = "<div class='loader'></div>";
+		arrow.style.display = "none";
+		setTimeout(() => {
+			// window.location.reload();
+			this.innerHTML = "Successful";
+			this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px";
+		}, 1500);
+
+		setTimeout(() => {
+			window.location.href = "https://studiometrodesk.com/thank-you-free-trial";
+		}, 2200);
 	}
-
-}
-
+};
 
 const progressbarClick = (i) => {
 	return (e) => {
@@ -41,19 +76,6 @@ const progressbarClick = (i) => {
 
 for (let i = 0; i < progressbar.length; i++) {
 	progressbar[i].addEventListener("click", progressbarClick(i));
-}
-
-const cardSelect = (product) => {
-	return (e) => {
-		cardBody[product].childNodes[1].childNodes[1].checked = true;
-			serveice_button.style.color = "#7a80bd"
-			
-		
-	};
-};
-
-for (let i = 0; i < cardBody.length; i++) {
-	cardBody[i].addEventListener("click", cardSelect(i));
 }
 
 function nextSlide(i) {
@@ -74,7 +96,6 @@ function nextSlide(i) {
 		upload_image.style.display = "none";
 		contact_information.style.display = "none";
 	}
-	
 }
 
 function previousSlide(i) {
@@ -106,7 +127,7 @@ button.onclick = () => {
 input.addEventListener("change", function (event) {
 	file = this.files;
 	dropArea.classList.add("active");
-	serveice_button.style.color = "#7a80bd"
+	serveice_button.style.color = "#7a80bd";
 	let x = showFile(event); //calling function
 });
 
@@ -155,64 +176,64 @@ function showFile(e, file) {
 				button.classList.add("image_button");
 				button.innerText = "+";
 				div.appendChild(button);
-				if(output.children.length <3){
+				if (output.children.length < 3) {
 					output.appendChild(div);
-				}else{
-					alert('Please send up to 3 sample images with any level of complexity.')
+				} else {
+					alert("Please send up to 3 sample images with any level of complexity.");
 				}
 				const deleteImage = (i) => {
 					return (e) => {
-						classes = document.querySelectorAll('.button-container')
+						classes = document.querySelectorAll(".button-container");
 						output.removeChild(classes[i]);
-						upload_button.style.color = "#9e9e9e"
+						upload_button.style.color = "#9e9e9e";
 					};
 				};
 
 				for (let i = 0; i < delete_btn.length; i++) {
 					delete_btn[i].addEventListener("click", deleteImage(i));
 				}
-				upload_button.style.color = "#7a80bd"
+				upload_button.style.color = "#7a80bd";
 			};
 			fileReader.readAsDataURL(file);
 		} else {
 			const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
 
-				for (let i = 0; i < files.length; i++) {
-					// LOOP THROUGH THE FILE LIST OBJECT
-					if (!files[i].type.match("image.*|application.*")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
-					const picReader = new FileReader(); // RETRIEVE DATA URI
-					picReader.addEventListener("load", function (event) {
-						// LOAD EVENT FOR DISPLAYING PHOTOS
-						const picFile = event.target;
-						const div = document.createElement("div");
-						div.classList.add("button-container");
-						div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
-						button = document.createElement("button");
-						button.classList.add("image_button");
-						button.innerText = "+";
-						div.appendChild(button);
-						if(output.children.length <3){
-							output.appendChild(div);
-						}else{
-							alert('Please send up to 3 sample images with any level of complexity.')
-						}
-						console.log(output.children.length);
-						const deleteImage = (i) => {
-							return (e) => {
-								classes = document.querySelectorAll('.button-container')
-								output.removeChild(classes[i]);
-								upload_button.style.color = "#9e9e9e"
-							};
+			for (let i = 0; i < files.length; i++) {
+				// LOOP THROUGH THE FILE LIST OBJECT
+				if (!files[i].type.match("image.*|application.*")) continue; // ONLY PHOTOS (SKIP CURRENT ITERATION IF NOT A PHOTO)
+				const picReader = new FileReader(); // RETRIEVE DATA URI
+				picReader.addEventListener("load", function (event) {
+					// LOAD EVENT FOR DISPLAYING PHOTOS
+					const picFile = event.target;
+					const div = document.createElement("div");
+					div.classList.add("button-container");
+					div.innerHTML = `<img class="thumbnail" src="${picFile.result}" title="${picFile.name}"/>`;
+					button = document.createElement("button");
+					button.classList.add("image_button");
+					button.innerText = "+";
+					div.appendChild(button);
+					if (output.children.length < 3) {
+						output.appendChild(div);
+					} else {
+						alert("Please send up to 3 sample images with any level of complexity.");
+					}
+					console.log(output.children.length);
+					const deleteImage = (i) => {
+						return (e) => {
+							classes = document.querySelectorAll(".button-container");
+							output.removeChild(classes[i]);
+							upload_button.style.color = "#9e9e9e";
 						};
-	
-						for (let i = 0; i < delete_btn.length; i++) {
-							delete_btn[i].addEventListener("click", deleteImage(i));
-						}
-						upload_button.style.color = "#7a80bd"
-					});
-					picReader.readAsDataURL(files[i]); //READ THE IMAGE
-					// console.log(files[i]);
-				}
+					};
+
+					for (let i = 0; i < delete_btn.length; i++) {
+						delete_btn[i].addEventListener("click", deleteImage(i));
+					}
+					upload_button.style.color = "#7a80bd";
+				});
+				picReader.readAsDataURL(files[i]); //READ THE IMAGE
+				// console.log(files[i]);
+			}
 		}
 	} else {
 		alert("This is not an Image File!");

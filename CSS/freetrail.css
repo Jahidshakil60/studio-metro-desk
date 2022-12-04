@@ -1,7 +1,19 @@
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .body-main--frame {
+    width: inherit;
+  }
+}
 .trail-main__wrapper .arrow-progressbar {
   height: 50px;
   margin: 120px 0 40px 0;
   width: 95%;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar {
+    height: 80px;
+    margin: 50px 10px 20px 10px;
+    width: 85%;
+  }
 }
 .trail-main__wrapper .arrow-progressbar__main {
   display: flex;
@@ -26,6 +38,20 @@
   border-bottom: 26px solid transparent;
   border-left: 40px solid #dee1fa;
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar__main .progressbar-single::after {
+    border-top: 41px solid transparent;
+    border-bottom: 41px solid transparent;
+    border-left: 30px solid #dee1fa;
+    right: -28px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar__main .progressbar-single p {
+    margin-left: 30px;
+    font-size: 15px;
+  }
+}
 .trail-main__wrapper .arrow-progressbar__main .choose-services {
   flex: 1;
   background: #dee1fa;
@@ -44,6 +70,14 @@
   border-top: 26px solid transparent;
   border-bottom: 26px solid transparent;
   border-left: 40px solid #d6d9f3;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar__main .upload-image::after {
+    border-top: 41px solid transparent;
+    border-bottom: 41px solid transparent;
+    border-left: 30px solid #d6d9f3;
+    right: -28px;
+  }
 }
 .trail-main__wrapper .arrow-progressbar__main .contact-information {
   flex: 1;
@@ -64,8 +98,26 @@
   border-bottom: 25px solid transparent;
   border-left: 40px solid #7a80bd;
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar__main .active::after {
+    border-top: 41px solid transparent;
+    border-bottom: 41px solid transparent;
+    border-left: 30px solid #7a80bd;
+    right: -28px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .arrow-progressbar__main {
+    font-size: 15px;
+  }
+}
 .trail-main__wrapper .service-section__main {
   margin-bottom: 150px;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .service-section__main {
+    margin-bottom: 50px;
+  }
 }
 .trail-main__wrapper .formsection-main__body {
   /* Tooltip container */
@@ -75,6 +127,11 @@
 .trail-main__wrapper .formsection-main__body h4 {
   font-size: 20px;
   margin: 40px 0 25px 0;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .formsection-main__body h4 {
+    margin: 40px 0 15px 0;
+  }
 }
 .trail-main__wrapper .formsection-main__body .product-card-main {
   display: grid;
@@ -87,6 +144,16 @@
 .trail-main__wrapper .formsection-main__body .product-card-main .item-image img {
   width: 100%;
   height: 100%;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .formsection-main__body .product-card-main .item-image img {
+    height: 200px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .formsection-main__body .product-card-main {
+    display: block;
+  }
 }
 .trail-main__wrapper .formsection-main__body .tooltip {
   position: relative;
@@ -120,6 +187,11 @@
 .trail-main__wrapper .formsection-main__body .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .formsection-main__body {
+    margin: 0 10px;
+  }
+}
 .trail-main__wrapper .upload-image__main {
   display: none;
   margin-bottom: 150px;
@@ -128,6 +200,12 @@
   width: 50%;
   font-size: 20px;
   line-height: 27px;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main p {
+    width: inherit;
+    margin: 0 10px;
+  }
 }
 .trail-main__wrapper .upload-image__main .drag-area {
   border: 2px dashed rgba(122, 128, 189, 0.8);
@@ -145,6 +223,12 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   width: 100%;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main .drag-area .result {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 }
 .trail-main__wrapper .upload-image__main .drag-area img {
   height: 150px;
@@ -177,6 +261,11 @@
 .trail-main__wrapper .upload-image__main .drag-area .button-container .image_button:hover {
   transform: rotate(45deg) scale(1.2);
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main .drag-area {
+    margin: 50px 20px 0 20px;
+  }
+}
 .trail-main__wrapper .upload-image__main .drag-area__btn {
   padding: 5px 20px;
   border-radius: 5px;
@@ -203,6 +292,23 @@
   cursor: pointer;
   padding: 0;
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main .drag-area__btn button {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main .drag-area__btn {
+    width: 85%;
+    font-size: 15px;
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .upload-image__main {
+    margin-bottom: 50px;
+  }
+}
 .trail-main__wrapper .contact-information__main {
   display: none;
   margin-bottom: 150px;
@@ -210,6 +316,12 @@
 }
 .trail-main__wrapper .contact-information__main h6 {
   font-size: 20px;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main h6 {
+    margin: 40px 0 20px 0;
+    font-size: 18px;
+  }
 }
 .trail-main__wrapper .contact-information__main .common-flex-section {
   display: flex;
@@ -222,6 +334,17 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main .common-flex-section .primaryinput-container {
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main .common-flex-section {
+    display: block;
+    margin-top: 0;
+  }
 }
 .trail-main__wrapper .contact-information__main .message-section {
   display: flex;
@@ -268,6 +391,12 @@
   display: grid;
   place-content: center;
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main .free_trail-button .button-sub {
+    padding: 10px 20px 10px 0;
+    width: 120px;
+  }
+}
 .trail-main__wrapper .contact-information__main .free_trail-button .submit-btn {
   position: relative;
 }
@@ -277,6 +406,12 @@
   right: 25px;
   color: white;
   cursor: pointer;
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main .free_trail-button .submit-btn span {
+    top: 8px;
+    right: 15px;
+  }
 }
 .trail-main__wrapper .contact-information__main .free_trail-button .submit-btn .loader {
   pointer-events: none;
@@ -305,6 +440,23 @@
     transform: rotate(1turn);
   }
 }
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main .free_trail-button {
+    font-size: 18px;
+    bottom: 0;
+    right: 10px;
+  }
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper .contact-information__main {
+    margin: 0 10px 50px 10px;
+  }
+}
 .trail-main__wrapper .previous-button:hover {
   color: rgb(122, 128, 189);
+}
+@media only screen and (max-width : 480px) {
+  .trail-main__wrapper {
+    width: 100%;
+  }
 }/*# sourceMappingURL=freetrail.css.map */
