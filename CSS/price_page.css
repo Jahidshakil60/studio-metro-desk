@@ -24,6 +24,51 @@
 .estimation-calculator {
   padding: 90px 0;
 }
+@media only screen and (max-width: 600px) {
+  .estimation-calculator {
+    padding: 20px;
+  }
+  .estimation-calculator__header h2 {
+    font-size: 32px !important;
+  }
+  .payment-section {
+    padding: 20px !important;
+  }
+  .payment__header {
+    width: auto !important;
+  }
+  .payment__header h2 {
+    font-size: 32px !important;
+  }
+  .payment__systems-wrapper {
+    display: block !important;
+  }
+  .payment__system {
+    margin: 50px !important;
+  }
+  .hire-photo-editor-section {
+    padding: 20px 20px 0 20px !important;
+  }
+  .hire-editor__text h2 {
+    font-size: 32px !important;
+  }
+  .hire-editor-wrapper {
+    display: block !important;
+  }
+  .hire-editor__photo img{
+    width: 100%;
+  }
+  .client-section {
+    padding: 20px !important;
+  }
+  .client-section__wrapper {
+    width: auto !important;
+  }
+  .client-section__wrapper img {
+    width: 100%;
+  }
+
+}
 .estimation-calculator__header {
   margin-bottom: 50px;
 }
