@@ -346,6 +346,9 @@
     margin-top: 0;
   }
 }
+.trail-main__wrapper .contact-information__main .phone-label {
+  margin-bottom: 15px;
+}
 .trail-main__wrapper .contact-information__main .message-section {
   display: flex;
   flex-direction: column;
@@ -373,6 +376,54 @@
 }
 .trail-main__wrapper .contact-information__main .phone {
   padding-left: 50px;
+}
+.trail-main__wrapper .contact-information__main .contact-information {
+  /* Tooltip container */
+  /* Tooltip text */
+  /* Show the tooltip text when you mouse over the tooltip container */
+}
+.trail-main__wrapper .contact-information__main .contact-information .tooltip {
+  position: relative;
+  display: inline-block;
+}
+.trail-main__wrapper .contact-information__main .contact-information .tooltip .free__warning-text {
+  visibility: hidden;
+  width: 63%;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 4px 5px 10px #ccc;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  left: 20%;
+  top: 10px;
+  border: 0.3px solid #000;
+}
+.trail-main__wrapper .contact-information__main .contact-information .tooltip .free__warning-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 15%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgb(221, 221, 221) transparent;
+}
+.trail-main__wrapper .contact-information__main .contact-information .tooltip .free__warning-text span {
+  margin: 0;
+  padding: 0;
+  color: orange;
+  font-size: 28px;
+}
+.trail-main__wrapper .contact-information__main .contact-information .tooltip .free__warning-text .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 .trail-main__wrapper .contact-information__main .free_trail-button {
   position: absolute;

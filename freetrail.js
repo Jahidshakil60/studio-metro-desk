@@ -20,11 +20,10 @@ function freetrailmobile() {
 				serveice_button.style.color = "#7a80bd";
 			};
 		};
-		
+
 		for (let i = 0; i < cardBody.length; i++) {
 			cardBody[i].addEventListener("click", cardSelect(i));
 		}
-
 	} else {
 		let mobile_card = document.querySelector(".mobile-card-main");
 		mobile_card.remove();
@@ -36,7 +35,7 @@ function freetrailmobile() {
 				serveice_button.style.color = "#7a80bd";
 			};
 		};
-		
+
 		for (let i = 0; i < cardBody.length; i++) {
 			cardBody[i].addEventListener("click", cardSelect(i));
 		}
@@ -47,21 +46,30 @@ function freetrailmobile() {
 
 let submit_button = document.querySelector(".button-sub");
 let contact_input = document.querySelectorAll(".contact-input");
+let free__warning_text = document.querySelector(".free__warning-text");
 let arrow = document.querySelector(".arrow");
 submit_button.onclick = function (event) {
 	if (contact_input[0].value !== "" && contact_input[1].value !== "" && contact_input[2].value !== "") {
-		event.preventDefault();
-		this.innerHTML = "<div class='loader'></div>";
-		arrow.style.display = "none";
-		setTimeout(() => {
-			// window.location.reload();
-			this.innerHTML = "Successful";
-			this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px";
-		}, 1500);
+		if (contact_input[3].value !== "+1") {
+			event.preventDefault();
+			this.innerHTML = "<div class='loader'></div>";
+			arrow.style.display = "none";
+			setTimeout(() => {
+				// window.location.reload();
+				this.innerHTML = "Successful";
+				this.style = "background: #fff; color: 	#32CD32; pointer-events: none; font-size: 24px";
+			}, 1500);
 
-		setTimeout(() => {
-			window.location.href = "https://studiometrodesk.com/thank-you-free-trial";
-		}, 2200);
+			setTimeout(() => {
+				window.location.href = "https://studiometrodesk.com/thank-you-free-trial";
+			}, 2200);
+		} else {
+			event.preventDefault();
+			free__warning_text.style.visibility = "visible";
+			setTimeout(() => {
+				free__warning_text.style.visibility = "hidden";
+			}, 1000);
+		}
 	}
 };
 

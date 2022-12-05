@@ -129,4 +129,7 @@ p {
 	.btn{
 		font-size: 18px;
 	}
+	.btn span {
+		font-size: 22px;
+	}
 }

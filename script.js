@@ -9,10 +9,24 @@ function responsiveSection() {
 		let mobile__upload = document.querySelector(".mobile-imageupload");
 		let desktopcontact__information = document.querySelector(".desktop-contact__information");
 		let contactinformation = document.querySelector(".contact-information");
+		let expand_less = document.querySelector('.expand_less')
+		let expand_more = document.querySelector('.expand_more')
+		let exp_m1 = document.querySelector('.exp_m1')
+		let exp_m2 = document.querySelector('.exp_m2')
+		let exp_m3 = document.querySelector('.exp_m3')
+		let exp_m4 = document.querySelector('.exp_m4')
+		let exp_l1 = document.querySelector('.exp_l1')
+		let exp_l2 = document.querySelector('.exp_l2')
+		let exp_l3 = document.querySelector('.exp_l3')
+		let exp_l4 = document.querySelector('.exp_l4')
 
 		mobile__formsection.style.display = "block";
 		desktop__upload.remove();
 		desktopcontact__information.remove();
+
+		exp_l2.style.display = "none"
+		exp_l3.style.display = "none"
+		exp_l4.style.display = "none"
 
 		//submit button animation
 
@@ -57,22 +71,35 @@ function responsiveSection() {
 							mobile__deliverysection.style.display = "block";
 							mobile__upload.style.display = "none";
 							contactinformation.style.display = "none";
+							exp_l1.style.display = 'none'
+							exp_l2.style.display = 'block'
+							exp_l3.style.display = 'none'
 						} else if (data == 2) {
 							mobile__deliverysection.style.display = "none";
 							mobile__upload.style.display = "block";
 							mobile__formsection.style.display = "none";
 							contactinformation.style.display = "none";
+							exp_l3.style.display = 'block'
+							exp_l2.style.display = 'none'
+
+
 						} else if (data == 3) {
 							mobile__formsection.style.display = "none";
 							mobile__upload.style.display = "none";
 							mobile__deliverysection.style.display = "none";
 							contactinformation.style.display = "block";
 							sidebar[3].childNodes[3].innerHTML = '<span class="material-symbols-outlined">check_circle</span>' + "Plese fill up this form";
+							exp_l4.style.display = 'block'
+							exp_l3.style.display = 'none'
+
 						} else {
 							mobile__formsection.style.display = "block";
 							mobile__deliverysection.style.display = "none";
 							mobile__upload.style.display = "none";
 							contactinformation.style.display = "none";
+							exp_l1.style.display = 'block'
+							exp_l2.style.display = 'none' 
+							exp_l3.style.display = 'none'
 						}
 					}
 				}
@@ -254,8 +281,13 @@ function responsiveSection() {
 		let inputimage = document.getElementById("image-input");
 		let mobile__upload = document.querySelector(".mobile-imageupload");
 		let mobilecontact__information = document.querySelector(".mobile-contact__information");
+		let mobile__formsection = document.querySelector('.mobile__formsection')
+		let mobile__deliverysection = document.querySelector('.mobile-deliverysection')
+
 		mobile__upload.remove();
 		mobilecontact__information.remove();
+		mobile__formsection.remove()
+		mobile__deliverysection.remove()
 		//for sidebar functionality//
 
 		let sidebar = document.getElementsByClassName("sidebar-item-wrapper");
@@ -408,7 +440,7 @@ function responsiveSection() {
 				if (sidebar[i].classList.length == 2) {
 					nextbutton.style.display = "block";
 					document.querySelector(".active").classList.remove("active");
-					sidebar[i].previousSibling.previousSibling.classList.add("active");
+					sidebar[i-1].classList.add("active")
 					if (i == 0) {
 						// formsectionbody.style.display = "none";
 						// deliverytime.style.display = "block";

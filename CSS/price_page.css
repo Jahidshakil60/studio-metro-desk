@@ -287,3 +287,10 @@
 .client-section__wrapper img {
   margin-bottom: 50px;
 }
+
+.mySwiper{
+  padding-bottom: 50px;
+}
+.swiper-pagination{
+  bottom: -5px;
+}

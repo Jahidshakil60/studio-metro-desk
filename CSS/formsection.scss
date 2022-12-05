@@ -111,11 +111,16 @@ $media-mobile-sm: "only screen and (max-width : 480px)";
 					background: #7a80bd;
 					color: white;
 				}
+				.expand_more{
+					display: none;
+				}
+
 			}
 			.sidebar-item {
 				display: flex;
 				align-items: center;
 				gap: 24px;
+				position: relative;
 				p {
 					font-size: 25px;
 					padding: 1px 12px;
@@ -131,12 +136,36 @@ $media-mobile-sm: "only screen and (max-width : 480px)";
 					// 	font-size: 28px;
 					// }
 				}
+				.expand_icon{
+					display: none;
+					@media #{$media-mobile-sm} {
+						display: block;
+					}
+				}
+				.expand_less{
+					font-size: 32px;
+					color: #9e9e9e;
+					position: absolute;
+					right: -30px;
+					top: 50%;
+					transform: translate(0 , -50%);
+					
+				}
+				.expand_more{
+					font-size: 32px;
+					color: #9e9e9e;
+					position: absolute;
+					right: -30px;
+					top: 50%;
+					transform: translate(0 , -50%);
+				}
+				
 			}
 
 			.sidebar-item-single {
 				padding: 20px 0;
 				@media #{$media-mobile-sm} {
-				
+				padding: 10px 0;
 				}
 			}
 			@media #{$media-mobile-sm} {
